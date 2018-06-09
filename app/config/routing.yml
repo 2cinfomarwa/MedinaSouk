@@ -1,0 +1,72 @@
+souk_back_end:
+    resource: "@SoukBackEndBundle/Resources/config/routing.yml"
+    prefix:   /BackEnd
+
+souk_front_end:
+    resource: "@SoukFrontEndBundle/Resources/config/routing.yml"
+    prefix:   /FrontEnd
+
+souk_front_end_boutique:
+    resource: "@SoukFrontEndBundle/Resources/config/routing/boutique.yml"
+    prefix:   /FrontEnd/boutique
+souk_front_end_accueil:
+    resource: "@SoukFrontEndBundle/Resources/config/routing/accueil.yml"
+    prefix:   /accueil
+
+souk_front_end_categorie_lieu:
+    resource: "@SoukFrontEndBundle/Resources/config/routing/categorielieu.yml"
+    prefix:   /FrontEnd/lieu/categorie
+souk_front_end_lieu:
+    resource: "@SoukFrontEndBundle/Resources/config/routing/lieu.yml"
+    prefix:   /FrontEnd/lieu
+
+souk_front_end_categorie_produit:
+    resource: "@SoukFrontEndBundle/Resources/config/routing/categorieproduit.yml"
+    prefix:   /FrontEnd/produit/categorie
+souk_front_end_produit:
+    resource: "@SoukFrontEndBundle/Resources/config/routing/produit.yml"
+    prefix:   /FrontEnd/produit
+
+souk_front_end_commande:
+    resource: "@SoukFrontEndBundle/Resources/config/routing/commande.yml"
+    prefix:   /FrontEnd/commande
+souk_front_end_details_commande:
+    resource: "@SoukFrontEndBundle/Resources/config/routing/detailscommande.yml"
+    prefix:   /FrontEnd/commande/details
+souk_front_end_panier:
+    resource: "@SoukFrontEndBundle/Resources/config/routing/panier.yml"
+    prefix:   /FrontEnd/panier
+
+
+souk_front_end_event:
+    resource: "@SoukFrontEndBundle/Resources/config/routing/event.yml"
+    prefix:   /FrontEnd/event
+souk_front_end_type_event:
+    resource: "@SoukFrontEndBundle/Resources/config/routing/typeevent.yml"
+    prefix:   /FrontEnd/event/type
+
+souk_front_end_facture:
+    resource: "@SoukFrontEndBundle/Resources/config/routing/facture.yml"
+    prefix:   /FrontEnd/facture
+
+souk_front_end_media:
+    resource: "@SoukFrontEndBundle/Resources/config/routing/media.yml"
+    prefix:   /FrontEnd/media
+
+souk_front_end_promotion:
+    resource: "@SoukFrontEndBundle/Resources/config/routing/promotion.yml"
+    prefix:   /FrontEnd/promotion
+
+souk_front_end_reclamation:
+    resource: "@SoukFrontEndBundle/Resources/config/routing/reclamation.yml"
+    prefix:   /FrontEnd/reclamation
+
+souk_api:
+    resource: "@SoukFrontEndBundle/Resources/config/routing.yml"
+    prefix:   /api
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

@@ -1,0 +1,36 @@
+{% extends 'layout_FrontEnd.html.twig' %}
+
+{% block Content %}
+    <h1>Facture</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Datefact</th>
+                <td>{% if facture.datefact %}{{ facture.datefact|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Datelivr</th>
+                <td>{% if facture.datelivr %}{{ facture.datelivr|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ facture.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('facture_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('facture_edit', { 'id': facture.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

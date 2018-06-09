@@ -1,0 +1,43 @@
+{% extends 'layout_FrontEnd.html.twig' %}
+
+{% block Content %}
+    <h1>Detailscommandes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Quantite</th>
+                <th>Prixunitaire</th>
+                <th>Montantht</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for detailsCommande in detailsCommandes %}
+            <tr>
+                <td><a href="{{ path('detailscommande_show', { 'id': detailsCommande.id }) }}">{{ detailsCommande.quantite }}</a></td>
+                <td>{{ detailsCommande.prixunitaire }}</td>
+                <td>{{ detailsCommande.montantht }}</td>
+                <td>{{ detailsCommande.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('detailscommande_show', { 'id': detailsCommande.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('detailscommande_edit', { 'id': detailsCommande.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('detailscommande_new') }}">Create a new detailsCommande</a>
+        </li>
+    </ul>
+{% endblock %}

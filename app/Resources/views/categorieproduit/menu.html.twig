@@ -1,0 +1,6 @@
+
+    <!--<option value="all">Categories</option>-->
+    {% for c in categories %}
+        <option value="{{ c.id }}">{{ c.libelle }}</option>
+    {% endfor %}
+

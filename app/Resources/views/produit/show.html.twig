@@ -1,0 +1,56 @@
+{% extends 'layout_FrontEnd.html.twig' %}
+
+{% block Content %}
+    <h1>Produit</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Idutilisateur</th>
+                <td>{{ produit.idutilisateur }}</td>
+            </tr>
+            <tr>
+                <th>Designation</th>
+                <td>{{ produit.designation }}</td>
+            </tr>
+            <tr>
+                <th>Prixunitaire</th>
+                <td>{{ produit.prixunitaire }}</td>
+            </tr>
+            <tr>
+                <th>Qtestock</th>
+                <td>{{ produit.qtestock }}</td>
+            </tr>
+            <tr>
+                <th>Tauxtva</th>
+                <td>{{ produit.tauxtva }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ produit.image }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ produit.description }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ produit.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('produit_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('produit_edit', { 'id': produit.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

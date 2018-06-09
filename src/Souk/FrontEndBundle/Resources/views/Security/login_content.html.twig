@@ -1,0 +1,52 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+
+
+<div class="container">
+    <div class="row justify-content-center mt-4">
+        <div class="col-xs-12 col-sm-auto">
+            <div class="card">
+                <div class="card-body pt-2">
+                    <div class="text-center">
+                        <div class="d-inline-block border border-secondary rounded-circle text-center m-auto">
+                            <h1 class="px-1"><i class="fa fa-user fa-fw"></i></h1>
+                        </div>
+                    </div>
+                    <h5 class="card-title text-center">Please Enter Your Information</h5>
+
+                    <form action="{{ path("fos_user_security_check") }}" method="post">
+                        {% if csrf_token %}
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                        {% endif %}
+
+
+                        <div class="form-group">
+                            <label for="username">{{ 'security.login.username'|trans }}</label>
+                            <input type="text" class="form-control" id="InputUsername username" placeholder="Enter Username" name="_username" value="{{ last_username }}" required="required" autocomplete="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">{{ 'security.login.password'|trans }}</label>
+                            <input type="password" class="form-control" id="InputPassword password" placeholder="Password" name="_password" required="required" autocomplete="current-password">
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="rememberMe remember_me"  name="_remember_me" value="on" >
+
+                            <label for="remember_me" class="custom-control-label">{{ 'security.login.remember_me'|trans }}</label>
+                        </div>
+                        <button type="submit" class="btn btn-theme btn-sm btn-block my-3" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}">Enter</button>
+
+
+                        <div class="form-group mb-0">
+                            <a href="register.html" class="text-default"><small>Register</small></a>
+                            <a href="#" class="float-right text-default"><small>Forgot Password ?</small></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

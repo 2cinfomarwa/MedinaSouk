@@ -1,0 +1,24 @@
+categorielieu_index:
+    path:     /
+    defaults: { _controller: "SoukFrontEndBundle:Categorielieu:index" }
+    methods:  GET
+
+categorielieu_show:
+    path:     /{id}/show
+    defaults: { _controller: "SoukFrontEndBundle:Categorielieu:show" }
+    methods:  GET
+
+categorielieu_new:
+    path:     /new
+    defaults: { _controller: "SoukFrontEndBundle:Categorielieu:new" }
+    methods:  [GET, POST]
+
+categorielieu_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SoukFrontEndBundle:Categorielieu:edit" }
+    methods:  [GET, POST]
+
+categorielieu_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SoukFrontEndBundle:Categorielieu:delete" }
+    methods:  DELETE

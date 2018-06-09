@@ -1,0 +1,24 @@
+typeevent_index:
+    path:     /
+    defaults: { _controller: "SoukFrontEndBundle:Typeevent:index" }
+    methods:  GET
+
+typeevent_show:
+    path:     /{id}/show
+    defaults: { _controller: "SoukFrontEndBundle:Typeevent:show" }
+    methods:  GET
+
+typeevent_new:
+    path:     /new
+    defaults: { _controller: "SoukFrontEndBundle:Typeevent:new" }
+    methods:  [GET, POST]
+
+typeevent_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SoukFrontEndBundle:Typeevent:edit" }
+    methods:  [GET, POST]
+
+typeevent_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SoukFrontEndBundle:Typeevent:delete" }
+    methods:  DELETE

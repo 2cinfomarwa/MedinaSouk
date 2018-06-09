@@ -1,0 +1,41 @@
+{% extends 'layout_FrontEnd.html.twig' %}
+
+{% block Content %}
+    <h1>Categorieproduits list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Libelle</th>
+                <th>Description</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorieproduit in categorieproduits %}
+            <tr>
+                <td><a href="{{ path('categorieproduit_show', { 'id': categorieproduit.id }) }}">{{ categorieproduit.libelle }}</a></td>
+                <td>{{ categorieproduit.description }}</td>
+                <td>{{ categorieproduit.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('categorieproduit_show', { 'id': categorieproduit.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('categorieproduit_edit', { 'id': categorieproduit.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('categorieproduit_new') }}">Create a new categorieproduit</a>
+        </li>
+    </ul>
+{% endblock %}

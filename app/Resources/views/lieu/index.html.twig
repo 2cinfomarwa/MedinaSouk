@@ -1,0 +1,41 @@
+{% extends 'layout_FrontEnd.html.twig' %}
+
+{% block Content %}
+    <h1>Lieus list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Libelle</th>
+                <th>Description</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for lieu in lieus %}
+            <tr>
+                <td><a href="{{ path('lieu_show', { 'id': lieu.id }) }}">{{ lieu.libelle }}</a></td>
+                <td>{{ lieu.description }}</td>
+                <td>{{ lieu.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('lieu_show', { 'id': lieu.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('lieu_edit', { 'id': lieu.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('lieu_new') }}">Create a new lieu</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,24 @@
+boutique_index:
+    path:     /
+    defaults: { _controller: "SoukFrontEndBundle:Boutique:index" }
+    methods:  GET
+
+boutique_show:
+    path:     /{id}/show
+    defaults: { _controller: "SoukFrontEndBundle:Boutique:show" }
+    methods:  GET
+
+boutique_new:
+    path:     /new
+    defaults: { _controller: "SoukFrontEndBundle:Boutique:new" }
+    methods:  [GET, POST]
+
+boutique_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SoukFrontEndBundle:Boutique:edit" }
+    methods:  [GET, POST]
+
+boutique_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SoukFrontEndBundle:Boutique:delete" }
+    methods:  DELETE

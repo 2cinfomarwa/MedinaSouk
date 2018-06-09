@@ -1,0 +1,43 @@
+{% extends 'layout_FrontEnd.html.twig' %}
+
+{% block Content %}
+    <h1>Boutiques list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Adresse</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for boutique in boutiques %}
+            <tr>
+                <td><a href="{{ path('boutique_show', { 'id': boutique.id }) }}">{{ boutique.nom }}</a></td>
+                <td>{{ boutique.description }}</td>
+                <td>{{ boutique.adresse }}</td>
+                <td>{{ boutique.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('boutique_show', { 'id': boutique.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('boutique_edit', { 'id': boutique.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('boutique_new') }}">Create a new boutique</a>
+        </li>
+    </ul>
+{% endblock %}

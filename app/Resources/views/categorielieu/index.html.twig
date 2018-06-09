@@ -1,0 +1,39 @@
+{% extends 'layout_FrontEnd.html.twig' %}
+
+{% block Content %}
+    <h1>Categorielieus list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Libelle</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorielieu in categorielieus %}
+            <tr>
+                <td><a href="{{ path('categorielieu_show', { 'id': categorielieu.id }) }}">{{ categorielieu.libelle }}</a></td>
+                <td>{{ categorielieu.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('categorielieu_show', { 'id': categorielieu.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('categorielieu_edit', { 'id': categorielieu.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('categorielieu_new') }}">Create a new categorielieu</a>
+        </li>
+    </ul>
+{% endblock %}

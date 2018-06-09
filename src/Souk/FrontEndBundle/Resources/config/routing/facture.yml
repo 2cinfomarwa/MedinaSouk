@@ -1,0 +1,32 @@
+facture_index:
+    path:     /
+    defaults: { _controller: "SoukFrontEndBundle:Facture:index" }
+    methods:  GET
+
+facture_show:
+    path:     /show/{id}
+    defaults: { _controller: "SoukFrontEndBundle:Facture:show" }
+    methods:  GET
+facture_apres_commande:
+    path:     /facture/consultation
+    defaults: { _controller: "SoukFrontEndBundle:Facture:factureConsultation" }
+    methods:  GET
+
+facture_new:
+    path:     /new
+    defaults: { _controller: "SoukFrontEndBundle:Facture:new" }
+    methods:  [GET, POST]
+facture_validation_commande:
+    path:     /facturation/{id}
+    defaults: { _controller: "SoukFrontEndBundle:Facture:facturation" }
+    methods:  [GET, POST]
+
+facture_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SoukFrontEndBundle:Facture:edit" }
+    methods:  [GET, POST]
+
+facture_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SoukFrontEndBundle:Facture:delete" }
+    methods:  DELETE

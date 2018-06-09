@@ -1,0 +1,24 @@
+produit_index:
+    path:     /
+    defaults: { _controller: "SoukFrontEndBundle:Produit:index" }
+    methods:  GET
+
+produit_show:
+    path:     /{id}/show
+    defaults: { _controller: "SoukFrontEndBundle:Produit:show" }
+    methods:  GET
+
+produit_new:
+    path:     /new
+    defaults: { _controller: "SoukFrontEndBundle:Produit:new" }
+    methods:  [GET, POST]
+
+produit_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SoukFrontEndBundle:Produit:edit" }
+    methods:  [GET, POST]
+
+produit_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SoukFrontEndBundle:Produit:delete" }
+    methods:  DELETE

@@ -1,0 +1,20 @@
+panier_index:
+    path:     /index
+    defaults: { _controller: "SoukFrontEndBundle:Panier:index" }
+    methods:  GET
+
+ajouter_panier:
+    path:     /ajouter/{id}
+    defaults: { _controller: "SoukFrontEndBundle:Panier:ajouter_panier" }
+supprimer_panier:
+    path:  /supprimer/{id}
+    defaults: { _controller: "SoukFrontEndBundle:Panier:supprimer_panier" }
+panier:
+    path:  /panier
+    defaults: { _controller: "SoukFrontEndBundle:Panier:panier" }
+    methods:  GET
+validation:
+    path:  /validation
+    defaults: { _controller: "SoukFrontEndBundle:Panier:validation" }
+    methods:  GET
+

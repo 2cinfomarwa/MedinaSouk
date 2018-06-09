@@ -1,0 +1,24 @@
+lieu_index:
+    path:     /
+    defaults: { _controller: "SoukFrontEndBundle:Lieu:index" }
+    methods:  GET
+
+lieu_show:
+    path:     /{id}/show
+    defaults: { _controller: "SoukFrontEndBundle:Lieu:show" }
+    methods:  GET
+
+lieu_new:
+    path:     /new
+    defaults: { _controller: "SoukFrontEndBundle:Lieu:new" }
+    methods:  [GET, POST]
+
+lieu_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SoukFrontEndBundle:Lieu:edit" }
+    methods:  [GET, POST]
+
+lieu_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SoukFrontEndBundle:Lieu:delete" }
+    methods:  DELETE

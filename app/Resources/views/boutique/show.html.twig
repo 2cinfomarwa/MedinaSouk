@@ -1,0 +1,40 @@
+{% extends 'layout_FrontEnd.html.twig' %}
+
+{% block Content %}
+    <h1>Boutique</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Nom</th>
+                <td>{{ boutique.nom }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ boutique.description }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ boutique.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ boutique.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('boutique_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('boutique_edit', { 'id': boutique.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

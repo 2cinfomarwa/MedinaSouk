@@ -1,0 +1,40 @@
+{% extends 'layout_FrontEnd.html.twig' %}
+
+{% block Content %}
+    <h1>Detailscommande</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Quantite</th>
+                <td>{{ detailsCommande.quantite }}</td>
+            </tr>
+            <tr>
+                <th>Prixunitaire</th>
+                <td>{{ detailsCommande.prixunitaire }}</td>
+            </tr>
+            <tr>
+                <th>Montantht</th>
+                <td>{{ detailsCommande.montantht }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ detailsCommande.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('detailscommande_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('detailscommande_edit', { 'id': detailsCommande.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

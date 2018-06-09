@@ -1,0 +1,24 @@
+detailscommande_index:
+    path:     /
+    defaults: { _controller: "SoukFrontEndBundle:DetailsCommande:index" }
+    methods:  GET
+
+detailscommande_show:
+    path:     /{id}/show
+    defaults: { _controller: "SoukFrontEndBundle:DetailsCommande:show" }
+    methods:  GET
+
+detailscommande_new:
+    path:     /new
+    defaults: { _controller: "SoukFrontEndBundle:DetailsCommande:new" }
+    methods:  [GET, POST]
+
+detailscommande_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SoukFrontEndBundle:DetailsCommande:edit" }
+    methods:  [GET, POST]
+
+detailscommande_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SoukFrontEndBundle:DetailsCommande:delete" }
+    methods:  DELETE

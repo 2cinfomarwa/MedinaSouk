@@ -2,7 +2,9 @@
 
 namespace Souk\FrontEndBundle\Controller;
 
+use http\Env\Response;
 use Souk\FrontEndBundle\Entity\Facture;
+use Spipu\Html2Pdf\Html2Pdf;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -72,11 +74,53 @@ class FactureController extends Controller
         return $this->render('facture/consultation.html.twig', array('details_commande'=>$detailscmd));
     }
 
-public function factureConsultationAction()
-{
 
-}
-       // return $this->redirectToRoute('facture_index');
+    /******* facture immr ***
+     * @throws \HTML2PDF_exception
+     */////
+
+    public function facture_PDFAction()
+    {
+
+
+        $html = $this->renderView('facture/facturePDF.html.twig');
+
+        $html2pdf = new Html2Pdf('P','A4','fr',true, 'UTF-8');
+        //echo 'good';
+       // exit;
+        //echo''die($html);
+        $html2pdf->pdf->SetAuthor('DevAndClick');
+        $html2pdf->pdf->SetTitle('Facture ');//.$facture->getReference());
+        $html2pdf->pdf->SetSubject('Facture DevAndClick');
+        $html2pdf->pdf->SetKeywords('facture,devandclick');
+        $html2pdf->pdf->SetDisplayMode('real');
+        $html2pdf->writeHTML($html);
+        $html2pdf->Output('Facture.pdf');
+
+        $response = new \Symfony\Component\HttpFoundation\Response();
+        $response->headers->set('Content-type' , 'application/pdf');
+
+        return $response;
+
+        /*$html2pdf->pdf->SetAuthor('Machmoum');
+        $html2pdf->pdf->SetTitle('Facture ');//.$facture->getReference());
+        $html2pdf->pdf->SetSubject('Facture DevAndClick');
+        $html2pdf->pdf->SetKeywords('facture,devandclick');
+        $html2pdf->pdf->SetDisplayMode('real');
+        $html2pdf->writeHTML($html);
+        $html2pdf->Output('Facture.pdf');
+
+        $response = new Response();
+        $response->headers->set('Content-type' , 'application/pdf');
+
+        return $response;*/
+    }
+
+
+
+
+
+  // return $this->redirectToRoute('facture_index');
 
 
     /**

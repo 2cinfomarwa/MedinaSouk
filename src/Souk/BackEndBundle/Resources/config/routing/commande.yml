@@ -1,6 +1,12 @@
 commande_backend_liste:
     path:     /
-    defaults: { _controller: SoukFrontEndBundle:Commande:commande_backend_liste }
+    defaults: { _controller: SoukBackEndBundle:Commande:commande_backend_liste }
+commande_backend_details:
+    path:     /{id}/details
+    defaults: { _controller: SoukBackEndBundle:Commande:commande_backend_details }
+commande_backend_facture:
+    path:     /valide
+    defaults: { _controller: SoukBackEndBundle:Commande:commande_backend_valide }
 
 
 

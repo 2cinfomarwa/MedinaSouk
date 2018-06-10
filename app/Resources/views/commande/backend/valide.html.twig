@@ -13,7 +13,7 @@
                         <li class="breadcrumb-item active">Datatable</li>
                     </ol>
                 </div>
-                <h4 class="page-title">Commande</h4>
+                <h4 class="page-title">Commandes VAlidées (Factures)</h4>
             </div>
         </div>
     </div>
@@ -33,24 +33,25 @@
                         <thead>
                         <tr>
                             <th>Numero Commande</th>
-                            <th>Créée par</th>
+                            <th>Numéro Facture</th>
+                            <th>Date Facture</th>
                             <th>Total HT</th>
                             <th>Total TTC</th>
-                            <th>date Commande</th>
 
                         </tr>
                         </thead>
 
 
                         <tbody>
-                        {% for commande in commandes %}
-                        <tr>
-                            <td><a href="{{ path('commande_backend_details', { 'id': commande.id }) }}"> {{ commande.id }}</a></td>
-                            <td><a href="">{{ commande.idutilisateur }}</a></td>
-                            <td>{{ commande.montantHT }}</td>
-                            <td>{{ commande.montantTTC }}</td>
-                            <td>{% if commande.datecmd %}{{ commande.datecmd|date('Y-m-d H:i:s') }}{% endif %}</td>
-                        </tr>
+                        {% for f in factures %}
+                            <tr>
+                                <td><a href="{{ path('commande_backend_details', { 'id': f.idcommande.id }) }}"> {{ f.idcommande.id }}</a></td>
+                                <td>{{ f.id }}</td>
+                                <td>{% if f.datefact %}{{ f.datefact|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                <td>{{ f.idcommande.montantHT }}</td>
+                                <td>{{ f.idcommande.montantTTC }}</td>
+
+                            </tr>
                         {% endfor %}
                         </tbody>
                     </table>

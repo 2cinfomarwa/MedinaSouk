@@ -19,12 +19,6 @@ class Facture
      */
     private $datefact;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="dateLivr", type="datetime", nullable=true)
-     */
-    private $datelivr;
 
     /**
      * @var integer

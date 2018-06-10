@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Event
  *
- * @ORM\Table(name="event", indexes={@ORM\Index(name="FK_Event_Type", columns={"idTypeEvent"})})
+ * @ORM\Table(name="event", indexes={@ORM\Index(name="FK_Event_Type", columns={"idTypeEvent"}) ,@ORM\Index(name="FK_Event_Lieu", columns={"idLieu"})})
  * @ORM\Entity
  */
 class Event
@@ -22,9 +22,32 @@ class Event
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=254, nullable=true)
+     * @ORM\Column(name="image", type="string", length=254, nullable=true)
+     */
+    private $image;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lieu", type="string", length=254, nullable=true)
+     */
+    private $lieu;
+
+
+    /**
+     * @var text
+     *
+     * @ORM\Column(name="description", type="text", nullable=false)
      */
     private $description;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateevent", type="datetime", nullable=false)
+     */
+    private $dateevent;
+
 
     /**
      * @var integer
@@ -44,6 +67,16 @@ class Event
      * })
      */
     private $idtypeevent;
+
+    /**
+     * @var \Souk\FrontEndBundle\Entity\Lieu
+     *
+     * @ORM\ManyToOne(targetEntity="Souk\FrontEndBundle\Entity\Lieu")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idLieu", referencedColumnName="id")
+     * })
+     */
+    private $idlieu;
 
     /**
      * @return string
@@ -107,6 +140,70 @@ class Event
     public function setIdtypeevent($idtypeevent)
     {
         $this->idtypeevent = $idtypeevent;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param string $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLieu()
+    {
+        return $this->lieu;
+    }
+
+    /**
+     * @param string $lieu
+     */
+    public function setLieu($lieu)
+    {
+        $this->lieu = $lieu;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateevent()
+    {
+        return $this->dateevent;
+    }
+
+    /**
+     * @param \DateTime $dateevent
+     */
+    public function setDateevent($dateevent)
+    {
+        $this->dateevent = $dateevent;
+    }
+
+    /**
+     * @return Lieu
+     */
+    public function getIdlieu()
+    {
+        return $this->idlieu;
+    }
+
+    /**
+     * @param Lieu $idlieu
+     */
+    public function setIdlieu($idlieu)
+    {
+        $this->idlieu = $idlieu;
     }
     
     

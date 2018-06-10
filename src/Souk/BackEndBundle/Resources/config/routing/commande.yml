@@ -1,0 +1,6 @@
+commande_backend_liste:
+    path:     /
+    defaults: { _controller: SoukFrontEndBundle:Commande:commande_backend_liste }
+
+
+

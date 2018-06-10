@@ -35,11 +35,20 @@ class Commande
     private $datecmd;
 
     /**
-     * @var string
+     * @var float
      *
-     * @ORM\Column(name="description", type="string", length=254, nullable=true)
+     * @ORM\Column(name="montantHT", type="float", precision=10, scale=0, nullable=true)
      */
-    private $description;
+    private $montantHT;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="montantTTC", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $montantTTC;
+
+
 
     /**
      * @var integer
@@ -50,10 +59,44 @@ class Commande
      */
     private $id;
 
+    /**
+     * @return float
+     */
+    public function getMontantHT()
+    {
+        return $this->montantHT;
+    }
+
+    /**
+     * @param float $montantHT
+     */
+    public function setMontantHT($montantHT)
+    {
+        $this->montantHT = $montantHT;
+    }
+
+    /**
+     * @return float
+     */
+    public function getMontantTTC()
+    {
+        return $this->montantTTC;
+    }
+
+    /**
+     * @param float $montantTTC
+     */
+    public function setMontantTTC($montantTTC)
+    {
+        $this->montantTTC = $montantTTC;
+    }
+
 
     /**
      * @return \DateTime
      */
+
+
     public function getDatecmd()
     {
         return $this->datecmd;
@@ -65,22 +108,6 @@ class Commande
     public function setDatecmd($datecmd)
     {
         $this->datecmd = $datecmd;
-    }
-
-    /**
-     * @return float
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * @param float $description
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
     }
 
     /**

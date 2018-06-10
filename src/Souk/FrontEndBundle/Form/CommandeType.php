@@ -21,7 +21,7 @@ class CommandeType extends AbstractType
                 //    'multiple'=>false
 
         //))
-        ->add('datecmd')->add('description');
+        ->add('datecmd')->add('montantHT')->add('montantTTC');
     }/**
      * {@inheritdoc}
      */

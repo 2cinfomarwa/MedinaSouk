@@ -22,3 +22,7 @@ commande_delete:
     path:     /{id}/delete
     defaults: { _controller: "SoukFrontEndBundle:Commande:delete" }
     methods:  DELETE
+
+
+
+

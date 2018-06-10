@@ -1,4 +1,4 @@
-
+{% extends 'layout_BackEnd.html.twig' %}
 
 {% block Content %}
 
@@ -34,12 +34,10 @@
                         <tr>
                             <th>Numero Commande</th>
                             <th>Créée par</th>
-                            <th>Description</th>
-                            <th>Quantité</th>
-                            <th>Prix unitaire</th>
-                            <th>Prix HT</th>
+                            <th>Total HT</th>
+                            <th>Total TTC</th>
                             <th>date Commande</th>
-                            <th>Opérations</th>
+
                         </tr>
                         </thead>
 
@@ -50,19 +48,8 @@
                             <td>{{ commande.id }}</td>
                             <td><a href="{{ path('commande_show', { 'id': commande.id }) }}">{{ commande.idutilisateur }}</a></td>
                             <td>{{ commande.montantHT }}</td>
-                            <td>**QTE**</td>
-                            <td>PrixUnitaire</td>
-                            <td>Prix HT</td>
+                            <td>{{ commande.montantTTC }}</td>
                             <td>{% if commande.datecmd %}{{ commande.datecmd|date('Y-m-d H:i:s') }}{% endif %}</td>
-                            <td> <ul>
-                                    <li>
-                                        <a href="{{ path('commande_show', { 'id': commande.id }) }}">show</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ path('commande_edit', { 'id': commande.id }) }}">edit</a>
-                                    </li>
-                                </ul>
-                            </td>
                         </tr>
                         {% endfor %}
                         </tbody>
@@ -72,5 +59,6 @@
             </div>
         </div> <!-- end col -->
     </div> <!-- end row -->
+
 
 {% endblock %}

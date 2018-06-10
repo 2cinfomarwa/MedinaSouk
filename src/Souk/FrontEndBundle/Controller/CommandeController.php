@@ -30,6 +30,7 @@ class CommandeController extends Controller
         ));
     }
 
+
     /**
      * Creates a new commande entity.
      *
@@ -150,6 +151,16 @@ class CommandeController extends Controller
         $formatted = $serializer->normalize($tasks);
         return new JsonResponse($formatted);
     }
+/***************** partie BAckend ************************/
+    public function commande_backend_listeAction()
+    {
+        $em = $this->getDoctrine()->getManager();
 
+        $commandes = $em->getRepository('SoukFrontEndBundle:Commande')->findAll();
+
+        return $this->render('commande/backend/index.html.twig', array(
+            'commandes' => $commandes,
+        ));
+    }
 
 }

@@ -64,9 +64,19 @@ souk_front_end_reclamation:
 souk_api:
     resource: "@SoukFrontEndBundle/Resources/config/routing.yml"
     prefix:   /api
+souk_backend_commande:
+    resource: "@SoukBackEndBundle/Resources/config/routing/commande.yml"
+    prefix:   /BackEnd/commande
 
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+
+
+
+souk_back_end_commande:
+    resource: "@SoukBackEndBundle/Resources/config/routing/commande.yml"
+    prefix:   /BackEnd/commande

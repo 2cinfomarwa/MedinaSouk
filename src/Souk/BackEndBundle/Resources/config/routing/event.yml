@@ -1,0 +1,9 @@
+event_backend_ajout:
+    path:     /ajouter
+    defaults: { _controller: SoukBackEndBundle:Event:event_backend_ajout }
+event_backend_liste:
+    path:     /lister
+    defaults: { _controller: SoukBackEndBundle:Event:event_backend_liste }
+
+
+

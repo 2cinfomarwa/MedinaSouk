@@ -196,9 +196,9 @@
                     <li class="has_sub">
                         <a href="javascript:void(0);" class="waves-effect"><span> Event /Categorie <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                         <ul class="list-unstyled">
-                            <li><a href="#">Afficher</a></li>
-                            <li><a href="#">Modifier</a></li>
-                            <li><a href="#">Supprimer</a></li>
+                            <li><a href="{{ path('event_backend_ajout') }}">Nouveau Event</a></li>
+                            <li><a href="{{ path('event_backend_liste') }}">Liste event</a></li>
+
                         </ul>
                     </li>
 
@@ -377,7 +377,8 @@
                     </div>-->
 
               {% block Content %}
-                    {% endblock %}
+
+              {% endblock %}
                     <!--<div class="row">
                         <div class="col-md-6 col-lg-6 col-xl-3">
                             <div class="mini-stat clearfix bg-white">

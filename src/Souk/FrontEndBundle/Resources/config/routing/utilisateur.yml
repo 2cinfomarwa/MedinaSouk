@@ -1,0 +1,3 @@
+utilisateur_profil:
+    path:     /profil
+    defaults: { _controller: "SoukFrontEndBundle:Utilisateur:profil" }

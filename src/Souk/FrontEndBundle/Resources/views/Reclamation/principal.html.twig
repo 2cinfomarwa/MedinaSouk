@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-md-8 mb-3">
 				
-				<div class="title"><span>Reclamation</span></div>
+				<br>
 				<h3>
 					<center>Comment faire une réclamation?</center>
 				</h3>
@@ -58,6 +58,24 @@
 				{{ form_start(form) }}
 				
 				<hr>
+				<div class="title"><span>Informations client:</span></div>
+				<table> <tr>
+						<div class="form-group">
+							<td>Nom utilisateur:
+							
+							</td>
+							
+							<td>{{ app.user.username }}</td>
+						</div>
+					</tr>
+					<tr>
+						<div class="form-group">
+							<td>Email: </td>
+							<td>{{ app.user.email }}</td>
+						</div>
+					</tr>
+				</table>
+				<hr>
 				<div class="title"><span>Informations réclamation:</span></div>
 				
 				<div class="form-group">
@@ -82,15 +100,6 @@
 				</div>
 				
 				
-				<div class="title"><span>Informations client:</span></div>
-				<div class="form-group">
-					<label>Nom utilisateur</label>
-					<p>{{ app.user.username }}</p>
-				</div>
-				<div class="form-group">
-					<label>Email</label>
-					<p>{{ app.user.email }}</p>
-				</div>
 				<hr/>
 				
 				<div class="form-group">

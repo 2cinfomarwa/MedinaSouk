@@ -117,22 +117,39 @@ class ReclamationController extends Controller
         ));
     }
 
+
+    public function updateAction (Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        //Récupération du modèle
+        $Reclamation = $em->getRepository('SoukFrontEndBundle:Reclamation')->find($id);
+        $form = $this->createForm(ReclamationType::class,$Reclamation);
+        $form->handleRequest($request);
+        if($form->isValid())
+        {
+            $em->persist($Reclamation);
+            $em->flush();
+            return $this->redirectToRoute('reclamation_new');
+        }
+        return $this->render('SoukFrontEndBundle:Reclamation:update.html.twig'
+            ,array(
+                "form"=>$form->createView()
+            ));
+    }
+
     /**
      * Deletes a reclamation entity.
      *
      */
-    public function deleteAction(Request $request, Reclamation $reclamation)
+    public function deleteAction(Request $request)
     {
-        $form = $this->createDeleteForm($reclamation);
-        $form->handleRequest($request);
+        $id = $request->get('id');
+        $em= $this->getDoctrine()->getManager();
+        $reclamation= $em->getRepository('SoukFrontEndBundle:Reclamation')->find($id);
+        $em->remove($reclamation);
+        $em->flush();
+        return $this->redirectToRoute('reclamation_new');
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($reclamation);
-            $em->flush();
-        }
-
-        return $this->redirectToRoute('reclamation_index');
     }
 
 

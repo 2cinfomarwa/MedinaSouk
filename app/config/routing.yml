@@ -80,3 +80,4 @@ fos_user:
 souk_back_end_commande:
     resource: "@SoukBackEndBundle/Resources/config/routing/commande.yml"
     prefix:   /BackEnd/commande
+

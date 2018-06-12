@@ -32,6 +32,6 @@ reclamation_update:
     methods:  [GET, POST]
 
 reclamation_detail:
-    path:  /detail/{id}
+    path:  /{id}/detail
     defaults: { _controller: "SoukFrontEndBundle:Reclamation:detail"}
     methods:  [GET, POST]

@@ -3,32 +3,26 @@
 
 			
 			
-			<h2>Liste des reclamations</h2>
-			<table>
+			<h2>Détails de reclamation</h2>
+			
+			
+				{% for reclamation in reclamation %}
 				<ul>
-					<li>ID</li>
-					<li>Description</li>
-					<li>sujet</li>
-					<li>date du probleme</li>
-					<li>Afficher détails</li>
-					<li>date_reclamation </li>
+					<li><b>ID:</b> {{ reclamation.id }}</li>
+					<li><b>Description:</b> {{ reclamation.description }}</li>
+					<li><b>Sujet:</b> {{ reclamation.sujet }}</li>
+					<li><b>Date du probleme: </b>{{ reclamation.dateProbleme |date }}</li>
+					<li><b>Date_reclamation:</b> {{ reclamation.dateReclamation |date}}</li>
 				</ul>
 				
-				{% for reclamation in reclamation %}
-					<ul>
-						<li>{{ reclamation.id }}</li>
-						<li>{{ reclamation.description }}</li>
-						<li>{{ reclamation.sujet }}</li>
-						<li>{{ reclamation.dateProbleme |date }}</li>
-						<li>{{ reclamation.dateReclamation |date}}</li>
-					</ul>
+				
 					<a href="{{ path ('reclamation_update',{'id':reclamation.id }) }}"><b>Mise à jour</b></a>
 					<a href="{{ path ('reclamation_edit', {'id':reclamation.id }) }}"><b>Supprimer</b></a>
 					
 					
 				
 			{% endfor %}
-			</table>
+			
 			
 			
 			<hr>

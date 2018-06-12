@@ -34,6 +34,7 @@ class ReclamationType extends AbstractType
                 'attr' => array('class' => 'tinymce'),
             ))
             ->add('dateProbleme')
+            ->add('dateReclamation')
             ->add('file', FileType::class, array('label' => 'Fichier joint', 'required' => false))
             ->add('commande', EntityType::class, array(
                 'class' => 'Souk\FrontEndBundle\Entity\Commande',

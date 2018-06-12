@@ -65,7 +65,7 @@ class ReclamationController extends Controller
                 ->setBody(
                     $this->renderView(
                     // app/Resources/views/Emails/registration.html.twig
-                        ':reclamation:email.html.twig',
+                        'SoukFrontEndBundle:Reclamation:email.html.twig',
                         array('data' => $reclamation)
                     ),
                     'text/html'
@@ -150,6 +150,17 @@ class ReclamationController extends Controller
         $em->flush();
         return $this->redirectToRoute('reclamation_new');
 
+    }
+
+    public function detailAction(){
+        //Créer une instance de notre Entity Manager
+        $em = $this->getDoctrine()->getManager();
+        //Récupérer la liste des modèles
+        $reclamation = $em->getRepository('SoukFrontEndBundle:Reclamation')->findAll();
+        return $this->render('SoukFrontEndBundle:Reclamation:list.html.twig'
+            ,array(
+                "reclamation"=>$reclamation
+            ));
     }
 
 

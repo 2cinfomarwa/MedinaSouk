@@ -1,0 +1,105 @@
+
+{% extends '::layout_FrontEnd.html.twig' %}
+{% block Content %}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 mb-3">
+				
+			
+				
+				<div class="title"><span><h4> Merci de Mettre à jour votre Reclamation</h4></span></div>
+				
+				<br>
+				<br>
+				{{ form_start(form) }}
+				
+				<table>
+					<tr>
+						<div class="form-group">
+							<td>
+								{{ form_label(form.commande) }}(*)
+							</td>
+							<td>
+								{{ form_widget(form.commande, {'label_attr': {'class': 'form-control'}}) }}
+							</td>
+						</div>
+					</tr>
+					<tr>
+						<div class="form-group">
+							<td>
+								{{ form_label(form.sujet) }}(*)
+							</td>
+							<td>
+								{{ form_widget(form.sujet, {'label_attr': {'class': 'form-control'}}) }}
+							</td>
+						</div>
+					</tr>
+					<tr>
+						<div class="form-group">
+							<td>
+								{{  form_label(form.description) }}
+							</td>
+							<td>
+								{{ form_widget(form.description, {'label_attr': {'class': 'form-control'}}) }}
+							</td>
+						
+						</div>
+					</tr>
+					<tr>
+						<div class="form-group">
+							<td>
+								{{ form_label(form.dateProbleme) }}
+							
+							</td>
+							<td>
+								{{ form_widget(form.dateProbleme, {'label_attr': {'class': 'form-control'}}) }}
+							</td>
+						
+						</div>
+					</tr>
+					<div class="form-group">
+						<td>
+							{{ form_label(form.dateReclamation) }}
+						
+						</td>
+						<td>
+							{{ form_widget(form.dateReclamation, {'label_attr': {'class': 'form-control'}}) }}
+						</td>
+					
+					</div>
+					</tr>
+					<tr>
+						<div class="form-group">
+							<td>
+								{{ form_label(form.file) }}
+							</td>
+							<td>
+								{{ form_widget(form.file, {'label_attr': {'class': 'form-control'}}) }}
+							</td>
+						</div>
+					</tr>
+					
+				
+				</table>
+				
+				
+				<hr/>
+				
+				<div class="form-group">
+					<button class="btn btn-success" type="submit">Enregistrer Modification</button>
+				</div>
+				{{ form_end(form) }}
+			
+			
+		</div>
+	</div>
+
+
+{% endblock %}
+
+
+
+
+
+
+</div>

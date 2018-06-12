@@ -3,6 +3,7 @@
 namespace Souk\FrontEndBundle\Controller;
 
 use Souk\FrontEndBundle\Entity\Reclamation;
+use Souk\FrontEndBundle\Form\ReclamationType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -34,18 +35,46 @@ class ReclamationController extends Controller
     public function newAction(Request $request)
     {
         $reclamation = new Reclamation();
-        $form = $this->createForm('Souk\FrontEndBundle\Form\ReclamationType', $reclamation);
+        $user = $this->getUser();
+        $form = $this->createForm(
+            ReclamationType::class, $reclamation,
+            array('user' => $this->getUser())
+        );
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            if ($reclamation->getFile()) {
+                $file = $reclamation->getFile();
+                $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+                $file->move(
+                    $this->getParameter('uploads_directory_reclamation'),
+                    $fileName
+                );
+                $reclamation->setFile($fileName);
+            }
+            $reclamation->setUtilisateur($user);
             $em = $this->getDoctrine()->getManager();
             $em->persist($reclamation);
             $em->flush();
 
-            return $this->redirectToRoute('reclamation_show', array('id' => $reclamation->getId()));
+            //Sending email to customer
+            $message = (new \Swift_Message('Souk-El-Mdina : Reclamation'))
+                ->setFrom('noreply@souklemdina.com')
+                ->setTo($user->getEmail())
+                ->setBody(
+                    $this->renderView(
+                    // app/Resources/views/Emails/registration.html.twig
+                        'SoukFrontEndBundle:Reclamation:email.html.twig',
+                        array('data' => $reclamation)
+                    ),
+                    'text/html'
+                );
+            dump($this->get('mailer')->send($message));
+            return $this->redirectToRoute('reclamation_detail');
         }
 
-        return $this->render('reclamation/new.html.twig', array(
+        return $this->render('@SoukFrontEnd/Reclamation/principal.html.twig', array(
             'reclamation' => $reclamation,
             'form' => $form->createView(),
         ));
@@ -88,23 +117,65 @@ class ReclamationController extends Controller
         ));
     }
 
+
+    public function updateAction (Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        //Récupération du modèle
+        $Reclamation = $em->getRepository('SoukFrontEndBundle:Reclamation')->find($id);
+        $form = $this->createForm(ReclamationType::class,$Reclamation);
+        $form->handleRequest($request);
+        if($form->isValid())
+        {
+            $em->persist($Reclamation);
+            $em->flush();
+            return $this->redirectToRoute('reclamation_detail');
+        }
+        return $this->render('SoukFrontEndBundle:Reclamation:update.html.twig'
+            ,array(
+                "form"=>$form->createView()
+            ));
+    }
+
     /**
      * Deletes a reclamation entity.
      *
      */
-    public function deleteAction(Request $request, Reclamation $reclamation)
+    public function deleteAction(Request $request)
     {
-        $form = $this->createDeleteForm($reclamation);
-        $form->handleRequest($request);
+        $id = $request->get('id');
+        $em= $this->getDoctrine()->getManager();
+        $reclamation= $em->getRepository('SoukFrontEndBundle:Reclamation')->find($id);
+        $em->remove($reclamation);
+        $em->flush();
+        return $this->redirectToRoute('reclamation_new');
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($reclamation);
-            $em->flush();
-        }
-
-        return $this->redirectToRoute('reclamation_index');
     }
+
+    public function detailAction(Request $request){
+        $id = $request->get('id');
+        //Créer une instance de notre Entity Manager
+        $em = $this->getDoctrine()->getManager();
+        //Récupérer la liste des modèles
+        $reclamation = $em->getRepository('SoukFrontEndBundle:Reclamation')->find($id);
+        return $this->render('SoukFrontEndBundle:Reclamation:list.html.twig'
+            ,array(
+                "reclamation"=>$reclamation
+            ));
+    }
+
+
+    public function principalAction()
+    {
+        return $this->render("SoukFrontEndBundle:Reclamation:principal.html.twig", array());
+    }
+
+
+    public function conditionsAction()
+    {
+        return $this->render("SoukFrontEndBundle:Reclamation:Conditionsgenerale.html.twig", array());
+    }
+
 
     /**
      * Creates a form to delete a reclamation entity.
@@ -118,7 +189,8 @@ class ReclamationController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('reclamation_delete', array('id' => $reclamation->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
+
+
 }

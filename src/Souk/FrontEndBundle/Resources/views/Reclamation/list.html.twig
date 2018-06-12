@@ -1,0 +1,38 @@
+
+
+
+			
+			
+			<h2>Détails de reclamation</h2>
+			
+			
+				{% for reclamation in reclamation %}
+				<ul>
+					<li><b>ID:</b> {{ reclamation.id }}</li>
+					<li><b>Description:</b> {{ reclamation.description }}</li>
+					<li><b>Sujet:</b> {{ reclamation.sujet }}</li>
+					<li><b>Date du probleme: </b>{{ reclamation.dateProbleme |date }}</li>
+					<li><b>Date_reclamation:</b> {{ reclamation.dateReclamation |date}}</li>
+				</ul>
+				
+				
+					<a href="{{ path ('reclamation_update',{'id':reclamation.id }) }}"><b>Mise à jour</b></a>
+					<a href="{{ path ('reclamation_edit', {'id':reclamation.id }) }}"><b>Supprimer</b></a>
+					
+					
+				
+			{% endfor %}
+			
+			
+			
+			<hr>
+			
+		
+	
+
+
+
+
+
+
+

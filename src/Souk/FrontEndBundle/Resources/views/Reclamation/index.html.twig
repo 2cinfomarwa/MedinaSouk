@@ -1,0 +1,182 @@
+{% extends '::layout_FrontEnd.html.twig' %}
+{% block Content %}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 mb-3">
+				
+				<div class="title"><span>Reclamation</span></div>
+				<h3><center>Comment faire une réclamation? </center></h3>
+				<br>
+				<center><p><h6><i><strong>
+								Si après avoir lu nos termes et conditions vous souhaitez tout de même
+								faire une réclamation, </br>
+								merci de suivre la procédure ci-dessous ou contactez-nous
+								par téléphone au + 27 273 225.
+							</strong></i></h6></p></center>
+				<hr width="40%">
+				<br>
+				<br>
+				<table>
+					<tr>
+						<th> <img src="{{ asset('48.png') }}"></th>
+						<center><th><img src="{{ asset('imp.png') }}" ></th></center>
+						<th><img src="{{ asset('mesg.png') }}" ></th>
+					
+					</tr>
+					
+					<tr>
+						<th><i>1. Déclarez votre réclamation sous 48h: <i> <br><br>
+									La réclamation doit être déclarée dans les 48h suivant
+									le recevoir d'article.</th>
+						
+						<th><i>2. Envoyez-nous le maximum de preuves: </i> <br><br>
+							Lors de votre demande en ligne, transmettez-nous votre
+							factures de paiements,
+							des photos et autres documents probants
+						</th>
+						<th><i>3. Réponse sous 48h: </i><br> <br>
+							Un retour par email de notre équipe vous sera adressée sous 48h.</th>
+					</tr>
+				</table>
+				<br><br><br>
+				
+				<div class="title"><span>Formulaire de reclamation</span></div>
+				
+				<b>Cher Client, Chère Cliente,</b> <br><br>
+				Merci de remplir la demande de retour ci-dessous. Tous les articles vendus n'étant pas éligibles au retour, toutes les demandes sont soumises à analyse et approbation.<br>
+				Merci de prendre connaissance de nos <b> <a href="{{ path('conditionsgenerale') }}">
+						conditions générales de vente</a></b> .<br>
+				Après réception des informations suivantes, nous analyserons votre demande et y répondrons en conséquence.<br>
+				<br>
+				<h4>Sujet de votre reclamation:</h4><br>
+				<form>
+					<div class="form-group">
+						<label for="InputName">Sujet(*)</label>
+						<p>
+							<select>
+								<option>Produit défectueux</option>
+								<option>Produit endommagé ou cassé</option>
+								<option>Information erronée dans le catalogue ou sur le site web</option>
+								<option>Manquant à la livraison</option>
+								<option>Produit commandé erroné</option>
+								<option>Produit livré non commandé</option>
+								<option>Problème de performance d'un produit</option>
+								<option>Autre</option>
+							</select>
+						</p>
+					</div>
+					<div class="form-group">
+						<label for="InputEmail1">Si"Autre", merci de préciser</label>
+						<input type="email" class="form-control" id="InputEmail1" >
+					</div>
+					
+					<hr>
+					<div class="title"><span>Informations commande:</span></div>
+					
+					<div class="form-group">
+						<label for="InputMessage">N° de commande (*)</label>
+						<input type="text" class="form-control" id="InputName" >
+					</div>
+					<div class="form-group">
+						<label for="InputMessage">N° d'article (*)</label>
+						<input type="text" class="form-control" id="InputName" >
+					</div>
+					<div class="form-group">
+						<label for="InputMessage">Désignation article</label>
+						<input type="text" class="form-control" id="InputName" >
+					</div>
+					<div class="form-group">
+						<label for="InputMessage">Déscription du probleme rencontré</label>
+						<textarea class="form-control" id="InputMessage" rows="3"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="InputMessage">Date à laquelle le problème a été constaté</label>
+						<input type="date" class="form-control" id="InputName" >
+					</div>
+					<div class="form-group">
+						<input type="file" name="fichier"><br>
+					</div>
+				</form>
+				
+				
+				
+				
+				<div class="title"><span>Informations client:</span></div>
+				<form>
+					<div class="form-group">
+						<label for="InputName">Prenom (*)</label>
+						<input type="text" class="form-control" id="InputName" placeholder="Entrer prénom">
+					</div>
+					<div class="form-group">
+						<label for="InputName">Nom (*)</label>
+						<input type="text" class="form-control" id="InputName" placeholder="Entrer nom">
+					</div>
+					<div class="form-group">
+						<label for="InputName">Adresse (*)</label>
+						<input type="text" class="form-control" id="InputName" placeholder="Entrer adresse">
+					</div>
+					<div class="form-group">
+						<label for="InputName">Code Postal (*)</label>
+						<input type="text" class="form-control" id="InputName" placeholder="Entrer code postal">
+					</div>
+					<div class="form-group">
+						<label for="InputName">Téléphone (*)</label>
+						<input type="text" class="form-control" id="InputName" placeholder="Entrer téléphone">
+					</div>
+					<div class="form-group">
+						<label for="InputEmail1">Addresse Email (*)</label>
+						<input type="email" class="form-control" id="InputEmail1" placeholder="Entrer adresse email">
+					</div>
+					
+					
+					<button type="submit" class="btn btn-theme btn-sm">Envoyer</button>
+				</form>
+			
+			</div>
+			<div class="col-md-4">
+				<div class="title"><span>Information du Contact </span></div>
+				<ul class="list-group mb-4">
+					<li class="list-group-item pl-2 border-left-0 border-right-0 border-top-0">&raquo; Z.I. Chotrana II B.P. 160
+						Pôle Technologique El Ghazela - Ariana 2083</a>
+					<li class="list-group-item pl-2 border-left-0 border-right-0">&raquo;Tel: (216) 70 685 685</a>
+					<li class="list-group-item pl-2 border-left-0 border-right-0">&raquo; Email : contact@esprit.tn</a>
+				</ul>
+				<div class="title"><span>Notre Location</span></div>
+				<div class="embed-responsive embed-responsive-4by3 rounded">
+					<iframe class="embed-responsive-item" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=central%2Bpark&amp;ie=UTF8&amp;z=12&amp;t=m&amp;iwloc=near&amp;output=embed"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+	<body>
+	<h2> <strong> Formulaire De Contact</strong> </h2>
+	<hr>
+	<h3><p> Contacter nous </p></h3>
+	{{ form_start (form) }}
+	<table>
+		<tr>
+			<td> Nom </td>
+			<td> {{ form_widget (form.nom) }} </td>
+		</tr>
+		<tr>
+			<td> Prenom </td>
+			<td> {{ form_widget (form.prenom) }} </td>
+		</tr>
+		<tr>
+			<td> Téléphone </td>
+			<td> {{ form_widget (form.tel) }} </td>
+		</tr>
+		<tr>
+			<td> Email </td>
+			<td> {{ form_widget (form.email) }} </td>
+		</tr>
+		<tr>
+			<td> Text </td>
+			<td> {{ form_widget (form.text) }} </td>
+		</tr>
+	</table>
+	{{ form_end(form)}}
+	</body>
+
+{% endblock %}
+

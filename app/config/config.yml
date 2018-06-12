@@ -7,6 +7,7 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
+    uploads_directory_reclamation: '%kernel.project_dir%/web/uploads/reclamation'
 
 framework:
     #esi: ~

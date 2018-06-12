@@ -21,4 +21,17 @@ reclamation_edit:
 reclamation_delete:
     path:     /{id}/delete
     defaults: { _controller: "SoukFrontEndBundle:Reclamation:delete" }
-    methods:  DELETE
+
+
+conditionsgenerale:
+    path:     /reclamation/conditionsgenerale
+
+reclamation_update:
+    path:  /update/{id}
+    defaults: { _controller: "SoukFrontEndBundle:Reclamation:update"}
+    methods:  [GET, POST]
+
+reclamation_detail:
+    path:  /{id}/detail
+    defaults: { _controller: "SoukFrontEndBundle:Reclamation:detail"}
+    methods:  [GET, POST]

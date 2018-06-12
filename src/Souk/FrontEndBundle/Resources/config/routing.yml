@@ -20,3 +20,6 @@ Souk_api_categorie_produit_new:
     path:     /produit/categorie/new
     defaults: { _controller: Categorieproduit:Api_Categorie_produit_new }
 
+
+
+

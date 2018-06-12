@@ -4,6 +4,19 @@ event_backend_ajout:
 event_backend_liste:
     path:     /lister
     defaults: { _controller: SoukBackEndBundle:Event:event_backend_liste }
+event_backend_supprimer:
+    path:    /supprimer
+    defaults: { _controller: SoukBackEndBundle:Event:event_backend_supprimer }
 
+event_backend_modifier:
+    path:    /modifier
+    defaults: { _controller: SoukBackEndBundle:Event:event_backend_modifier }
 
+event_backend_ajouttype:
+    path:    /ajoutertype
+    defaults: { _controller: SoukBackEndBundle:Typeevent:typeevent_backend_ajouttype }
+
+event_backend_listetype:
+    path:    /listetype
+    defaults: { _controller: SoukBackEndBundle:Typeevent:typeevent_backend_listetype }
 

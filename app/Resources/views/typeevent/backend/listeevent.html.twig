@@ -13,7 +13,7 @@
                         <li class="breadcrumb-item active">Datatable</li>
                     </ol>
                 </div>
-                <h4 class="page-title">Liste des evenements</h4>
+                <h4 class="page-title">Liste des catégories</h4>
             </div>
         </div>
     </div>
@@ -34,35 +34,28 @@
                         <tr>
                             <th>Libelle</th>
                             <th>Description</th>
-                            <th>Date Event</th>
-                            <th>Lieu</th>
-                            <th>Image</th>
-                            <th>Suppression</th>
-                            <th>Mise à jour</th>
+
 
                         </tr>
                         </thead>
 
 
                         <tbody>
-                        {% for event in events %}
-                        <tr>
-                            <td>{{ event.libelle }}</td>
-                            <td>{{ event.description }}</td>
-                            <td>{{ event.dateevent|date('Y-m-d H:i:s') }}</td>
-                            <td>{{ event.idlieu.libelle}}</td>
-                            <td>{{ event.image }}</td>
-                            <td>
-                                <a href="{{ path('event_backend_supprimer',{'id':event.id}) }}">
-                                    Supprimer
-                                </a>
-                            </td>
-                            <td>
-                                <a href="{{ path('event_backend_modifier',{'id':event.id}) }}">
-                                    Modifier
-                                </a>
-                            </td>
-                        </tr>
+                        {% for typeevent in typeevents %}
+                            <tr>
+                                <td>{{typeevent.libelle }}</td>
+                                <td>{{ typeevent.description }}</td>
+                                <td>
+                                    <a href="{{ path('event_backend_supprimer',{'id':typeevent.id}) }}">
+                                        Supprimer
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('event_backend_modifier',{'id':typeevent.id}) }}">
+                                        Modifier
+                                    </a>
+                                </td>
+                            </tr>
                         {% endfor %}
                         </tbody>
                     </table>

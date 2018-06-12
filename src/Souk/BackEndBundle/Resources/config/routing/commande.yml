@@ -7,6 +7,8 @@ commande_backend_details:
 commande_backend_facture:
     path:     /valide
     defaults: { _controller: SoukBackEndBundle:Commande:commande_backend_valide }
-
+commande_backend_en_attente:
+    path:     /en_attente
+    defaults: { _controller: SoukBackEndBundle:Commande:commande_backend_en_attente }
 
 

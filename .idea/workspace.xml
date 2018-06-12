@@ -2,13 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f0c8d27-edfb-4bfc-91ea-bd3f67c2405c" name="Default" comment="repository 2">
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/typeevent/backend/ajouttype.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/typeevent/backend/listeevent.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/commande/backend/en_attente.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/utilisateur/profil.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/UtilisateurController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing/utilisateur.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Souk_madina_v6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Souk_madina_v6.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/event/backend/liste.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/event/backend/liste.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/facture/consultation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/facture/consultation.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/layout_BackEnd.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/layout_BackEnd.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Souk/BackEndBundle/Controller/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Souk/BackEndBundle/Controller/EventController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Souk/BackEndBundle/Resources/config/routing/event.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Souk/BackEndBundle/Resources/config/routing/event.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/panier/panier.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/panier/panier.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/panier/validation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/panier/validation.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/produit/liste.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/produit/liste.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.phar" beforeDir="false" afterPath="$PROJECT_DIR$/composer.phar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Souk/BackEndBundle/Controller/CommandeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Souk/BackEndBundle/Controller/CommandeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Souk/BackEndBundle/Resources/config/routing/commande.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Souk/BackEndBundle/Resources/config/routing/commande.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/PanierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/PanierController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Repository/CommandeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Repository/CommandeRepository.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,34 +36,66 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <pharPath>$PROJECT_DIR$/composer.phar</pharPath>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="EventController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/EventController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
+            <state relative-caret-position="425">
+              <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Souk/BackEndBundle/Controller/EventController.php">
+      <file leaf-file-name="layout_FrontEnd.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/layout_FrontEnd.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="42" column="3" selection-start-line="42" selection-start-column="3" selection-end-line="51" selection-end-column="5" />
-              <folding>
-                <element signature="e#50#87#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="442">
+              <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modifier.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/event/backend/modifier.html.twig">
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="171">
+              <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppKernel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="186" lean-forward="true" selection-start-line="186" selection-end-line="186" />
             </state>
           </provider>
         </entry>
@@ -56,56 +103,26 @@
       <file leaf-file-name="event.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Souk/BackEndBundle/Resources/config/routing/event.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
+            <state relative-caret-position="323">
               <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TypeeventController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Souk/BackEndBundle/Controller/TypeeventController.php">
+      <file leaf-file-name="event.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing/event.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="23" />
-              <folding>
-                <element signature="e#134#175#0#PHP" expanded="true" />
-              </folding>
+            <state>
+              <caret selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="liste.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/event/backend/liste.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="62" column="36" selection-end-line="76" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listeevent.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/typeevent/backend/listeevent.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajouttype.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/typeevent/backend/ajouttype.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout_BackEnd.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="layout_BackEnd.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/layout_BackEnd.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="201" column="100" selection-start-line="201" selection-start-column="100" selection-end-line="201" selection-end-column="100" />
+            <state relative-caret-position="3417">
+              <caret line="201" column="32" selection-start-line="201" selection-start-column="32" selection-end-line="201" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -121,7 +138,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="twig file" />
-        <option value="twig" />
       </list>
     </option>
   </component>
@@ -145,6 +161,8 @@
       <find>canvab</find>
       <find>MAi</find>
       <find>routing</find>
+      <find>desc</find>
+      <find>conta</find>
     </findStrings>
     <replaceStrings>
       <replace>FrontEndBundle</replace>
@@ -152,14 +170,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="c clear-cache" />
-      <command text="s cache:clear" />
-      <command text="c clear-cache" />
-      <command text="s doctrine:schema:update --force" />
-      <command text="s doctrine:database:create" />
-      <command text="s doctrine:schema:create" />
-      <command text="s fos:user:promote admin ROLE_ADMIN" />
-      <command text="s doctrine:schema:update " />
       <command text="s doctrine:schema:update --force" />
       <command text="s doctrine:schema:update" />
       <command text="s doctrine:schema:update --force" />
@@ -177,6 +187,14 @@
       <command text="s doctrine:database:create" />
       <command text="s doctrine:schema:create" />
       <command text="c dump-autoload" />
+      <command text="c update --no-scripts" />
+      <command text="c  install --no-interaction" />
+      <command text="s doctrine:schema:update --force" />
+      <command text="c require spipu/html2pdf" />
+      <command text="c dump-autoload" />
+      <command text="c update --no-scripts" />
+      <command text="c install --no-interaction" />
+      <command text="s doctrine:schema:update --force" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -185,57 +203,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Resources/views/promotion/show.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/reclamation/edit.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/reclamation/index.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/reclamation/new.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/reclamation/show.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/typeevent/edit.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/typeevent/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/typeevent/new.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/typeevent/show.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/panier/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/ProduitController.php" />
-        <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/views/Default/accueil.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/layout_FrontEnd.html.twig" />
         <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Entity/Produit.php" />
         <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Repository/ProduitRepository.php" />
         <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing/panier.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/panier/panier.html.twig" />
         <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Listener/RedirectionListener.php" />
-        <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Form/CommandeType.php" />
         <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Entity/Souk/FrontEndBundle/Entity/Utilisateur.php" />
-        <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Entity/Commande.php" />
-        <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Repository/CommandeRepository.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/commande/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/CommandeController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/panier/validationEmail.html.twig" />
         <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/app/config/config_dev.yml" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/CategorieproduitController.php" />
         <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Entity/Utilisateur.php" />
         <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/AccueilController.php" />
         <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing/accueil.yml" />
-        <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Entity/Facture.php" />
-        <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/PanierController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/panier/validation.html.twig" />
+        <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/views/Default/accueil.html.twig" />
+        <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Entity/Commande.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/commande/show.html.twig" />
+        <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Form/CommandeType.php" />
+        <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing/commande.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/views/commande/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing/facture.yml" />
+        <option value="$PROJECT_DIR$/vendor/autoload.php" />
         <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/FactureController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/facture/consultation.html.twig" />
+        <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/CommandeController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/commande/backend/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/commande/backend/details.html.twig" />
+        <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Entity/Facture.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/commande/backend/valide.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/layout_BackEnd.html.twig" />
+        <option value="$PROJECT_DIR$/src/Souk/BackEndBundle/Resources/config/routing/commande.yml" />
+        <option value="$PROJECT_DIR$/src/Souk/BackEndBundle/Controller/CommandeController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/commande/backend/en_attente.html.twig" />
+        <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Repository/CommandeRepository.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/produit/liste.html.twig" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/event/backend/liste.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/event/backend/modifier.html.twig" />
-        <option value="$PROJECT_DIR$/src/Souk/BackEndBundle/Controller/EventController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/typeevent/backend/ajouttype.html.twig" />
-        <option value="$PROJECT_DIR$/src/Souk/BackEndBundle/Resources/config/routing/event.yml" />
-        <option value="$PROJECT_DIR$/src/Souk/BackEndBundle/Controller/TypeeventController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/typeevent/backend/listeevent.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/layout_BackEnd.html.twig" />
+        <option value="$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/PanierController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/panier/panier.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/panier/validation.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/facture/consultation.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/routing.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/views/utilisateur/profil.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/layout_FrontEnd.html.twig" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
       </list>
     </option>
   </component>
@@ -289,15 +307,15 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
       <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
-      <path value="$PROJECT_DIR$/vendor/spipu/html2pdf" />
+      <path value="$PROJECT_DIR$/vendor/html2pdf/lib" />
       <path value="$PROJECT_DIR$/vendor/tecnickcom/tcpdf" />
+      <path value="$PROJECT_DIR$/vendor/spipu/html2pdf" />
+      <path value="$PROJECT_DIR$/vendor/nomaya/social-bundle" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="y" value="-12" />
-    <option name="width" value="606" />
-    <option name="height" value="690" />
+    <option name="width" value="1371" />
+    <option name="height" value="774" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -305,7 +323,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -322,84 +339,18 @@
               <item name="Medina_projet" type="b2602c69:ProjectViewProjectNode" />
               <item name="Medina_projet" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Medina_projet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Medina_projet" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Medina_projet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Medina_projet" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="typeevent" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Medina_projet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Medina_projet" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="typeevent" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Medina_projet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Medina_projet" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Medina_projet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Medina_projet" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Souk" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Medina_projet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Medina_projet" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Souk" type="462c0819:PsiDirectoryNode" />
-              <item name="BackEndBundle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Medina_projet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Medina_projet" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Souk" type="462c0819:PsiDirectoryNode" />
-              <item name="BackEndBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Medina_projet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Medina_projet" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Souk" type="462c0819:PsiDirectoryNode" />
-              <item name="BackEndBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Medina_projet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Medina_projet" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Souk" type="462c0819:PsiDirectoryNode" />
-              <item name="BackEndBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Medina_projet" type="b2602c69:ProjectViewProjectNode" />
               <item name="Medina_projet" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Medina_projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Medina_projet" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Souk" type="462c0819:PsiDirectoryNode" />
-              <item name="BackEndBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="routing" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Medina_projet" type="b2602c69:ProjectViewProjectNode" />
@@ -414,30 +365,46 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Souk" type="462c0819:PsiDirectoryNode" />
               <item name="FrontEndBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Medina_projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Medina_projet" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Souk" type="462c0819:PsiDirectoryNode" />
+              <item name="FrontEndBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Medina_projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Medina_projet" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../demo_esprit" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="settings.editor.selected.configurable" value="vcs.CVS" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\MedinaSouk\src\Souk\FrontEndBundle\Resources\config\routing" />
+      <recent name="C:\wamp\www\MedinaSouk\src\Souk\FrontEndBundle\Controller" />
+      <recent name="C:\wamp\www\MedinaSouk\app\Resources\views" />
+      <recent name="C:\wamp\www\MedinaSouk\app\Resources\views\commande\backend" />
+      <recent name="C:\wamp\www\MedinaSouk\src\Souk\BackEndBundle\Controller" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp\www\Souk_madina_v6\src\Souk\FrontEndBundle\Resources\views\Default" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp\www\Souk_madina\src\Souk\FrontEndBundle\Resources\config\routing" />
-      <recent name="C:\wamp\www\Souk_madina\src\Souk\FrontEndBundle\Controller" />
-      <recent name="C:\wamp\www\Souk_madina\src\Souk\FrontEndBundle\Entity" />
-      <recent name="C:\wamp\www\Souk_madina\src\Souk\FrontEndBundle" />
-      <recent name="C:\wamp\www\Souk_madina\src\Souk\FrontEndBundle\Repository" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -482,6 +449,9 @@
       <workItem from="1528493698076" duration="1893000" />
       <workItem from="1528554659109" duration="1532000" />
       <workItem from="1528584932297" duration="1414000" />
+      <workItem from="1528590418462" duration="24972000" />
+      <workItem from="1528710472587" duration="396000" />
+      <workItem from="1528837300078" duration="1069000" />
     </task>
     <task id="LOCAL-00001" summary="repository 2">
       <created>1528585275180</created>
@@ -497,50 +467,101 @@
       <option name="project" value="LOCAL" />
       <updated>1528586067806</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="repository 2">
+      <created>1528594719076</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1528594719076</updated>
+    </task>
+    <task id="LOCAL-00004" summary="repository 2">
+      <created>1528595188238</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1528595188238</updated>
+    </task>
+    <task id="LOCAL-00005" summary="repository 2">
+      <created>1528603566604</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1528603566604</updated>
+    </task>
+    <task id="LOCAL-00006" summary="repository 2">
+      <created>1528605695592</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1528605695592</updated>
+    </task>
+    <task id="LOCAL-00007" summary="repository 2">
+      <created>1528620031291</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1528620031291</updated>
+    </task>
+    <task id="LOCAL-00008" summary="repository 2">
+      <created>1528710746098</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1528710746098</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130159000" />
+    <option name="totallyTimeSpent" value="151995000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Messages" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5030257" side_tool="true" weight="0.32843137" />
-      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32993197" />
-      <window_info anchor="bottom" id="Run" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32843137" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2021858" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27868852" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5030257" side_tool="true" weight="0.32843137" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="2" visible="true" weight="0.32993197" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.3282313" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32843137" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27166277" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="15" />
-      <window_info anchor="bottom" id="Version Control" order="17" />
-      <window_info anchor="bottom" id="Run" order="5" />
-      <window_info anchor="bottom" id="Database Changes" order="21" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Command Line Tools Console" order="18" sideWeight="0.4969743" visible="true" weight="0.3282313" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="19" sideWeight="0.5030257" side_tool="true" weight="0.32843137" />
-      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="20" weight="0.32843137" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="7" sideWeight="0.4969743" weight="0.3267974" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32843137" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32526475" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="8" visible="true" weight="0.32843137" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32843137" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -558,288 +579,244 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/DefaultController.php">
+    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Entity/Utilisateur.php">
+    <entry file="file://$PROJECT_DIR$/src/Souk/BackEndBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="20" selection-end-column="7" />
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/services.yml">
+    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/DetailsCommandeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="20" />
+        <state relative-caret-position="-1612">
+          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing/boutique.yml">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/commande/backend/details.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="17" />
+        <state relative-caret-position="105">
+          <caret line="65" column="28" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="75" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Entity/Facture.php">
+    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing/commande.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="98" selection-start-line="9" selection-start-column="98" selection-end-line="9" selection-end-column="98" />
+        <state relative-caret-position="102">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Entity/Commande.php">
+    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/CommandeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing/panier.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing/facture.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/PanierController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="74" column="38" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
+        <state relative-caret-position="189">
+          <caret line="131" column="5" lean-forward="true" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Entity/Detailscommande.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="46" column="6" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
+        <state relative-caret-position="-261">
+          <caret line="38" column="38" selection-start-line="38" selection-start-column="38" selection-end-line="39" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/produit/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Entity/Facture.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+        <state relative-caret-position="273">
+          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Souk/BackEndBundle/Resources/config/routing/commande.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="83" selection-start-line="11" selection-start-column="83" selection-end-line="11" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Repository/CommandeRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/commande/backend/en_attente.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/commande/backend/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Souk/BackEndBundle/Controller/CommandeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/commande/backend/valide.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/FactureController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="64" column="9" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+        <state relative-caret-position="122">
+          <caret line="64" column="80" selection-start-line="64" selection-start-column="80" selection-end-line="64" selection-end-column="112" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/panier/validation.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing/accueil.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1955">
-          <caret line="115" column="93" selection-end-line="315" selection-end-column="14" />
+        <state>
+          <caret selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/facture/consultation.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Entity/Produit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/modulesUsed/liste_produit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/views/Default/accueil.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1955">
-          <caret line="115" column="16" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="16" />
+        <state relative-caret-position="155">
+          <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/produit/liste.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2516">
-          <caret line="148" selection-start-line="148" selection-end-line="148" />
+        <state relative-caret-position="304">
+          <caret line="84" column="50" selection-start-line="75" selection-start-column="43" selection-end-line="84" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/categorieproduit/menu.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/services.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/CategorieproduitController.php">
+    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+        <state relative-caret-position="-184">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/modulesUsed/categories_produit.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        <state relative-caret-position="241">
+          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/TypeeventController.php">
+    <entry file="file://$PROJECT_DIR$/app/config/config_test.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config_prod.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
+        <state relative-caret-position="-116" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/BackEndBundle/Resources/config/routing.yml">
+    <entry file="file://$PROJECT_DIR$/app/config/routing_dev.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        <state relative-caret-position="170">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/AccueilController.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/commande/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
+        <state relative-caret-position="782">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/BoutiqueController.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/panier/validationEmail.html.twig">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/CategorielieuController.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/panier/panier.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="1530">
+          <caret line="90" column="119" selection-start-line="90" selection-start-column="119" selection-end-line="90" selection-end-column="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/PanierController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="73" column="45" selection-start-line="73" selection-start-column="45" selection-end-line="73" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/panier/validation.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="81" column="15" selection-start-line="80" selection-start-column="20" selection-end-line="81" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing/facture.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" selection-start-line="32" selection-end-line="32" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/facture/consultation.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1343">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/UtilisateurController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing/utilisateur.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/projet symfony/front souk html/souk/mimity31.netlify.com/account-profile.html" />
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/utilisateur/profil.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="46" column="43" selection-start-line="42" selection-start-column="31" selection-end-line="46" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="23" />
+        <state relative-caret-position="434">
+          <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Form/EventType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="e#44#93#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Form/CommandeType.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Form/DetailsCommandeType.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/event/backend/indexbackend.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/event/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/event/backend/recap.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing/event.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/BackEndBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/commande/backend/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/commande/backend/details.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/CommandeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="94" column="35" selection-start-line="94" selection-start-column="35" selection-end-line="94" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/commande/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/event/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/event/backend/modifier.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/typeevent/backend/ajouttype.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/EventController.php">
+    <entry file="file://$PROJECT_DIR$/src/Souk/BackEndBundle/Controller/EventController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/event/backend/ajout.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/typeevent/backend/ajouttype.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/event/backend/liste.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="62" column="36" selection-end-line="76" />
+        <state relative-caret-position="88">
+          <caret line="42" column="3" selection-start-line="42" selection-start-column="3" selection-end-line="51" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -847,16 +824,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="23" />
-          <folding>
-            <element signature="e#134#175#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/BackEndBundle/Resources/config/routing/event.yml">
+    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/EventController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="23" />
+        <state relative-caret-position="425">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -867,20 +841,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Souk/BackEndBundle/Controller/EventController.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout_BackEnd.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="42" column="3" selection-start-line="42" selection-start-column="3" selection-end-line="51" selection-end-column="5" />
-          <folding>
-            <element signature="e#50#87#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="3417">
+          <caret line="201" column="32" selection-start-line="201" selection-start-column="32" selection-end-line="201" selection-end-column="80" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout_BackEnd.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Souk/BackEndBundle/Resources/config/routing/event.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="201" column="100" selection-start-line="201" selection-start-column="100" selection-end-line="201" selection-end-column="100" />
+        <state relative-caret-position="323">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing/event.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout_FrontEnd.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/event/backend/liste.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="36" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="186" lean-forward="true" selection-start-line="186" selection-end-line="186" />
         </state>
       </provider>
     </entry>

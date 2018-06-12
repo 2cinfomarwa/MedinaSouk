@@ -64,13 +64,12 @@ souk_front_end_reclamation:
 souk_api:
     resource: "@SoukFrontEndBundle/Resources/config/routing.yml"
     prefix:   /api
-
 souk_backend_commande:
     resource: "@SoukBackEndBundle/Resources/config/routing/commande.yml"
     prefix:   /BackEnd/commande
-souk_backend_event:
-    resource: "@SoukBackEndBundle/Resources/config/routing/event.yml"
-    prefix:   /BackEnd/event
+souk_front_end_utilisateurs:
+    resource: "@SoukFrontEndBundle/Resources/config/routing/utilisateur.yml"
+    prefix:   /FrontEnd/utilisateur
 
 app:
     resource: '@AppBundle/Controller/'
@@ -84,3 +83,7 @@ fos_user:
 souk_back_end_commande:
     resource: "@SoukBackEndBundle/Resources/config/routing/commande.yml"
     prefix:   /BackEnd/commande
+
+souk_back_end_event:
+    resource: "@SoukBackEndBundle/Resources/config/routing/event.yml"
+    prefix:   /BackEnd/event

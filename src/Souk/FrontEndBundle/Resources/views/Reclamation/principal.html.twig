@@ -132,11 +132,14 @@
 							</td>
 						</div>
 					</tr>
-					<tr>
+					
+						<tr> <td><a href="{{ path ('reclamation_update',{'id':reclamation.id }) }}"><b>Mise à jour</b></a></td></tr>
+						<tr> <td><a href="{{ path ('reclamation_edit', {'id':reclamation.id }) }}"><b>Supprimer</b></a></td></tr>
 						
-						<td><a href="{{ path ('reclamation_update',{'id':reclamation.id }) }}">Mise à jour</a></td>
-						<td><a href="{{ path ('reclamation_edit', {'id':reclamation.id }) }}">Supprimer</a></td>
-					</tr>
+					{% endfor %}
+					
+					
+				
 					
 				</table>
 				

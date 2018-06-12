@@ -67,6 +67,9 @@ souk_api:
 souk_backend_commande:
     resource: "@SoukBackEndBundle/Resources/config/routing/commande.yml"
     prefix:   /BackEnd/commande
+souk_front_end_utilisateurs:
+    resource: "@SoukFrontEndBundle/Resources/config/routing/utilisateur.yml"
+    prefix:   /FrontEnd/utilisateur
 
 app:
     resource: '@AppBundle/Controller/'
@@ -81,3 +84,6 @@ souk_back_end_commande:
     resource: "@SoukBackEndBundle/Resources/config/routing/commande.yml"
     prefix:   /BackEnd/commande
 
+souk_back_end_event:
+    resource: "@SoukBackEndBundle/Resources/config/routing/event.yml"
+    prefix:   /BackEnd/event

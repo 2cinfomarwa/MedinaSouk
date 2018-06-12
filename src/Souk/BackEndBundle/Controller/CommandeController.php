@@ -52,4 +52,16 @@ class CommandeController extends Controller
         ));
     }
 
+    public function commande_backend_en_attenteAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $commandes = $em->getRepository('SoukFrontEndBundle:Commande')->CmdEnAttente();
+
+        return $this->render('commande/backend/en_attente.html.twig', array(
+            'commandes' => $commandes
+        ));
+    }
+
+
 }

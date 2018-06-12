@@ -13,16 +13,16 @@ use Doctrine\ORM\Mapping as ORM;
 class Typeevent
 {
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="libelle", type="integer", nullable=true)
+     * @ORM\Column(name="libelle", type="string", length=254, nullable=true)
      */
     private $libelle;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="description", type="integer", nullable=true)
+     * @ORM\Column(name="description",  type="string", length=254,  nullable=true)
      */
     private $description;
 

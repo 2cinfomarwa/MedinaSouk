@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Souk\FrontEndBundle\SoukFrontEndBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Souk\BackEndBundle\SoukBackEndBundle(),
+            new Nomaya\SocialBundle\NomayaSocialBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

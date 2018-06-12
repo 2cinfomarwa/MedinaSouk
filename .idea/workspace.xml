@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f0c8d27-edfb-4bfc-91ea-bd3f67c2405c" name="Default" comment="repository 2">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Composer_08_06_18_23_43_c.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_10_06_18_05_17_s.xml" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_11_06_18_00_40_s.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -551,7 +550,7 @@
       <workItem from="1528786107456" duration="3427000" />
       <workItem from="1528817397319" duration="185000" />
       <workItem from="1528819701073" duration="2769000" />
-      <workItem from="1528836810520" duration="4257000" />
+      <workItem from="1528836810520" duration="4312000" />
     </task>
     <task id="LOCAL-00001" summary="repository 2">
       <created>1528585275180</created>
@@ -630,11 +629,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528841031914</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="repository 2">
+      <created>1528841082561</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1528841082562</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156879000" />
+    <option name="totallyTimeSpent" value="156934000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />

@@ -64,20 +64,20 @@ class EventController extends Controller
 
         public function event_backend_modifierAction(Request $request, Event $event)
         {
-            $deleteForm = $this->createDeleteForm($event);
+            //$deleteForm = $this->createDeleteForm($event);
             $editForm = $this->createForm('Souk\FrontEndBundle\Form\EventType', $event);
             $editForm->handleRequest($request);
 
             if ($editForm->isSubmitted() && $editForm->isValid()) {
                 $this->getDoctrine()->getManager()->flush();
 
-                return $this->redirectToRoute('event_backend_modifier', array('id' => $event->getId()));
+                return $this->redirectToRoute('event_backend_liste');
             }
 
-            return $this->render('event/backend/ajout.html.twig', array(
+            return $this->render('event/backend/modifier.html.twig', array(
                 'event' => $event,
-                'edit_form' => $editForm->createView(),
-                'delete_form' => $deleteForm->createView(),
+                'edit_form' => $editForm->createView()
+                //'delete_form' => $deleteForm->createView(),
             ));
         }
         /*

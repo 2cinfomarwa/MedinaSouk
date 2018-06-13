@@ -13,25 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class ReclamationController extends Controller
 {
-    /**
-     * Lists all reclamation entities.
-     *
-     */
-    public function indexAction()
-    {
-        $em = $this->getDoctrine()->getManager();
 
-        $reclamations = $em->getRepository('SoukFrontEndBundle:Reclamation')->findAll();
-
-        return $this->render('reclamation/index.html.twig', array(
-            'reclamations' => $reclamations,
-        ));
-    }
-
-    /**
-     * Creates a new reclamation entity.
-     *
-     */
     public function newAction(Request $request)
     {
         $reclamation = new Reclamation();
@@ -70,8 +52,8 @@ class ReclamationController extends Controller
                     ),
                     'text/html'
                 );
-            dump($this->get('mailer')->send($message));
-            return $this->redirectToRoute('reclamation_detail');
+            $this->get('mailer')->send($message);
+            return $this->redirectToRoute('reclamation_detail', ['id' => $reclamation->getId()]);
         }
 
         return $this->render('@SoukFrontEnd/Reclamation/principal.html.twig', array(
@@ -129,7 +111,7 @@ class ReclamationController extends Controller
         {
             $em->persist($Reclamation);
             $em->flush();
-            return $this->redirectToRoute('reclamation_detail');
+            return $this->redirectToRoute('reclamation_detail', ['id' => $Reclamation->getId()]);
         }
         return $this->render('SoukFrontEndBundle:Reclamation:update.html.twig'
             ,array(
@@ -152,16 +134,13 @@ class ReclamationController extends Controller
 
     }
 
-    public function detailAction(Request $request){
-        $id = $request->get('id');
-        //Créer une instance de notre Entity Manager
-        $em = $this->getDoctrine()->getManager();
-        //Récupérer la liste des modèles
-        $reclamation = $em->getRepository('SoukFrontEndBundle:Reclamation')->find($id);
+    //param converter
+    public function detailAction(Reclamation $reclamation){
+
         return $this->render('SoukFrontEndBundle:Reclamation:list.html.twig'
-            ,array(
+            ,[
                 "reclamation"=>$reclamation
-            ));
+            ]);
     }
 
 
@@ -174,6 +153,11 @@ class ReclamationController extends Controller
     public function conditionsAction()
     {
         return $this->render("SoukFrontEndBundle:Reclamation:Conditionsgenerale.html.twig", array());
+    }
+
+    public function quitterAction()
+    {
+        return $this->redirectToRoute('souk_front_end_elmadina_accueil');
     }
 
 

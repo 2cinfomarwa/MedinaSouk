@@ -221,6 +221,8 @@
                             <li><a href="#">Supprimer</a></li>
                         </ul>
                     </li>
+    
+                    
 
 
 
@@ -263,6 +265,15 @@
                             <li><a href="{{ path('commande_backend_liste') }}">Liste Commandes</a></li>
                             <li><a href="#">Commandes En attente</a></li>
                             <li><a href="{{ path('commande_backend_facture') }}">Liste des Factures</a></li>
+                        </ul>
+                    </li>
+    
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><span> Réclamation et SAV <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{ path('reclamation_backend_liste') }}">Liste des reclamations</a></li>
+                            <li><a href="{{ path('reclamation_backend_statistique') }}">Statistiques</a></li>
+                           
                         </ul>
                     </li>
 

@@ -5,6 +5,7 @@ namespace Souk\FrontEndBundle\Form;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -33,8 +34,8 @@ class ReclamationType extends AbstractType
             ->add('description', TextareaType::class, array(
                 'attr' => array('class' => 'tinymce'),
             ))
-            ->add('dateProbleme')
-            ->add('dateReclamation')
+            ->add('dateProbleme',DateType::class)
+            ->add('dateReclamation', DateType::class)
             ->add('file', FileType::class, array('label' => 'Fichier joint', 'required' => false))
             ->add('commande', EntityType::class, array(
                 'class' => 'Souk\FrontEndBundle\Entity\Commande',

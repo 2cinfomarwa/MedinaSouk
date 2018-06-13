@@ -6,9 +6,11 @@ namespace Souk\BackEndBundle\Controller;
 use Souk\FrontEndBundle\Entity\Event;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Souk\FrontEndBundle\Form\EventType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * Commande controller.
@@ -25,6 +27,12 @@ class EventController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            if ($event->getImage()) {
+                $image = $event->getImage();
+                $image = md5(uniqid()) . '.' . $image->guessExtension();
+
+                $event->setImage($image);
+            }
             $em = $this->getDoctrine()->getManager();
             $em->persist($event);
             $em->flush();

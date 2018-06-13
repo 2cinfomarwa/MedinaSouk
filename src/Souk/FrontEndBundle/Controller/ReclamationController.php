@@ -36,8 +36,7 @@ class ReclamationController extends Controller
     {
         $reclamation = new Reclamation();
         $user = $this->getUser();
-        $form = $this->createForm(
-            ReclamationType::class, $reclamation,
+        $form = $this->createForm(ReclamationType::class, $reclamation,
             array('user' => $this->getUser())
         );
 

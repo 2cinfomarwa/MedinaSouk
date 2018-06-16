@@ -87,3 +87,7 @@ souk_back_end_commande:
 souk_back_end_event:
     resource: "@SoukBackEndBundle/Resources/config/routing/event.yml"
     prefix:   /BackEnd/event
+
+souk_back_end_reclamation:
+    resource: "@SoukBackEndBundle/Resources/config/routing/reclamation.yml"
+    prefix:   /BackEnd/reclamation

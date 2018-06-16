@@ -1,8 +1,3 @@
-reclamation_index:
-    path:     /
-    defaults: { _controller: "SoukFrontEndBundle:Reclamation:index" }
-    methods:  GET
-
 reclamation_show:
     path:     /{id}/show
     defaults: { _controller: "SoukFrontEndBundle:Reclamation:show" }
@@ -21,4 +16,21 @@ reclamation_edit:
 reclamation_delete:
     path:     /{id}/delete
     defaults: { _controller: "SoukFrontEndBundle:Reclamation:delete" }
-    methods:  DELETE
+
+
+conditionsgenerale:
+    path:     /reclamation/conditionsgenerale
+    defaults: { _controller: "SoukFrontEndBundle:Reclamation:conditions" }
+
+reclamation_update:
+    path:  /update/{id}
+    defaults: { _controller: "SoukFrontEndBundle:Reclamation:update"}
+    methods:  [GET, POST]
+
+reclamation_detail:
+    path:  /detail/{id}
+    defaults: { _controller: "SoukFrontEndBundle:Reclamation:detail"}
+
+quitter:
+    path: /quitter
+    defaults: { _controller: "SoukFrontEndBundle:Reclamation:quitter"}

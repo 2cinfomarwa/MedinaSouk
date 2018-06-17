@@ -3,28 +3,36 @@
 namespace Souk\FrontEndBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Reclamation
  *
- * @ORM\Table(name="reclamation", indexes={@ORM\Index(name="FK_reclamation_cmd", columns={"idCommande"}),@ORM\Index(name="FK_utilisateur_reclamation", columns={"idUtilisateur"})})
+ * @ORM\Table(name="reclamation")
  * @ORM\Entity
  */
 class Reclamation
 {
+
+
+    public function __construct()
+    {
+        $this->dateReclamation = new \DateTime("now");
+    }
+
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="idUtilisateur", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Souk\FrontEndBundle\Entity\Utilisateur")
+     * @ORM\JoinColumn(name="utilisateur_id", referencedColumnName="id")
      */
-    private $idutilisateur;
+    private $utilisateur;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="titre", type="string", length=254, nullable=true)
+     * @ORM\Column(name="sujet", type="string", length=254, nullable=false)
      */
-    private $titre;
+    private $sujet;
 
     /**
      * @var string
@@ -43,48 +51,71 @@ class Reclamation
     private $id;
 
     /**
+     * @ORM\Column(name="date_reclamation", type="datetime")
+     */
+    private $dateReclamation;
+
+    /**
+     * @ORM\Column(name="date_probleme", type="datetime")
+     */
+    private $dateProbleme;
+
+
+    /**
      * @var \Souk\FrontEndBundle\Entity\Commande
      *
      * @ORM\ManyToOne(targetEntity="Souk\FrontEndBundle\Entity\Commande")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idCommande", referencedColumnName="id")
-     * })
+     * @ORM\JoinColumn(name="commande_id", referencedColumnName="id")
      */
-    private $idcommande;
+    private $commande;
 
     /**
-     * @return int
+     * @ORM\Column(type="string", nullable=true)
+     *
      */
-    public function getIdutilisateur()
+    private $file;
+
+    /**
+     * Set sujet
+     *
+     * @param string $sujet
+     *
+     * @return Reclamation
+     */
+    public function setSujet($sujet)
     {
-        return $this->idutilisateur;
+        $this->sujet = $sujet;
+
+        return $this;
     }
 
     /**
-     * @param int $idutilisateur
-     */
-    public function setIdutilisateur($idutilisateur)
-    {
-        $this->idutilisateur = $idutilisateur;
-    }
-
-    /**
+     * Get sujet
+     *
      * @return string
      */
-    public function getTitre()
+    public function getSujet()
     {
-        return $this->titre;
+        return $this->sujet;
     }
 
     /**
-     * @param string $titre
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Reclamation
      */
-    public function setTitre($titre)
+    public function setDescription($description)
     {
-        $this->titre = $titre;
+        $this->description = $description;
+
+        return $this;
     }
 
     /**
+     * Get description
+     *
      * @return string
      */
     public function getDescription()
@@ -93,15 +124,9 @@ class Reclamation
     }
 
     /**
-     * @param string $description
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-    }
-
-    /**
-     * @return int
+     * Get id
+     *
+     * @return integer
      */
     public function getId()
     {
@@ -109,31 +134,122 @@ class Reclamation
     }
 
     /**
-     * @param int $id
+     * Set dateReclamation
+     *
+     * @param \DateTime $dateReclamation
+     *
+     * @return Reclamation
      */
-    public function setId($id)
+    public function setDateReclamation($dateReclamation)
     {
-        $this->id = $id;
+        $this->dateReclamation = $dateReclamation;
+
+        return $this;
     }
 
     /**
-     * @return Commande
+     * Get dateReclamation
+     *
+     * @return \DateTime
      */
-    public function getIdcommande()
+    public function getDateReclamation()
     {
-        return $this->idcommande;
+        return $this->dateReclamation;
     }
 
     /**
-     * @param Commande $idcommande
+     * Set dateProbleme
+     *
+     * @param \DateTime $dateProbleme
+     *
+     * @return Reclamation
      */
-    public function setIdcommande($idcommande)
+    public function setDateProbleme($dateProbleme)
     {
-        $this->idcommande = $idcommande;
+        $this->dateProbleme = $dateProbleme;
+
+        return $this;
     }
-    
-    
 
+    /**
+     * Get dateProbleme
+     *
+     * @return \DateTime
+     */
+    public function getDateProbleme()
+    {
+        return $this->dateProbleme;
+    }
 
+    /**
+     * Set file
+     *
+     * @param string $file
+     *
+     * @return Reclamation
+     */
+    public function setFile($file)
+    {
+        $this->file = $file;
+
+        return $this;
+    }
+
+    /**
+     * Get file
+     *
+     * @return string
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
+     * Set utilisateur
+     *
+     * @param \Souk\FrontEndBundle\Entity\Utilisateur $utilisateur
+     *
+     * @return Reclamation
+     */
+    public function setUtilisateur(\Souk\FrontEndBundle\Entity\Utilisateur $utilisateur = null)
+    {
+        $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get utilisateur
+     *
+     * @return \Souk\FrontEndBundle\Entity\Utilisateur
+     */
+    public function getUtilisateur()
+    {
+        return $this->utilisateur;
+    }
+
+    /**
+     * Set commande
+     *
+     * @param \Souk\FrontEndBundle\Entity\Commande $commande
+     *
+     * @return Reclamation
+     */
+    public function setCommande(\Souk\FrontEndBundle\Entity\Commande $commande = null)
+    {
+        $this->commande = $commande;
+
+        return $this;
+    }
+
+    /**
+     * Get commande
+     *
+     * @return \Souk\FrontEndBundle\Entity\Commande
+     */
+    public function getCommande()
+    {
+        return $this->commande;
+    }
 }
-

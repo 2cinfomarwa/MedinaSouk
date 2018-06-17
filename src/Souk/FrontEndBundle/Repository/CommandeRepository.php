@@ -19,4 +19,13 @@ class CommandeRepository extends EntityRepository
     return $qb->getQuery()
         ->getOneOrNullResult();
 }
+
+public function CmdEnAttente()
+{
+    $query = $this->getEntityManager()->createQuery('SELECT CMD FROM SoukFrontEndBundle:Commande CMD  Left OUTER JOIN 
+                                                                             SoukFrontEndBundle:Facture FACT
+    where CMD.id = FACT.idcommande and  FACT.idcommande is NULL ')  ;
+    return $query->getResult();
+}
+
 }

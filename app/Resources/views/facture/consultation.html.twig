@@ -10,8 +10,8 @@
       <div class="container">
          <nav aria-label="breadcrumb" role="navigation">
             <ol class="breadcrumb">
-               <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
-               <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
+               <li class="breadcrumb-item"><a href="{{ path('souk_front_end_elmadina_accueil') }}">Accueil</a></li>
+               <li class="breadcrumb-item active" aria-current="page">Facture</li>
             </ol>
          </nav>
       </div>
@@ -25,45 +25,14 @@
             <table class="table table-bordered table-responsive-sm" add-class-on-xs="table-sm">
                <thead class="thead-light">
                <tr>
-                  <th scope="col" add-class-on-xs="w-75">Item</th>
-                  <th scope="col" class="text-center">Qty</th>
-                  <th scope="col" class="d-none d-sm-table-cell">Price</th>
-                  <th scope="col" class="d-none d-sm-table-cell">Subtotal</th>
+                  <th scope="col" add-class-on-xs="w-75">Produit</th>
+                  <th scope="col" class="text-center">Quantité</th>
+                  <th scope="col" class="d-none d-sm-table-cell">Prix Unitaire</th>
+                  <th scope="col" class="text-center">TVA</th>
+                  <th scope="col" class="d-none d-sm-table-cell">Montant HT</th>
                </tr>
                </thead>
                <tbody>
-
-               <!--<tr>
-                    <td scope="row">
-                        <div class="media">
-                            <a href="detail.html" class="mr-2 d-none d-md-block"><img src="images/product/polo4-small.jpg" class="img-thumbnail" alt="product"></a>
-                            <div class="media-body">
-                                <a href="detail.html" class="mt-0 text-default font-weight-bold"><u>Red Tape Blue Solid Slim Fit</u></a>
-                                <div>Size: M <span class="mx-2">|</span> Color: Gray</div>
-                                <div class="mb-2">
-                                    <span class="d-inline d-sm-none">Price: <span class="price">$13.50</span></span>
-                                    <span class="badge badge-success custom-badge arrowed-right">In stock</span>
-                                </div>
-                                <button class="btn btn-light btn-sm btn-cart-tools d-none d-md-block">Move to wishlist</button>
-                                <button class="btn btn-light btn-sm btn-cart-tools">Remove</button>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="text-center">
-                        <div class="input-group input-group-sm input-group-qty d-inline-flex mb-2">
-                            <div class="input-group-prepend"><button class="btn btn-theme btn-down" type="button"><i class="fa fa-minus"></i></button></div>
-                            <input type="text" class="form-control" aria-label="Quantity" value="1" data-min="1" data-max="10">
-                            <div class="input-group-append"><button class="btn btn-theme btn-up" type="button"><i class="fa fa-plus"></i></button></div>
-                        </div>
-                        <div class="d-block d-sm-none">
-                            Subtotal <div class="price">$13.50</div>
-                        </div>
-                    </td>
-                    <td class="d-none d-sm-table-cell">
-                        <span class="price">$13.50</span> <del class="text-muted">$15.00</del>
-                    </td>
-                    <td class="d-none d-sm-table-cell"><span class="price">$13.50</span></td>
-                </tr>-->
 
 
                {% for d in details_commande %}
@@ -74,6 +43,7 @@
                             {{ d.quantite}}
                         </td>
                         <td>{{ d.prixunitaire }} TND </td>
+                         <td>{{ d.idproduit.tauxtva }} % </td>
                         <td>{{ d.montantHT }} TND</td>
                      </form>
                   </tr>
@@ -87,12 +57,7 @@
       </div>
       <div class="row justify-content-between">
          <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 mb-2">
-            <div class="input-group input-group-sm">
-               <input type="text" class="form-control" placeholder="Coupon code" aria-label="Coupon code">
-               <div class="input-group-append">
-                  <button class="btn btn-theme" type="button">Apply</button>
-               </div>
-            </div>
+
          </div>
          <div class="col-12 col-md-6 col-lg-5 col-xl-4">
 
@@ -111,204 +76,12 @@
          </div>
          <div class="col-12 text-right" remove-class-on-xs="text-right" add-class-on-xs="text-center">
             <div class="btn-group" role="group" aria-label="Basic example">
-               <!--<a href="" class="d-none d-sm-inline-block btn btn-outline-theme">Continue Shopping</a>
-               <a href="checkout.html" class="btn btn-theme">PROCEED TO CHECKOUT</a>-->
+               <a href="{{ path('facture_PDF')}}" class="d-none d-sm-inline-block btn btn-outline-theme">Imprimer</a>
+
             </div>
          </div>
       </div>
-      <div class="row mt-5">
-         <div class="col-12"><div class="title"><span>Recently viewed items</span></div></div>
-         <div class="col pl-sm-0 pr-sm-0">
-            <div class="owl-carousel owl-theme product-slider">
-               <div class="product-slider-item">
-                  <div class="card card-product">
-                     <div class="img-wrapper">
-                        <a href="detail.html"><img class="card-img-top" src="images/product/vneck1.jpg" alt="Card image cap"></a>
-                        <div class="tools tools-bottom" data-animate-in="fadeInDown" data-animate-out="flipOutX">
-                           <div class="btn-group" role="group" aria-label="card-product-tools">
-                              <button class="btn btn-link btn-sm d-none d-md-inline-block quick-view"><i class="fa fa-search-plus"></i></button>
-                              <button class="btn btn-link btn-sm">Add to Cart</button>
-                              <button class="btn btn-link btn-sm d-none d-md-inline-block"><i class="fa fa-heart"></i></button>
-                           </div>
-                        </div>
-                        <span class="badge badge-primary custom-badge arrowed-right label label-top-left">Extra Sale</span>
-                     </div>
-                     <div class="card-body">
-                        <p class="card-text"><a href="detail.html">Gas Mustard Yellow Solid Slim Fit</a></p>
-                        <ul class="card-text list-inline">
-                           <li class="list-inline-item"><span class="price">$13.50</span></li>
-                           <li class="list-inline-item"><del class="text-muted">$15.00</del></li>
-                           <li class="list-inline-item d-none d-sm-inline-block"><span class="badge badge-info custom-badge arrowed-left">-10%</span></li>
-                        </ul>
-                        <div class="rating">
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star-o"></i>
-                           <i class="fa fa-star-o"></i>
-                           <i class="fa fa-star-o"></i>
-                           <i class="fa fa-star-o"></i>
-                           <a href="#" class="d-none d-sm-inline-block">(6 reviews)</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="product-slider-item">
-                  <div class="card card-product">
-                     <div class="img-wrapper">
-                        <a href="detail.html"><img class="card-img-top" src="images/product/vneck2.jpg" alt="Card image cap"></a>
-                        <div class="tools tools-bottom" data-animate-in="zoomIn" data-animate-out="fadeOutLeft">
-                           <div class="btn-group" role="group" aria-label="card-product-tools">
-                              <button class="btn btn-link btn-sm d-none d-md-inline-block quick-view"><i class="fa fa-search-plus"></i></button>
-                              <button class="btn btn-link btn-sm">Add to Cart</button>
-                              <button class="btn btn-link btn-sm d-none d-md-inline-block"><i class="fa fa-heart"></i></button>
-                           </div>
-                        </div>
-                        <span class="badge badge-secondary custom-badge arrowed-right label label-top-left">Best Offer</span>
-                     </div>
-                     <div class="card-body">
-                        <p class="card-text"><a href="detail.html">Basics Black Striped</a></p>
-                        <ul class="card-text list-inline">
-                           <li class="list-inline-item"><span class="price">$13.50</span></li>
-                           <li class="list-inline-item"><del class="text-muted">$15.00</del></li>
-                           <li class="list-inline-item d-none d-sm-inline-block"><span class="badge badge-warning custom-badge arrowed-left">-10%</span></li>
-                        </ul>
-                        <div class="rating">
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star-half-o"></i>
-                           <i class="fa fa-star-o"></i>
-                           <i class="fa fa-star-o"></i>
-                           <i class="fa fa-star-o"></i>
-                           <a href="#" class="d-none d-sm-inline-block">(5 reviews)</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="product-slider-item">
-                  <div class="card card-product">
-                     <div class="img-wrapper">
-                        <a href="detail.html"><img class="card-img-top" src="images/product/vneck3.jpg" alt="Card image cap"></a>
-                        <div class="tools tools-right" data-animate-in="flipInX" data-animate-out="flipOutY">
-                           <div class="btn-group-vertical" role="group" aria-label="card-product-tools">
-                              <button class="btn btn-link btn-sm d-none d-sm-inline-block quick-view"><i class="fa fa-search-plus"></i></button>
-                              <button class="btn btn-link btn-sm"><i class="fa fa-shopping-cart"></i></button>
-                              <button class="btn btn-link btn-sm"><i class="fa fa-heart"></i></button>
-                           </div>
-                        </div>
-                        <span class="badge badge-success custom-badge arrowed-right label label-top-left">Special Discount</span>
-                     </div>
-                     <div class="card-body">
-                        <p class="card-text"><a href="detail.html">Superdry Blue Solid Slim Fit</a></p>
-                        <ul class="card-text list-inline">
-                           <li class="list-inline-item"><span class="price">$13.50</span></li>
-                           <li class="list-inline-item"><del class="text-muted">$15.00</del></li>
-                           <li class="list-inline-item d-none d-sm-inline-block"><span class="badge badge-danger custom-badge arrowed-left">-10%</span></li>
-                        </ul>
-                        <div class="rating">
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star-half-o"></i>
-                           <i class="fa fa-star-o"></i>
-                           <i class="fa fa-star-o"></i>
-                           <a href="#" class="d-none d-sm-inline-block">(4 reviews)</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="product-slider-item">
-                  <div class="card card-product">
-                     <div class="img-wrapper">
-                        <a href="detail.html"><img class="card-img-top" src="images/product/vneck5.jpg" alt="Card image cap"></a>
-                        <div class="tools tools-right" data-animate-in="slideInRight" data-animate-out="slideOutUp">
-                           <div class="btn-group-vertical" role="group" aria-label="card-product-tools">
-                              <button class="btn btn-link btn-sm d-none d-sm-inline-block quick-view"><i class="fa fa-search-plus"></i></button>
-                              <button class="btn btn-link btn-sm"><i class="fa fa-shopping-cart"></i></button>
-                              <button class="btn btn-link btn-sm"><i class="fa fa-heart"></i></button>
-                           </div>
-                        </div>
-                        <span class="badge badge-warning custom-badge arrowed-right label label-top-left">Best Price</span>
-                     </div>
-                     <div class="card-body">
-                        <p class="card-text"><a href="detail.html">Gritstones Olive Solid</a></p>
-                        <ul class="card-text list-inline">
-                           <li class="list-inline-item"><span class="price">$13.50</span></li>
-                           <li class="list-inline-item"><del class="text-muted">$15.00</del></li>
-                           <li class="list-inline-item d-none d-sm-inline-block"><span class="badge badge-secondary custom-badge arrowed-left">-10%</span></li>
-                        </ul>
-                        <div class="rating">
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star-half-o"></i>
-                           <a href="#" class="d-none d-sm-inline-block">(2 reviews)</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="product-slider-item">
-                  <div class="card card-product">
-                     <div class="img-wrapper">
-                        <a href="detail.html"><img class="card-img-top" src="images/product/vneck4.jpg" alt="Card image cap"></a>
-                        <div class="tools tools-bottom" data-animate-in="rotateInDownLeft" data-animate-out="rotateOutDownLeft">
-                           <div class="btn-group" role="group" aria-label="card-product-tools">
-                              <button class="btn btn-link btn-sm d-none d-md-inline-block quick-view"><i class="fa fa-search-plus"></i></button>
-                              <button class="btn btn-link btn-sm">Add to Cart</button>
-                              <button class="btn btn-link btn-sm d-none d-md-inline-block"><i class="fa fa-heart"></i></button>
-                           </div>
-                        </div>
-                        <span class="badge badge-danger custom-badge arrowed-left label label-top-right">Buy 1 Get 1 Free</span>
-                     </div>
-                     <div class="card-body">
-                        <p class="card-text"><a href="detail.html">Celio Brown Textured</a></p>
-                        <ul class="card-text list-inline">
-                           <li class="list-inline-item"><span class="price">$13.50</span></li>
-                           <li class="list-inline-item"><del class="text-muted">$15.00</del></li>
-                           <li class="list-inline-item d-none d-sm-inline-block"><span class="badge badge-success custom-badge arrowed-left">-10%</span></li>
-                        </ul>
-                        <div class="rating">
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star-half-o"></i>
-                           <i class="fa fa-star-o"></i>
-                           <a href="#" class="d-none d-sm-inline-block">(3 reviews)</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="product-slider-item">
-                  <div class="card card-product">
-                     <div class="img-wrapper">
-                        <a href="detail.html"><img class="card-img-top" src="images/product/vneck6.jpg" alt="Card image cap"></a>
-                        <div class="tools tools-bottom" data-animate-in="lightSpeedIn" data-animate-out="zoomOut">
-                           <div class="btn-group" role="group" aria-label="card-product-tools">
-                              <button class="btn btn-link btn-sm d-none d-md-inline-block quick-view"><i class="fa fa-search-plus"></i></button>
-                              <button class="btn btn-link btn-sm">Add to Cart</button>
-                              <button class="btn btn-link btn-sm d-none d-md-inline-block"><i class="fa fa-heart"></i></button>
-                           </div>
-                        </div>
-                        <span class="badge badge-info custom-badge arrowed-left label label-top-right">Limited Offer</span>
-                     </div>
-                     <div class="card-body">
-                        <p class="card-text"><a href="detail.html">Numero Uno White Striped Regular Fit</a></p>
-                        <ul class="card-text list-inline">
-                           <li class="list-inline-item"><span class="price">$13.50</span></li>
-                           <li class="list-inline-item"><del class="text-muted">$15.00</del></li>
-                           <li class="list-inline-item d-none d-sm-inline-block"><span class="badge badge-primary custom-badge arrowed-left">-10%</span></li>
-                        </ul>
-                        <div class="rating">
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star"></i>
-                           <a href="#" class="d-none d-sm-inline-block">(1 reviews)</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
+
    </div>
 
 {% endblock %}

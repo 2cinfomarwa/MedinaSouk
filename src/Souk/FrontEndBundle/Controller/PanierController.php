@@ -24,10 +24,6 @@ class PanierController extends Controller
 
     public function indexAction()
     {
-        //$em = $this->getDoctrine()->getManager();
-
-      //  $commandes = $em->getRepository('SoukFrontEndBundle:Commande')->findAll();
-
         return $this->render('panier/index.html.twig');
     }
 
@@ -36,34 +32,22 @@ class PanierController extends Controller
      */
     public function validationAction()
     {
-        //if ($this->get('request')->getMethod() == 'POST')
-           // $this->setLivraisonOnSession();
         $user = $this->getUser();
         $commande = new Commande();
-
         $em = $this->getDoctrine()->getManager();
-
         $commande->setIdutilisateur($user);
-
         $em->persist($commande);
-       $em->flush();
+        $em->flush();
         $session =  new Session();
         $panier = $session->get('panier');
-      //  $adresse = $session->get('adresse');
         $totalHT = 0 ;
         $produits = $em->getRepository('SoukFrontEndBundle:Produit')->findArray(array_keys($session->get('panier')));
-       // $livraison = $em->getRepository('EcommerceBundle:UtilisateursAdresses')->find($adresse['livraison']);
-       // $facturation = $em->getRepository('EcommerceBundle:UtilisateursAdresses')->find($adresse['facturation']);
         $cmd = $em->getRepository('SoukFrontEndBundle:Commande')->findCmd();
-     //   die('idcom '.$cmd->getId());
+
         foreach($produits as $produit) {
-            $idprod = $produit->getId();
             $qte = $panier[$produit->getId()];
-            /*echo 'prod'.$idprod.' qte:'.$qte;
-            echo 'emai'.$commande->getIdUtilisateur()->getEmail();*/
             $prixUnitaire = $produit->getPrixunitaire();
             $prixHT = $qte *  $prixUnitaire ;
-
             $totalHT = $totalHT + $prixHT ;
             $detailsCmd = new DetailsCommande();
             $detailsCmd->setIdproduit($produit);
@@ -73,13 +57,12 @@ class PanierController extends Controller
             $detailsCmd->setMontantht($prixHT);
             $em = $this->getDoctrine()->getManager();
             $em->persist($detailsCmd);
-
             $em->flush();
         }
 
         //Ici le mail de validation
 
-        $message = (new \Swift_Message('Hello Email'))
+        $message = (new \Swift_Message('Commande à Valider'))
             ->setFrom('hassenslimi12@gmail.com')
             ->setTo('hassen.slimi@esprit.tn')
            ->setBody($this->renderView('panier/validationEmail.html.twig'),'text/html');
@@ -87,21 +70,14 @@ class PanierController extends Controller
 
 
         $transporter = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
-            ->setUsername("hassenslimi12@gmail.com")
-            ->setPassword("Maryouma170717");
-
-$mailer = new Swift_Mailer($transporter);
-        $mailer->send($message);
-
-
+                   ->setUsername("hassenslimi12@gmail.com")
+                   ->setPassword("Taheni20177");
+         $mailer = new Swift_Mailer($transporter);
+         $mailer->send($message);
        return $this->render('panier/validation.html.twig', array('produits' => $produits,
-            'panier' => $panier,
-           'commande'=>$cmd));
-
+                                                                       'panier' => $panier,
+                                                                       'commande'=>$cmd));
     }
-
-
-
 
     public function supprimer_panierAction($id)
     {

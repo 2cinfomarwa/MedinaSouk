@@ -37,6 +37,8 @@
                             <th>Date Event</th>
                             <th>Lieu</th>
                             <th>Image</th>
+                            <th>Suppression</th>
+                            <th>Mise à jour</th>
 
                         </tr>
                         </thead>
@@ -50,6 +52,16 @@
                             <td>{{ event.dateevent|date('Y-m-d H:i:s') }}</td>
                             <td>{{ event.idlieu.libelle}}</td>
                             <td>{{ event.image }}</td>
+                            <td>
+                                <a href="{{ path('event_backend_supprimer',{'id':event.id}) }}">
+                                    Supprimer
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ path('event_backend_modifier',{'id':event.id}) }}">
+                                    Modifier
+                                </a>
+                            </td>
                         </tr>
                         {% endfor %}
                         </tbody>

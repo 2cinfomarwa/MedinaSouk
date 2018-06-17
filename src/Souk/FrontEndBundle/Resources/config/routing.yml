@@ -9,6 +9,16 @@ Souk_api_commande_find:
     path:     /commande/{id}
     defaults: { _controller: SoukFrontEndBundle:Commande:Api_Commande_find }
 
+Souk_api_commande_details_liste:
+    path:     /commande_details
+    defaults: { _controller: SoukFrontEndBundle:Api:Api_Commande_details_all }
+Souk_api_commande_details_find:
+    path:     /commande_details/{id}
+    defaults: { _controller: SoukFrontEndBundle:Api:Api_Commande_details_find }
+
+
+
+
 Souk_api_categorie_produit_liste:
     path:     /produit/categorie
     defaults: { _controller: SoukFrontEndBundle:Categorieproduit:Api_Categorie_produit_all }
@@ -18,4 +28,32 @@ Souk_api_categorie_produit_find:
 Souk_api_categorie_produit_new:
     path:     /produit/categorie/new
     defaults: { _controller: Categorieproduit:Api_Categorie_produit_new }
+
+
+#Api Reclalamtion
+
+allInscription:
+    path:  /inscrit
+    defaults: { _controller: SoukFrontEndBundle:APIInscription:all}
+
+find_inscription:
+    path:  /inscription/find/{id}
+    defaults: { _controller: SoukFrontEndBundle:APIInscription:find}
+
+create_inscription:
+    path:  /inscription/new
+    defaults: { _controller: SoukFrontEndBundle:APIInscription:new}
+
+allAuthentification:
+    path:  /authent
+    defaults: { _controller: SoukFrontEndBundle:APIAuthentification:all}
+
+find_authentification:
+    path:  /authentification/find/{id}
+    defaults: { _controller: SoukFrontEndBundle:APIAuthentification:find}
+
+create_authentification:
+    path:  /authentification/new
+    defaults: { _controller: SoukFrontEndBundle:APIAuthentification:new}
+
 

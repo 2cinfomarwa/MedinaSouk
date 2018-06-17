@@ -8,7 +8,7 @@
 
 namespace Souk\FrontEndBundle\Controller;
 use Souk\FrontEndBundle\Entity\Commande;
-use Souk\FrontEndBundle\Entity\Detailscommande;
+use Souk\FrontEndBundle\Entity\DetailsCommande;
 use Swift_Mailer;
 use Swift_SmtpTransport;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -65,7 +65,7 @@ class PanierController extends Controller
             $prixHT = $qte *  $prixUnitaire ;
 
             $totalHT = $totalHT + $prixHT ;
-            $detailsCmd = new Detailscommande();
+            $detailsCmd = new DetailsCommande();
             $detailsCmd->setIdproduit($produit);
             $detailsCmd->setQuantite($qte);
             $detailsCmd->setIdcommande($cmd);

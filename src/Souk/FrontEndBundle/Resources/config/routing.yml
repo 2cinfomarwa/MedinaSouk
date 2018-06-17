@@ -2,7 +2,6 @@ souk_front_end_boutique:
     resource: "@SoukFrontEndBundle/Resources/config/routing/boutique.yml"
     prefix:   /boutique
 
-
 Souk_api_commande_liste:
     path:     /commande
     defaults: { _controller: SoukFrontEndBundle:Commande:Api_Commande_all }

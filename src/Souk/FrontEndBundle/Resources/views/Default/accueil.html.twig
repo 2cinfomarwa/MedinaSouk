@@ -1,4 +1,241 @@
 {% extends 'SoukFrontEndBundle::layout.html.twig' %}
+{% block middleHeader %}
+    <!-- Middle Header -->
+    <div class="middle-header">
+        <div class="container">
+            <div class="row py-2 py-lg-0">
+                <div class="col-2 col-sm-1 d-block d-lg-none">
+                    <div class="d-flex align-items-center h-100 justify-content-center menu-btn-wrapper">
+                        <button class="btn btn-lg border-0 btn-link offcanvas-btn p-0" type="button">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-2 col-sm-1 col-lg-3 pr-0">
+                    <div class="d-flex align-items-center h-100 logo-wrapper">
+                        <a href="index-2.html" class="d-lg-none"><img alt="Logo" src="{{ asset('FrontEnd/images/logo-teal.png') }}" class="img-fluid"/></a>
+                        <a href="index-2.html" class="d-none d-lg-flex mb-2 mb-lg-0"><img alt="Logo" src="{{ asset('FrontEnd/images/logo-teal.png') }}" class="img-fluid"/></a>
+
+                    </div>
+                </div>
+                <div class="col-8 col-sm-6 col-md-7 col-lg-6">
+                    <div class="d-flex align-items-center h-100">
+                        <div class="input-group input-group-search">
+                            <div class="input-group-prepend d-none d-md-flex">
+                                <select class="select-dropdown">
+                                    <option value="all">Categories</option>
+                                    {% for categorieproduit in categorieproduits %}
+                                        <option value="1">{{ categorieproduit.libelle }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <input type="text" class="form-control" id="search-input" placeholder="Recherche..." aria-label="Recherche..." autocomplete="off">
+                            <span class="input-group-append">
+                  <button class="btn btn-theme btn-search" type="button"><i class="fa fa-search"></i></button>
+                </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-4 col-md-3 col-lg-3 d-none d-sm-block">
+                    <div class="d-flex align-items-center h-100 float-right abg-secondary">
+                        <div class="btn-group btn-group-sm mr-3" role="group" aria-label="Login Sign Up">
+                            <button type="button" class="btn btn-outline-theme" data-toggle="modal" data-target="#LoginModal"><i class="fa fa-sign-in d-none d-lg-inline-block"></i> Login</button>
+                            <a class="btn btn-outline-theme" href="{{ path('souk_front_end_elmadina_register') }}" role="button"><i class="fa fa-user-plus d-none d-lg-inline-block"></i> Enregistrer</a>
+                    </div>
+                        <div class="navbar p-0 mr-3" hidden>
+                            <div class="dropdown">
+                                <button class="btn btn-light active btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Bienvenue , User
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right smooth" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="account-order.html"><i class="fa fa-fw fa-shopping-bag"></i> Commandes</a>
+                                    <a class="dropdown-item" href="account-profile.html"><i class="fa fa-fw fa-user"></i> Profile</a>
+                                    <a class="dropdown-item" href="account-wishlist.html"><i class="fa fa-fw fa-heart"></i> Favoris</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#"><i class="fa fa-fw fa-sign-out"></i> Déconnexion</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="account-wishlist.html" class="d-none d-xl-block pos-r mr-3"><img src="{{ asset('FrontEnd/images/wishlist.png') }}" alt="" width="31"><span class="badge badge-counter badge-theme">3</span></a>
+                        <a href="cart.html" class="d-lg-none pos-r"><img src="images/cart.png" alt="" width="31"><span class="badge badge-counter badge-theme">4</span></a>
+                        <div class="navbar p-0 d-none d-lg-block"> <!-- Disable Popper.js for Dropdown in Navbar, this will make it easier to animate -->
+                            <div class="dropdown dropdown-cart">
+                                <a class="d-block pos-r" href="#" role="button" id="dropdown-cart" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="{{ asset('FrontEnd/images/cart.png') }}" alt="" width="31"><span class="badge badge-counter badge-theme">4</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-cart smooth" aria-labelledby="dropdown-cart">
+                                    <div class="media">
+                                        <a href="detail.html"><img class="img-thumbnail d-flex mr-2" src="images/product/prod.jpg" alt="product" width="50"></a>
+                                        <div class="media-body">
+                                            <div><a href="detail.html" class="mt-0 text-default">Produit1</a></div>
+                                            <small>x1</small> <span class="price font-weight-normal">$13.50</span> <a href="#" class="float-right" data-toggle="tooltip" title="Remove"><span class="badge badge-light"><i class="fa fa-remove"></i></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <a href="detail.html"><img class="img-thumbnail d-flex mr-2" src="{{ asset('FrontEnd/images/product/polo2-small.jpg') }}" alt="product" width="50"></a>
+                                        <div class="media-body">
+                                            <div><a href="detail.html" class="mt-0 text-default">Produit1</a></div>
+                                            <small>x1</small> <span class="price font-weight-normal">$13.50</span> <a href="#" class="float-right" data-toggle="tooltip" title="Remove"><span class="badge badge-light"><i class="fa fa-remove"></i></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <a href="detail.html"><img class="img-thumbnail d-flex mr-2" src="{{ asset('FrontEnd/images/product/prod.jpg') }}" alt="product" width="50"></a>
+                                        <div class="media-body">
+                                            <div><a href="detail.html" class="mt-0 text-default">Produit1</a></div>
+                                            <small>x1</small> <span class="price font-weight-normal">$13.50</span> <a href="#" class="float-right" data-toggle="tooltip" title="Remove"><span class="badge badge-light"><i class="fa fa-remove"></i></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <a href="detail.html"><img class="img-thumbnail d-flex mr-2" src="{{ asset('FrontEnd/images/product/prod.jpg') }}" alt="product" width="50"></a>
+                                        <div class="media-body">
+                                            <div><a href="detail.html" class="mt-0 text-default">Produit1</a></div>
+                                            <small>x1</small> <span class="price font-weight-normal">$13.50</span> <a href="#" class="float-right" data-toggle="tooltip" title="Remove"><span class="badge badge-light"><i class="fa fa-remove"></i></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    Sous Total: <span class="price">$54.00</span>
+                                    <div class="dropdown-divider"></div>
+                                    <div class="text-center">
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="View Cart and Checkout Button">
+                                            <a href="#" role="button" class="btn btn-outline-theme"><i class="fa fa-shopping-cart"></i> View Cart</a>
+                                            <a href="#" role="button" class="btn btn-outline-theme"><i class="fa fa-check"></i> Checkout</a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+  {% block menu %}
+      <!-- Navigation Bar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light p-0 d-none d-lg-flex navbar-theme">
+          <div class="container">
+              <div class="pos-r d-flex w-100">
+                  <ul class="navbar-nav mr-auto">
+                      <li class="nav-item active"><a class="nav-link" href="index.html">Accueil</a></li>
+                      <li class="nav-item dropdown mega-menu">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarMegaMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Liste de  Produits
+                          </a>
+                          <div class="dropdown-menu w-100 t-90 smooth" aria-labelledby="navbarMegaMenu">
+                              <div class="mega-menu-content">
+                                  <div class="row">
+                                      <div class="col">
+                                          <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">Top Produits</h6>
+                                          <div class="list-group">
+
+                                              {% for detailsCommande in detailsCommandes %}
+                                                  <a href="{{ path('produit_show', { 'id': detailsCommande.idProduit.id }) }}" class="list-group-item list-group-item-action py-1 px-3 border-0">{{ detailsCommande.idProduit.designation }}</a>
+
+                                              {% endfor %}
+                                          </div>
+                                      </div>
+                                      <div class="col">
+                                          <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">Categories</h6>
+                                          <div class="list-group">
+                                              {% for produit in produits %}
+                                              <a href="{{ path('produit_index') }}" class="list-group-item list-group-item-action py-1 px-3 border-0">{{ produit.idCategorieProd.libelle }}</a>
+                                              {% endfor %}
+                                          </div>
+                                      </div>
+                                      <div class="col">
+                                          <div class="row">
+                                              <div class="col-12 mb-2">
+                                                  <div class="card overlay-thumbnail">
+                                                      <img src="{{ asset('FrontEnd/images/product/type-polo.jpg') }}" alt="" class="card-img">
+                                                      <a href="products.html">
+                                                          <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                                                              <div class="card-text">
+                                                                  <div>Polo T-Shirts <br/><small>40% OFF</small></div>
+                                                                  <button class="btn btn-sm btn-info rounded"><small>SHOP NOW</small></button>
+                                                              </div>
+                                                          </div>
+                                                      </a>
+                                                  </div>
+                                              </div>
+                                              <div class="col-12">
+                                                  <div class="card overlay-thumbnail">
+                                                      <img src="{{ asset('FrontEnd/images/product/type-hooded.jpg') }}" alt="" class="card-img">
+                                                      <a href="products.html">
+                                                          <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                                                              <div class="card-text">
+                                                                  <div>New Collection</div>
+                                                                  <button class="btn btn-sm btn-warning rounded"><small>SHOP NOW</small></button>
+                                                              </div>
+                                                          </div>
+                                                      </a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col">
+                                          <a href="products.html"><img class="img-thumbnail" src="{{ asset('FrontEnd/images/product/mega-menu.jpg') }}" alt=""></a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </li>
+                      <!-- <li class="nav-item"><a class="nav-link" href="products.html">Produits</a></li>-->
+                      <li class="nav-item active"><a class="nav-link" href="{{ path('boutique_index') }}">Nos Boutiques</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{{ path('lieu_index') }}">Lieux</a></li>
+                      <li class="nav-item"><a class="nav-link" href="checkout.html">Evenements</a></li>
+                      <li class="nav-item"><a class="nav-link" href="checkout.html">Réclamation</a></li>
+
+                      <!-- <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               Pages
+                           </a>
+                           <div class="dropdown-menu t-90 smooth" aria-labelledby="navbarDropdownMenuLink">
+                               <a class="dropdown-item" href="about.html">About Us</a>
+                               <a class="dropdown-item" href="blog.html">Blog</a>
+                               <a class="dropdown-item" href="blog-detail.html">Blog Detail</a>
+                               <a class="dropdown-item" href="compare.html">Compare</a>
+                               <a class="dropdown-item" href="contact.html">Contact Us</a>
+                               <a class="dropdown-item" href="cart-empty.html">Empty Shopping Cart</a>
+                               <a class="dropdown-item" href="404.html">Error 404</a>
+                               <a class="dropdown-item" href="faq.html">FAQ</a>
+                               <a class="dropdown-item" href="login.html">Login</a>
+                               <a class="dropdown-item" href="detail.html">Product Detail</a>
+                               <a class="dropdown-item" href="register.html">Register</a>
+                               <div class="dropdown-submenu">
+                                   <a href="#" class="dropdown-item">My Account</a>
+                                   <ul class="dropdown-menu smooth">
+                                       <a href="account-order.html" class="dropdown-item">Orders</a>
+                                       <a href="account-profile.html" class="dropdown-item">Profile</a>
+                                       <a href="account-address.html" class="dropdown-item">Addresses</a>
+                                       <a href="account-wishlist.html" class="dropdown-item">Wishlist</a>
+                                       <a href="account-password.html" class="dropdown-item">Change Password</a>
+                                       <div class="dropdown-submenu">
+                                           <a href="#" class="dropdown-item">Submenu</a>
+                                           <ul class="dropdown-menu smooth">
+                                               <a href="#" class="dropdown-item">Submenu1</a>
+                                               <a href="#" class="dropdown-item">Submenu2</a>
+                                           </ul>
+                                       </div>
+                                   </ul>
+                               </div>
+                           </div>
+                       </li>-->
+
+                  </ul>
+                  <span class="navbar-text">
+                    <a><i class="fa ml-4 fa-money"></i> Paiement</a>
+              <a><i class="fa ml-4 fa-truck"></i> Livraison</a>
+              <a class="d-none d-xl-inline-block"><i class="fa ml-4 fa-lock"></i> Condition de vente</a>
+            </span>
+              </div>
+          </div>
+      </nav>
+  {% endblock %}
   {% block Content %}
 
       <div class="container-fluid mb-3">

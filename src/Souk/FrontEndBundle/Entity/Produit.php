@@ -9,7 +9,6 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="produit", indexes={@ORM\Index(name="FK_produit_categorie", columns={"idCategorieProd"}),@ORM\Index(name="FK_utilisateur_produit", columns={"idUtilisateur"})})
  * @ORM\Entity
- * @ORM\Entity(repositoryClass="Souk\FrontEndBundle\Repository\ProduitRepository")
  */
 class Produit
 {
@@ -224,8 +223,8 @@ class Produit
     {
         $this->idcategorieprod = $idcategorieprod;
     }
-    
-    
+
+
 
 
 }

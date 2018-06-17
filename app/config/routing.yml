@@ -12,7 +12,6 @@ souk_front_end_boutique:
 souk_front_end_accueil:
     resource: "@SoukFrontEndBundle/Resources/config/routing/accueil.yml"
     prefix:   /accueil
-
 souk_front_end_categorie_lieu:
     resource: "@SoukFrontEndBundle/Resources/config/routing/categorielieu.yml"
     prefix:   /FrontEnd/lieu/categorie

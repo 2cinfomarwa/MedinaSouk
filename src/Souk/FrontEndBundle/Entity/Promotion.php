@@ -131,8 +131,8 @@ class Promotion
     {
         $this->idproduit = $idproduit;
     }
-    
-    
+
+
 
 
 }

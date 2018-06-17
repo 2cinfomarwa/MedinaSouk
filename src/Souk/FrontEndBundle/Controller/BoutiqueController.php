@@ -3,6 +3,7 @@
 namespace Souk\FrontEndBundle\Controller;
 
 use Souk\FrontEndBundle\Entity\Boutique;
+use Souk\FrontEndBundle\Entity\Utilisateur;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -21,9 +22,21 @@ class BoutiqueController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $boutiques = $em->getRepository('SoukFrontEndBundle:Boutique')->findAll();
+        $em= $this->getDoctrine()->getManager();
+        $boutiques = $em->getRepository('SoukFrontEndBundle:Boutique')->findAll();
+        $produits = $em->getRepository('SoukFrontEndBundle:Produit')->findAll();
+        $promotions = $em->getRepository('SoukFrontEndBundle:Promotion')->findAll();
+        $categorieproduits = $em->getRepository('SoukFrontEndBundle:Categorieproduit')->findAll();
+        //$detailsCommandes = $em->getRepository('SoukFrontEndBundle:DetailsCommande')->findAll();
+        //(array('quantite' => 'ASC'), 10, 0);
+
 
         return $this->render('boutique/index.html.twig', array(
             'boutiques' => $boutiques,
+            'produits' => $produits,
+            'promotions' => $promotions,
+            'categorieproduits' => $categorieproduits,
+            //'detailsCommandes' => $detailsCommandes,
         ));
     }
 
@@ -31,25 +44,64 @@ class BoutiqueController extends Controller
      * Creates a new boutique entity.
      *
      */
+
     public function newAction(Request $request)
     {
-        $boutique = new Boutique();
-        $form = $this->createForm('Souk\FrontEndBundle\Form\BoutiqueType', $boutique);
-        $form->handleRequest($request);
+        $user = $this->getUser();
+        //var_dump($user);die;
+        //$user = new Utilisateur();
+        if ($request->getMethod() == 'POST')
+            //echo $user = $this->container->get('security.context')->getToken()->getUser();
+            //$user = new User();
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        {    //$userID = $user->getUser()->getId();
+            echo 'suite au clic sur le bouton submit';
+            $name = $request->get('name');
+            $description = $request->get('description');
+            $adresse = $request->get('adresse');
+
+            $etat = $request->get('etat');
+
+
+            $boutique = new Boutique();
+            $boutique->setNom($name);
+            $boutique->setAdresse($adresse);
+            $boutique->setDescription($description);
+            $boutique->setIdutilisateur($user);
+            $boutique->setEtat($etat);
             $em = $this->getDoctrine()->getManager();
+            //persistance d'unn objet ds la base
             $em->persist($boutique);
+            //commit
             $em->flush();
+            return $this->redirectToRoute('boutique_index');
 
-            return $this->redirectToRoute('boutique_show', array('id' => $boutique->getId()));
         }
-
-        return $this->render('boutique/new.html.twig', array(
-            'boutique' => $boutique,
-            'form' => $form->createView(),
-        ));
+        return $this->render('boutique/new.html.twig');
     }
+
+
+
+
+    /** public function newAction(Request $request)
+    {
+    $boutique = new Boutique();
+    $form = $this->createForm('Souk\FrontEndBundle\Form\BoutiqueType', $boutique);
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+    $em = $this->getDoctrine()->getManager();
+    $em->persist($boutique);
+    $em->flush();
+
+    return $this->redirectToRoute('boutique_show', array('id' => $boutique->getId()));
+    }
+
+    return $this->render('boutique/new.html.twig', array(
+    'boutique' => $boutique,
+    'form' => $form->createView(),
+    ));
+    }*/
 
     /**
      * Finds and displays a boutique entity.
@@ -119,6 +171,6 @@ class BoutiqueController extends Controller
             ->setAction($this->generateUrl('boutique_delete', array('id' => $boutique->getId())))
             ->setMethod('DELETE')
             ->getForm()
-        ;
+            ;
     }
 }

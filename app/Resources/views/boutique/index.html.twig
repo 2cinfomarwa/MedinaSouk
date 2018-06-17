@@ -1,43 +1,169 @@
 {% extends 'layout_FrontEnd.html.twig' %}
+{% block middleHeader %}
+    <!-- Middle Header -->
+    <div class="middle-header">
+        <div class="container">
+            <div class="row py-2 py-lg-0">
+                <div class="col-2 col-sm-1 d-block d-lg-none">
+                    <div class="d-flex align-items-center h-100 justify-content-center menu-btn-wrapper">
+                        <button class="btn btn-lg border-0 btn-link offcanvas-btn p-0" type="button">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-2 col-sm-1 col-lg-3 pr-0">
+                    <div class="d-flex align-items-center h-100 logo-wrapper">
+                        <a href="index-2.html" class="d-lg-none"><img alt="Logo" src="{{ asset('FrontEnd/images/logo-teal.png') }}" class="img-fluid"/></a>
+                        <a href="index-2.html" class="d-none d-lg-flex mb-2 mb-lg-0"><img alt="Logo" src="{{ asset('FrontEnd/images/logo-teal.png') }}" class="img-fluid"/></a>
+
+                    </div>
+                </div>
+                <div class="col-8 col-sm-6 col-md-7 col-lg-6">
+                    <div class="d-flex align-items-center h-100">
+                        <div class="input-group input-group-search">
+                            <div class="input-group-prepend d-none d-md-flex">
+                                <select class="select-dropdown">
+                                    <option value="all">Souks</option>
+                                    {% for boutique in boutiques %}
+                                        <option value="1">{{ boutique.adresse }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <input type="text" class="form-control" id="search-input" placeholder="Recherche..." aria-label="Recherche..." autocomplete="off">
+                            <span class="input-group-append">
+                  <button class="btn btn-theme btn-search" type="button"><i class="fa fa-search"></i></button>
+                </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-4 col-md-3 col-lg-3 d-none d-sm-block">
+                    <div class="d-flex align-items-center h-100 float-right abg-secondary">
+                        <div class="btn-group btn-group-sm mr-3" role="group" aria-label="Login Sign Up">
+                            <button type="button" class="btn btn-outline-theme" data-toggle="modal" data-target="#LoginModal"><i class="fa fa-sign-in d-none d-lg-inline-block"></i> Login</button>
+                            <a class="btn btn-outline-theme" href="register.html" role="button"><i class="fa fa-user-plus d-none d-lg-inline-block"></i> Enregistrer</a>
+                        </div>
+                        <div class="navbar p-0 mr-3" hidden>
+                            <div class="dropdown">
+                                <button class="btn btn-light active btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Bienvenue , User
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right smooth" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="account-order.html"><i class="fa fa-fw fa-shopping-bag"></i> Commandes</a>
+                                    <a class="dropdown-item" href="account-profile.html"><i class="fa fa-fw fa-user"></i> Profile</a>
+                                    <a class="dropdown-item" href="account-wishlist.html"><i class="fa fa-fw fa-heart"></i> Favoris</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#"><i class="fa fa-fw fa-sign-out"></i> Déconnexion</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="account-wishlist.html" class="d-none d-xl-block pos-r mr-3"><img src="{{ asset('FrontEnd/images/wishlist.png') }}" alt="" width="31"><span class="badge badge-counter badge-theme">3</span></a>
+                        <a href="cart.html" class="d-lg-none pos-r"><img src="images/cart.png" alt="" width="31"><span class="badge badge-counter badge-theme">4</span></a>
+                        <div class="navbar p-0 d-none d-lg-block"> <!-- Disable Popper.js for Dropdown in Navbar, this will make it easier to animate -->
+                            <div class="dropdown dropdown-cart">
+                                <a class="d-block pos-r" href="#" role="button" id="dropdown-cart" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="{{ asset('FrontEnd/images/cart.png') }}" alt="" width="31"><span class="badge badge-counter badge-theme">4</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-cart smooth" aria-labelledby="dropdown-cart">
+                                    <div class="media">
+                                        <a href="detail.html"><img class="img-thumbnail d-flex mr-2" src="images/product/prod.jpg" alt="product" width="50"></a>
+                                        <div class="media-body">
+                                            <div><a href="detail.html" class="mt-0 text-default">Produit1</a></div>
+                                            <small>x1</small> <span class="price font-weight-normal">$13.50</span> <a href="#" class="float-right" data-toggle="tooltip" title="Remove"><span class="badge badge-light"><i class="fa fa-remove"></i></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <a href="detail.html"><img class="img-thumbnail d-flex mr-2" src="{{ asset('FrontEnd/images/product/polo2-small.jpg') }}" alt="product" width="50"></a>
+                                        <div class="media-body">
+                                            <div><a href="detail.html" class="mt-0 text-default">Produit1</a></div>
+                                            <small>x1</small> <span class="price font-weight-normal">$13.50</span> <a href="#" class="float-right" data-toggle="tooltip" title="Remove"><span class="badge badge-light"><i class="fa fa-remove"></i></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <a href="detail.html"><img class="img-thumbnail d-flex mr-2" src="{{ asset('FrontEnd/images/product/prod.jpg') }}" alt="product" width="50"></a>
+                                        <div class="media-body">
+                                            <div><a href="detail.html" class="mt-0 text-default">Produit1</a></div>
+                                            <small>x1</small> <span class="price font-weight-normal">$13.50</span> <a href="#" class="float-right" data-toggle="tooltip" title="Remove"><span class="badge badge-light"><i class="fa fa-remove"></i></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <a href="detail.html"><img class="img-thumbnail d-flex mr-2" src="{{ asset('FrontEnd/images/product/prod.jpg') }}" alt="product" width="50"></a>
+                                        <div class="media-body">
+                                            <div><a href="detail.html" class="mt-0 text-default">Produit1</a></div>
+                                            <small>x1</small> <span class="price font-weight-normal">$13.50</span> <a href="#" class="float-right" data-toggle="tooltip" title="Remove"><span class="badge badge-light"><i class="fa fa-remove"></i></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    Sous Total: <span class="price">$54.00</span>
+                                    <div class="dropdown-divider"></div>
+                                    <div class="text-center">
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="View Cart and Checkout Button">
+                                            <a href="#" role="button" class="btn btn-outline-theme"><i class="fa fa-shopping-cart"></i> View Cart</a>
+                                            <a href="#" role="button" class="btn btn-outline-theme"><i class="fa fa-check"></i> Checkout</a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
 
 {% block Content %}
-    <h1>Boutiques list</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Nom</th>
-                <th>Description</th>
-                <th>Adresse</th>
-                <th>Id</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for boutique in boutiques %}
-            <tr>
-                <td><a href="{{ path('boutique_show', { 'id': boutique.id }) }}">{{ boutique.nom }}</a></td>
-                <td>{{ boutique.description }}</td>
-                <td>{{ boutique.adresse }}</td>
-                <td>{{ boutique.id }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('boutique_show', { 'id': boutique.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('boutique_edit', { 'id': boutique.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="row">
+        <div class="col-md-8 mb-3">
+            <div class="title"><span>Our Shops</span></div>
+            <div class="row">
+                {% for boutique in boutiques %}
+                    <div class="col-lg-6 mb-4">
+                        <div class="card blog-list">
+                            <a href="blog-detail.html" class="p-1"><img class="card-img-top" src="{{ asset('FrontEnd/images/blog/chachia.jpg') }}" alt="Blog image"></a>
+                            <div class="card-body pb-0">
+                                <h5 class="card-title"><a class="text-default" href="blog-detail.html">{{ boutique.nom }}</a></h5>
+                                <p class="card-text">{{ boutique.description }}</p>
+                                <a href="{{ path('boutique_show', { 'id': boutique.id }) }}" class="btn btn-theme btn-sm float-right">A propos </a>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0 text-muted py-0">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><small><i class="fa fa-clock-o"></i> {{ boutique.etat }}</small></li>
+                                    <li class="list-inline-item"><small><i class="fa fa-user"></i> <a href="#" class="text-muted">{{ boutique.idutilisateur}}</a></small></li>
+                                    <li class="list-inline-item"><small><i class="fa fa-tag"></i> <a href="#" class="text-muted">{{ boutique.adresse }}</a></small></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="title"><span>Témoinganges Clients</span></div>
+            <video controls src="video.ogv">Ici la description alternative</video>
+            <div class="list-group mb-4">
+
+            </div>
+            <div class="title"><span>Archives</span></div>
+            <div class="list-group">
+                <a href="blog.html" class="list-group-item list-group-item-action pl-2 border-left-0 border-right-0 border-top-0">&raquo; January 2017</a>
+                <a href="blog.html" class="list-group-item list-group-item-action pl-2 border-left-0 border-right-0">&raquo; February 2017</a>
+                <a href="blog.html" class="list-group-item list-group-item-action pl-2 border-left-0 border-right-0">&raquo; March 2017</a>
+                <a href="blog.html" class="list-group-item list-group-item-action pl-2 border-left-0 border-right-0">&raquo; April 2017</a>
+                <a href="blog.html" class="list-group-item list-group-item-action pl-2 border-left-0 border-right-0">&raquo; May 2017</a>
+            </div>
+        </div>
+    </div>
+
 
     <ul>
         <li>
             <a href="{{ path('boutique_new') }}">Create a new boutique</a>
         </li>
     </ul>
+
 {% endblock %}

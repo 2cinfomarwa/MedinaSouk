@@ -1,1 +1,71 @@
-<h1>facture pdf </h1>
+
+{% set totalHT = 0 %}
+{% set totalTTC = 0%}
+
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="title"><span>Facturation </span></div>
+                <table class="table table-bordered table-responsive-sm" add-class-on-xs="table-sm" border="2">
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col" add-class-on-xs="w-75">Produit</th>
+                        <th scope="col" class="text-center">Quantité</th>
+                        <th scope="col" class="d-none d-sm-table-cell">Prix Unitaire</th>
+                        <th scope="col" class="text-center">TVA</th>
+                        <th scope="col" class="d-none d-sm-table-cell">Montant HT</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+
+                    {% for d in details_commande %}
+                        <tr>
+
+                            <td>{{ d.idproduit.designation }}</td>
+                            <td>
+                                {{ d.quantite}}
+                            </td>
+                            <td>{{ d.prixunitaire }} TND </td>
+                            <td>{{ d.idproduit.tauxtva }} % </td>
+                            <td>{{ d.montantHT }} TND</td>
+
+                        </tr>
+                        {% set totalHT = totalHT + d.montantHT %}
+                        {% set totalTTC = totalTTC + (d.montantHT + (d.montantHT) * (d.idproduit.tauxtva / 100))%}
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row justify-content-between">
+            <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 mb-2">
+
+            </div>
+            <div class="col-12 col-md-6 col-lg-5 col-xl-4">
+
+                <div class="d-flex">
+                    <div>Total HT</div>
+                    <div class="ml-auto font-weight-bold">{{ totalHT }} TND</div>
+                </div>
+
+
+                <hr>
+                <div class="d-flex">
+                    <div>Total TTc</div>
+                    <div class="ml-auto price h5 mb-0">{{ totalTTC }} TND</div>
+                </div>
+                <hr>
+            </div>
+            <div class="col-12 text-right" remove-class-on-xs="text-right" add-class-on-xs="text-center">
+                <div class="btn-group" role="group" aria-label="Basic example">
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>

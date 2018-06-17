@@ -1,3 +1,9 @@
 utilisateur_profil:
     path:     /profil
     defaults: { _controller: "SoukFrontEndBundle:Utilisateur:profil" }
+utilisateur_commandes:
+    path:     /mes_commandes
+    defaults: { _controller: "SoukFrontEndBundle:Utilisateur:mes_commandes" }
+utilisateur_commandes_filtrer:
+    path:     /mes_commandes/filtrer
+    defaults: { _controller: "SoukFrontEndBundle:Utilisateur:mes_commandes_filtrer" }

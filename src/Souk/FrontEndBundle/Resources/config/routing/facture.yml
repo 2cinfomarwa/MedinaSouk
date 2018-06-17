@@ -31,5 +31,5 @@ facture_delete:
     defaults: { _controller: "SoukFrontEndBundle:Facture:delete" }
     methods:  DELETE
 facture_PDF:
-    path: /impression
+    path: /impression/{id}
     defaults: { _controller: SoukFrontEndBundle:Facture:facture_PDF }

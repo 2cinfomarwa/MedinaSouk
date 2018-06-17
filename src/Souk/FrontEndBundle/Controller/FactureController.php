@@ -3,6 +3,7 @@
 namespace Souk\FrontEndBundle\Controller;
 
 use http\Env\Response;
+use Souk\FrontEndBundle\Entity\Commande;
 use Souk\FrontEndBundle\Entity\Facture;
 use Spipu\Html2Pdf\Html2Pdf;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -63,27 +64,36 @@ class FactureController extends Controller
         $cmd = $em->getRepository('SoukFrontEndBundle:Commande')->find($id);
 
         $detailscmd = $em->getRepository('SoukFrontEndBundle:Detailscommande')->findby(array('idcommande'=>$id));
-        //var_dump($detailscmd);
-       // die();
 
         $facture = new Facture();
         $facture->setIdcommande($cmd);
+
+
         $em->persist($facture);
+        //$cmd = new Commande();
+        $cmd->setEtat("Facturée");
+        $em->persist($cmd);
         $em->flush();
-         //return $this->redirectToRoute('facture_apres_commande');
-        return $this->render('facture/consultation.html.twig', array('details_commande'=>$detailscmd));
+
+        return $this->render('facture/consultation.html.twig', array('details_commande'=>$detailscmd, 'commande'=>$cmd));
     }
 
 
-    /******* facture immr ***
-     * @throws \HTML2PDF_exception
-     */////
-
-    public function facture_PDFAction()
+    public function facture_PDFAction($id)
     {
 
 
-        $html = $this->renderView('facture/facturePDF.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $cmd = $em->getRepository('SoukFrontEndBundle:Commande')->find($id);
+
+        $detailscmd = $em->getRepository('SoukFrontEndBundle:Detailscommande')->findby(array('idcommande'=>$id));
+        //$cmd = new Commande();
+        $cmd->setEtat("Imprimée");
+        $em->persist($cmd);
+        $em->flush();
+       // die("good");
+        $html = $this->renderView('facture/facturePDF.html.twig', array('details_commande'=>$detailscmd, 'commande'=>$cmd));
 
         $html2pdf = new Html2Pdf('P','A4','fr',true, 'UTF-8');
         //echo 'good';
@@ -91,8 +101,8 @@ class FactureController extends Controller
         //echo''die($html);
         $html2pdf->pdf->SetAuthor('DevAndClick');
         $html2pdf->pdf->SetTitle('Facture ');//.$facture->getReference());
-        $html2pdf->pdf->SetSubject('Facture DevAndClick');
-        $html2pdf->pdf->SetKeywords('facture,devandclick');
+        $html2pdf->pdf->SetSubject('Facture machmoum');
+        $html2pdf->pdf->SetKeywords('facture,machmoum');
         $html2pdf->pdf->SetDisplayMode('real');
         $html2pdf->writeHTML($html);
         $html2pdf->Output('Facture.pdf');
@@ -102,18 +112,7 @@ class FactureController extends Controller
 
         return $response;
 
-        /*$html2pdf->pdf->SetAuthor('Machmoum');
-        $html2pdf->pdf->SetTitle('Facture ');//.$facture->getReference());
-        $html2pdf->pdf->SetSubject('Facture DevAndClick');
-        $html2pdf->pdf->SetKeywords('facture,devandclick');
-        $html2pdf->pdf->SetDisplayMode('real');
-        $html2pdf->writeHTML($html);
-        $html2pdf->Output('Facture.pdf');
 
-        $response = new Response();
-        $response->headers->set('Content-type' , 'application/pdf');
-
-        return $response;*/
     }
 
 

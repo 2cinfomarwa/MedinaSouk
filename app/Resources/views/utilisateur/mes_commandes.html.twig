@@ -1,0 +1,118 @@
+{% extends 'layout_FrontEnd.html.twig' %}
+
+{% block Content %}
+    {% set status = 0 %}
+   <!-- Breadcrumb -->
+   <div class="breadcrumb-container">
+      <div class="container">
+         <nav aria-label="breadcrumb" role="navigation">
+            <ol class="breadcrumb">
+               <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+               <li class="breadcrumb-item"><a href="account-profile.html">My Account</a></li>
+               <li class="breadcrumb-item active" aria-current="page">My Orders</li>
+            </ol>
+         </nav>
+      </div>
+   </div>
+
+   <!-- Main Container -->
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+            <div class="card user-card">
+               <div class="card-body p-2 mb-3 mb-md-0 mb-xl-3">
+                  <div class="media">
+                     <img class="img-thumbnail" src="images/user.png" alt="John Thor">
+                     <div class="media-body">
+                        <h5 class="user-name">{{ utilisateur.username }}</h5>
+                       <!-- <small class="card-text text-muted">Joined Dec 31, 2017</small>
+                        <ul class="list-inline">
+                           <a href="#" class="list-inline-item m-0"><span class="badge badge-primary"><i class="fa fa-fw fa-facebook"></i></span></a>
+                           <a href="#" class="list-inline-item m-0"><span class="badge badge-info"><i class="fa fa-fw fa-twitter"></i></span></a>
+                           <a href="#" class="list-inline-item m-0"><span class="badge badge-danger"><i class="fa fa-fw fa-google-plus"></i></span></a>
+                        </ul>-->
+                     </div>
+                  </div>
+               </div>
+               <div class="list-group list-group-flush">
+                  <a href="account-order.html" class="list-group-item list-group-item-action active"><i class="fa fa-fw fa-shopping-bag"></i> Orders</a>
+                  <a href="account-profile.html" class="list-group-item list-group-item-action"><i class="fa fa-fw fa-user"></i> Profile</a>
+                  <a href="account-address.html" class="list-group-item list-group-item-action"><i class="fa fa-fw fa-map-marker"></i> Addresses</a>
+                  <a href="account-wishlist.html" class="list-group-item list-group-item-action"><i class="fa fa-fw fa-heart"></i> Wishlist<span class="badge badge-theme badge-pill pull-right mt-1">3</span></a>
+                  <a href="account-password.html" class="list-group-item list-group-item-action"><i class="fa fa-fw fa-key"></i> Change Password</a>
+                  <a href="#" class="list-group-item list-group-item-action d-none d-md-block"><i class="fa fa-fw fa-sign-out"></i> Logout</a>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-9 col-md-8">
+            <div class="title"><span>My Orders</span></div>
+            <div class="sorting-bar">
+               <div class="mr-5" remove-class-on-xs="mr-5" add-class-on-xs="w-100">
+                  <span>Date</span>
+                  <select name="date" class="select-dropdown" data-width="100px" data-size="sm">
+                     <option value="newest" selected="selected">Newest</option>
+                     <option value="oldest">Oldest</option>
+                  </select>
+               </div>
+               <div>
+
+<form action="{{ path('utilisateur_commandes_filtrer') }}" method ="POST">
+                  <select name="status" class="select-dropdown" data-width="160px" data-size="sm">
+                     <option value="all" selected="selected">All  </option>
+                     <option value="en attente">en attente</option>
+                     <option value="Facturée">Facturée</option>
+                     <option value="Imprimée">Imprimée</option>
+                     <option value="Imprimée">Suprimée</option>
+                  </select><input type="submit" value="Filtrer" class="d-none d-sm-inline-block btn btn-outline-theme">
+</form>
+               </div>
+            </div>
+            <div class="table-responsive">
+               <table class="table table-hover">
+                  <thead class="thead-light">
+                  <tr>
+                     <th scope="col">N° Commande</th>
+                     <th scope="col">Date Commande</th>
+                     <th scope="col">Montant TTC</th>
+                     <th scope="col">Statut</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  {% for cmd in commandes %}
+                  <tr>
+                     <th scope="row"><a href="#" class="text-default">{{ cmd.id }}</a></th>
+                     <td>December 19, 2017</td>
+                     <td><span class="price">{{ cmd.montantTTC }}</span></td>
+                     {% if cmd.etat == 'en attente' %}
+                     <td><span class="badge badge-warning">en attente</span></td>
+                      {% elseif cmd.etat == 'Facturée'  %}
+                         <td><span class="badge badge-success">Facturée</span></td>
+                      {% elseif cmd.etat == 'Imprimée'  %}
+                         <td><span class="badge badge-success">Imprimée</span></td>
+                      {% elseif cmd.etat == 'Desactivée'  %}
+                         <td><span class="badge badge-danger">Désactivée</span></td>
+                          {% endif %}
+                  </tr>
+                      {% endfor %}
+
+                  </tbody>
+               </table>
+            </div>
+            <div class="text-right">
+               <button class="btn btn-sm btn-outline-theme"><i class="fa fa-file-excel-o"></i> Export to xls</button>
+            </div>
+            <nav aria-label="Product Listing Page" class="d-flex justify-content-center mt-3">
+               <ul class="pagination">
+                  <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">&laquo;</a></li>
+                  <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">&lsaquo;</a></li>
+                  <li class="page-item active"><span class="page-link" href="#">1</span></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">&rsaquo;</a></li>
+                  <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+               </ul>
+            </nav>
+         </div>
+      </div>
+   </div>
+{% endblock %}

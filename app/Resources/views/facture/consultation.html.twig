@@ -76,7 +76,7 @@
          </div>
          <div class="col-12 text-right" remove-class-on-xs="text-right" add-class-on-xs="text-center">
             <div class="btn-group" role="group" aria-label="Basic example">
-               <a href="{{ path('facture_PDF')}}" class="d-none d-sm-inline-block btn btn-outline-theme">Imprimer</a>
+               <a href="{{ path('facture_PDF', {'id':commande.id})}}" class="d-none d-sm-inline-block btn btn-outline-theme">Imprimer</a>
 
             </div>
          </div>

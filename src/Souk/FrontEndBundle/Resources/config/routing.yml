@@ -17,7 +17,9 @@ Souk_api_commande_details_find:
     path:     /commande_details/{id}
     defaults: { _controller: SoukFrontEndBundle:Api:Api_Commande_details_find }
 
-
+Souk_api_commande_new:
+    path:     /commande/new/{idutilisateur}
+    defaults: { _controller: SoukFrontEndBundle:Api:Api_Commande_new }
 
 
 Souk_api_categorie_produit_liste:

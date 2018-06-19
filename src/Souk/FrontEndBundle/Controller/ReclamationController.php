@@ -5,7 +5,11 @@ namespace Souk\FrontEndBundle\Controller;
 use Souk\FrontEndBundle\Entity\Reclamation;
 use Souk\FrontEndBundle\Form\ReclamationType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * Reclamation controller.
@@ -46,7 +50,7 @@ class ReclamationController extends Controller
                 ->setTo($user->getEmail())
                 ->setBody(
                     $this->renderView(
-                    // app/Resources/views/Emails/registration.html.twig
+
                         'SoukFrontEndBundle:Reclamation:email.html.twig',
                         array('data' => $reclamation)
                     ),
@@ -61,44 +65,6 @@ class ReclamationController extends Controller
             'form' => $form->createView(),
         ));
     }
-
-    /**
-     * Finds and displays a reclamation entity.
-     *
-     */
-    public function showAction(Reclamation $reclamation)
-    {
-        $deleteForm = $this->createDeleteForm($reclamation);
-
-        return $this->render('reclamation/show.html.twig', array(
-            'reclamation' => $reclamation,
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-
-    /**
-     * Displays a form to edit an existing reclamation entity.
-     *
-     */
-    public function editAction(Request $request, Reclamation $reclamation)
-    {
-        $deleteForm = $this->createDeleteForm($reclamation);
-        $editForm = $this->createForm('Souk\FrontEndBundle\Form\ReclamationType', $reclamation);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('reclamation_edit', array('id' => $reclamation->getId()));
-        }
-
-        return $this->render('reclamation/edit.html.twig', array(
-            'reclamation' => $reclamation,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-
 
     public function updateAction (Request $request, $id)
     {
@@ -161,20 +127,30 @@ class ReclamationController extends Controller
     }
 
 
-    /**
-     * Creates a form to delete a reclamation entity.
-     *
-     * @param Reclamation $reclamation The reclamation entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Reclamation $reclamation)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('reclamation_delete', array('id' => $reclamation->getId())))
-            ->setMethod('DELETE')
-            ->getForm();
-    }
 
+
+    public function APIaffichereclamationAction ($id){
+         $liste = $this->getDoctrine()->getManager()->
+         getRepository('SoukFrontEndBundle:Reclamation')->find($id);
+         $serializer= new Serializer([new ObjectNormalizer()]);
+         $formatted= $serializer->normalize($liste);
+         return new JsonResponse($formatted);
+
+     }
+
+    public function APIajoutreclamationAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $add = new Reclamation();
+        $add->setEtat($request ->get('etat'));
+        $add->setSujet($request->get('sujet'));
+        $add->setDescription($request->get('description'));
+        $add->setDateReclamation($request ->get('date reclamation'));
+        $add->setDateProbleme($request->get('date probleme'));
+        $em->persist($add);
+        $em->flush();
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted= $serializer ->normalize($add);
+        return new JsonResponse($formatted);
+    }
 
 }

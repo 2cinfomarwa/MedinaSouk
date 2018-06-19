@@ -1,3 +1,13 @@
 utilisateur_profil:
     path:     /profil
     defaults: { _controller: "SoukFrontEndBundle:Utilisateur:profil" }
+
+
+
+utilisateur_APIauthentification:
+    path:     /user/find/{id}
+    defaults: { _controller: "SoukFrontEndBundle:Utilisateur:APIauthentification" }
+
+create_APIinscription:
+    path:  /inscription/new
+    defaults: { _controller: "SoukFrontEndBundle:Utilisateur:APIinscription"}

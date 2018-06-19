@@ -34,3 +34,11 @@ reclamation_detail:
 quitter:
     path: /quitter
     defaults: { _controller: "SoukFrontEndBundle:Reclamation:quitter"}
+
+APIajoutreclamation:
+    path: /APIajoutreclamation
+    defaults: { _controller: "SoukFrontEndBundle:Reclamation:APIajoutreclamation"}
+
+APIaffichereclamation:
+    path: /reclamation/find/{id}
+    defaults: { _controller: "SoukFrontEndBundle:Reclamation:APIaffichereclamation"}

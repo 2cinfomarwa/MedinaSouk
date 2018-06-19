@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f0c8d27-edfb-4bfc-91ea-bd3f67c2405c" name="Default" comment="repository 2">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/reclamation/backend/details.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/reclamation/backend/recherche.html.twig" />
-      <change beforePath="$PROJECT_DIR$/.idea/Souk_madina_v6.iml" afterPath="$PROJECT_DIR$/.idea/Souk_madina_v6.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/layout_BackEnd.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/layout_BackEnd.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change beforePath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/ReclamationController.php" afterPath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/ReclamationController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/UtilisateurController.php" afterPath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Controller/UtilisateurController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Entity/APIAuthentification.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Entity/APIEditProfile.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Entity/APIInscription.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Entity/Reclamation.php" afterPath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Entity/Reclamation.php" />
-      <change beforePath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Entity/Utilisateur.php" afterPath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Entity/Utilisateur.php" />
-      <change beforePath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing/reclamation.yml" afterPath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing/reclamation.yml" />
-      <change beforePath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing/utilisateur.yml" afterPath="$PROJECT_DIR$/src/Souk/FrontEndBundle/Resources/config/routing/utilisateur.yml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -458,7 +442,7 @@
       <workItem from="1529314970108" duration="16526000" />
       <workItem from="1529396756430" duration="6320000" />
       <workItem from="1529415773445" duration="2966000" />
-      <workItem from="1529437106504" duration="822000" />
+      <workItem from="1529437106504" duration="1599000" />
     </task>
     <task id="LOCAL-00001" summary="repository 2">
       <created>1528585275180</created>
@@ -495,15 +479,28 @@
       <option name="project" value="LOCAL" />
       <updated>1529168041238</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="repository 2">
+      <created>1529438010560</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1529438010560</updated>
+    </task>
+    <task id="LOCAL-00007" summary="repository 2">
+      <created>1529438064338</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1529438064338</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230195000" />
+    <option name="totallyTimeSpent" value="230972000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19253294" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />

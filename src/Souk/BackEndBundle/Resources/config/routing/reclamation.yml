@@ -7,8 +7,15 @@ reclamation_backend_supprime:
     path:     /supprimer
     defaults: { _controller: SoukBackEndBundle:Reclamation:reclamation_backend_supprimer }
 
+reclamation_backend_traite:
+    path:     /traite
+    defaults: { _controller: SoukBackEndBundle:Reclamation:reclamation_backend_traite }
 
 reclamation_backend_statistique:
     path:     /stat
-    defaults: { _controller: SoukBackEndBundle:Reclamation:reclamation_backend_stat }
+    defaults: { _controller: SoukBackEndBundle:Reclamation:reclamation_backend_charts }
+
+reclamation_backend_recherche:
+    path:     /chercher
+    defaults: { _controller: SoukBackEndBundle:Reclamation:reclamation_backend_chercher }
 

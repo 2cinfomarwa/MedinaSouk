@@ -60,6 +60,27 @@ class Reclamation
      */
     private $dateProbleme;
 
+    /**
+     * @ORM\Column(type="string",length=255)
+     */
+    private $etat= "en_cours";
+
+    /**
+     * @return mixed
+     */
+    public function getEtat()
+    {
+        return $this->etat;
+    }
+
+    /**
+     * @param mixed $etat
+     */
+    public function setEtat($etat)
+    {
+        $this->etat = $etat;
+    }
+
 
     /**
      * @var \Souk\FrontEndBundle\Entity\Commande

@@ -4,8 +4,6 @@ namespace Souk\FrontEndBundle\Form;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
-use  Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -19,7 +17,7 @@ class EventType extends AbstractType
         $builder->add('libelle')
             ->add('description')
             ->add('dateevent')
-            ->add('image', FileType::class, array('label' => 'image', 'required' => false ,'data_class' => null))
+            ->add('image')
             ->add('idlieu', EntityType::class,array(
 
         'class' => 'SoukFrontEndBundle:Lieu',

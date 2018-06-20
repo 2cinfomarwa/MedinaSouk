@@ -25,89 +25,6 @@ class Lieu
      * @ORM\Column(name="Description", type="string", length=254, nullable=true)
      */
     private $description;
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="adresse", type="string", length=254, nullable=true)
-     */
-    private $adresse;
-
-    /**
-     * @return string
-     */
-    public function getLog()
-    {
-        return $this->log;
-    }
-
-    /**
-     * @param string $log
-     */
-    public function setLog($log)
-    {
-        $this->log = $log;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLat()
-    {
-        return $this->lat;
-    }
-
-    /**
-     * @param string $lat
-     */
-    public function setLat($lat)
-    {
-        $this->lat = $lat;
-    }
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="log", type="string", length=254, nullable=true)
-     */
-    private $log;
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="lat", type="string", length=254, nullable=true)
-     */
-    private $lat;
-
-
-    /**
-     * @return string
-     */
-    public function getAdresse()
-    {
-        return $this->adresse;
-    }
-
-    /**
-     * @param string $adresse
-     */
-    public function setAdresse($adresse)
-    {
-        $this->adresse = $adresse;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCoordonnes()
-    {
-        return $this->coordonnes;
-    }
-
-    /**
-     * @param string $coordonnes
-     */
-    public function setCoordonnes($coordonnes)
-    {
-        $this->coordonnes = $coordonnes;
-    }
 
     /**
      * @var integer
@@ -136,7 +53,6 @@ class Lieu
         return $this->libelle;
     }
 
-
     /**
      * @param string $libelle
      */
@@ -160,7 +76,6 @@ class Lieu
     {
         $this->description = $description;
     }
-
 
     /**
      * @return int
@@ -193,8 +108,8 @@ class Lieu
     {
         $this->idcategorielieu = $idcategorielieu;
     }
-
-
+    
+    
 
 
 }

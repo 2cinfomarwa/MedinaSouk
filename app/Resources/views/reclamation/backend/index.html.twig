@@ -1,0 +1,64 @@
+{% extends 'layout_BackEnd.html.twig' %}
+
+{% block Content %}
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-title-box">
+                <div class="float-right">
+                    <ol class="breadcrumb p-0 m-0">
+                        <li class="breadcrumb-item"><a href="#">Canvab</a></li>
+                        <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                        <li class="breadcrumb-item active">Datatable</li>
+                    </ol>
+                </div>
+               
+    
+                <h3>Détails des reclamations</h3>
+	            <br>
+	            <br>
+	            
+	
+	
+	            {% for reclamation in reclamation %}
+                    <ul>
+                        <li><b>ID:</b> {{ reclamation.id }}</li>
+                        <li><b>Description:</b> {{ reclamation.description }}</li>
+                        <li><b>Sujet:</b> {{ reclamation.sujet }}</li>
+                        <li><b>Date du probleme: </b>{{ reclamation.dateProbleme |date }}</li>
+                        <li><b>Date_reclamation:</b> {{ reclamation.dateReclamation |date}}</li>
+                        <li><b>Etat :</b>{{ reclamation.etat }}</li>
+                    </ul>
+        
+                    <a href="{{ path ('reclamation_backend_traite',{'id':reclamation.id }) }}"><b>Mise à jour</b></a>
+                    <a href="{{ path ('reclamation_backend_supprime', {'id':reclamation.id }) }}"><b>Supprimer</b></a>
+                    
+	            {% endfor %}
+                
+                <hr>
+                
+            </div>
+        </div>
+    </div>
+    <!-- end page title end breadcrumb -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card m-b-20">
+                <div class="card-body">
+
+                    <h4 class="mt-0 header-title">Default Datatable</h4>
+                    <p class="text-muted m-b-30 font-14">DataTables has most features enabled by
+                        default, so all you need to do to use it with your own tables is to call
+                        the construction function: <code>$().DataTable();</code>.
+                    </p>
+
+                    
+
+                </div>
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+
+
+{% endblock %}

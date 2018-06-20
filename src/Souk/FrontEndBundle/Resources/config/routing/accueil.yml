@@ -1,10 +1,3 @@
 souk_front_end_elmadina_accueil:
     path:  /
     defaults: { _controller: SoukFrontEndBundle:Accueil:accueil }
-souk_front_end_elmadina_register:
-    path:  /
-    defaults: { _controller: SoukFrontEndBundle:Accueil:register }
-produit_show:
-    path:     /FrontEnd/produit/{id}/show
-    defaults: { _controller: "SoukFrontEndBundle:Accueil:showProduit" }
-    methods:  GET

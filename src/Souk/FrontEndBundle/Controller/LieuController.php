@@ -21,12 +21,9 @@ class LieuController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $lieus = $em->getRepository('SoukFrontEndBundle:Lieu')->findAll();
-        $categorielieus = $em->getRepository('SoukFrontEndBundle:Categorielieu')->findAll();
-
 
         return $this->render('lieu/index.html.twig', array(
             'lieus' => $lieus,
-            'categorielieus' => $categorielieus,
         ));
     }
 

@@ -3,7 +3,6 @@
 namespace Souk\FrontEndBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Event
@@ -22,9 +21,8 @@ class Event
 
     /**
      * @var string
-     * @Assert\File(
-     *  mimeTypes={"image/jpeg","image/gif","image/png"})
-     * @ORM\Column(name="image", type="string")
+     *
+     * @ORM\Column(name="image", type="string", length=254, nullable=true)
      */
     private $image;
 

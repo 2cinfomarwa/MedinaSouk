@@ -1,0 +1,67 @@
+{% extends 'layout_BackEnd.html.twig' %}
+
+{% block Content %}
+	
+	
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="page-title-box">
+				<div class="float-right">
+					<ol class="breadcrumb p-0 m-0">
+						<li class="breadcrumb-item"><a href="#">Canvab</a></li>
+						<li class="breadcrumb-item"><a href="#">Tables</a></li>
+						<li class="breadcrumb-item active">Datatable</li>
+					</ol>
+				</div>
+				<h4 class="page-title">Rechercher reclamations </h4>
+			</div>
+		</div>
+	</div>
+	<!-- end page title end breadcrumb -->
+	<div class="row">
+		<div class="col-12">
+			<div class="card m-b-20">
+				<div class="card-body">
+					
+					<form method="post">
+						<I><B>Etat:</B></I><input type="text" name="etat">
+						<input type="submit"value="Chercher"/>
+					</form>
+					<br>
+					<h3>la liste trouvé</h3>
+					<br>
+					<table border="2">
+						<tr>
+							
+							<td><b>ID</b> </td>
+							<td><b>Description</b> </td>
+							<td><b>Sujet</b></td>
+							<td><b>Date du probleme </b></td>
+							<td><b>Date_reclamation</b> </td>
+							<td><b>Etat </b></td>
+							<td><b>Traiter</b></td>
+						
+						</tr>
+						{%for reclamation in reclamation %}
+							<tr>
+								<td>{{ reclamation.id }}</td>
+								<td>{{ reclamation.description }}</td>
+								<td> {{ reclamation.sujet }}</td>
+								<td>{{ reclamation.dateProbleme |date }}</td>
+								<td>{{ reclamation.dateReclamation |date}}</td>
+								<td> {{ reclamation.etat }}</td>
+								
+								<td><a href="{{ path('reclamation_backend_traite',{'id':reclamation.id}) }}">Traitée</a> </td>
+							</tr>
+						{% endfor %}
+					</table>
+				
+				
+				
+				</div>
+			</div>
+		</div> <!-- end col -->
+	</div> <!-- end row -->
+
+
+{% endblock %}

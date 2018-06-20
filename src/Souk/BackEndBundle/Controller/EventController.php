@@ -6,11 +6,9 @@ namespace Souk\BackEndBundle\Controller;
 use Souk\FrontEndBundle\Entity\Event;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Souk\FrontEndBundle\Form\EventType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
-use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * Commande controller.
@@ -27,12 +25,6 @@ class EventController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            if ($event->getImage()) {
-                $image = $event->getImage();
-                $image = md5(uniqid()) . '.' . $image->guessExtension();
-
-                $event->setImage($image);
-            }
             $em = $this->getDoctrine()->getManager();
             $em->persist($event);
             $em->flush();
@@ -72,20 +64,20 @@ class EventController extends Controller
 
         public function event_backend_modifierAction(Request $request, Event $event)
         {
-            //$deleteForm = $this->createDeleteForm($event);
+            $deleteForm = $this->createDeleteForm($event);
             $editForm = $this->createForm('Souk\FrontEndBundle\Form\EventType', $event);
             $editForm->handleRequest($request);
 
             if ($editForm->isSubmitted() && $editForm->isValid()) {
                 $this->getDoctrine()->getManager()->flush();
 
-                return $this->redirectToRoute('event_backend_liste');
+                return $this->redirectToRoute('event_backend_modifier', array('id' => $event->getId()));
             }
 
-            return $this->render('event/backend/modifier.html.twig', array(
+            return $this->render('event/backend/ajout.html.twig', array(
                 'event' => $event,
-                'edit_form' => $editForm->createView()
-                //'delete_form' => $deleteForm->createView(),
+                'edit_form' => $editForm->createView(),
+                'delete_form' => $deleteForm->createView(),
             ));
         }
         /*

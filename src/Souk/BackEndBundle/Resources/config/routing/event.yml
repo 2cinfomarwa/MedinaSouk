@@ -9,7 +9,7 @@ event_backend_supprimer:
     defaults: { _controller: SoukBackEndBundle:Event:event_backend_supprimer }
 
 event_backend_modifier:
-    path:    /{id}/modifier
+    path:    /modifier
     defaults: { _controller: SoukBackEndBundle:Event:event_backend_modifier }
 
 event_backend_ajouttype:

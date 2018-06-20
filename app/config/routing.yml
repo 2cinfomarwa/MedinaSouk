@@ -12,6 +12,7 @@ souk_front_end_boutique:
 souk_front_end_accueil:
     resource: "@SoukFrontEndBundle/Resources/config/routing/accueil.yml"
     prefix:   /accueil
+
 souk_front_end_categorie_lieu:
     resource: "@SoukFrontEndBundle/Resources/config/routing/categorielieu.yml"
     prefix:   /FrontEnd/lieu/categorie
@@ -59,6 +60,7 @@ souk_front_end_promotion:
 souk_front_end_reclamation:
     resource: "@SoukFrontEndBundle/Resources/config/routing/reclamation.yml"
     prefix:   /FrontEnd/reclamation
+
 souk_api:
     resource: "@SoukFrontEndBundle/Resources/config/routing.yml"
     prefix:   /api
@@ -85,6 +87,7 @@ souk_back_end_commande:
 souk_back_end_event:
     resource: "@SoukBackEndBundle/Resources/config/routing/event.yml"
     prefix:   /BackEnd/event
+
 souk_back_end_reclamation:
     resource: "@SoukBackEndBundle/Resources/config/routing/reclamation.yml"
     prefix:   /BackEnd/reclamation

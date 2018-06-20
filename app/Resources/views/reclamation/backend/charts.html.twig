@@ -1,0 +1,50 @@
+{% extends 'layout_BackEnd.html.twig' %}
+
+{% block Content %}
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-title-box">
+                <div class="float-right">
+                    <ol class="breadcrumb p-0 m-0">
+                        <li class="breadcrumb-item"><a href="#">Canvab</a></li>
+                        <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                        <li class="breadcrumb-item active">Datatable</li>
+                    </ol>
+                </div>
+               
+    
+                <h3>Détails des reclamations</h3>
+    
+    
+                <div id="div_histogram"></div>
+    
+    
+                <hr>
+                
+            </div>
+        </div>
+    </div>
+    <!-- end page title end breadcrumb -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card m-b-20">
+                <div class="card-body">
+
+                
+                    
+
+                </div>
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+    
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+		{{ gc_language('fr') }}
+		
+		{{ gc_draw(chart, 'div_histogram') }}
+    </script>
+{% endblock %}

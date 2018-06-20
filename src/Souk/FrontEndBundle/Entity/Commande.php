@@ -28,18 +28,11 @@ class Commande
 
 
     /**
-     * @var \string
+     * @var \DateTime
      *
-     * @ORM\Column(name="dateCmd", type="string", length=254, nullable=true)
+     * @ORM\Column(name="dateCmd", type="datetime", nullable=true)
      */
     private $datecmd;
-
-    /**
-     * @var \string
-     *
-     * @ORM\Column(name="etat", type="string", length=254, nullable=true)
-     */
-    private $etat="en attente";
 
     /**
      * @var float
@@ -148,22 +141,6 @@ class Commande
     public function setIdutilisateur($idutilisateur)
     {
         $this->idutilisateur = $idutilisateur;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEtat()
-    {
-        return $this->etat;
-    }
-
-    /**
-     * @param string $etat
-     */
-    public function setEtat($etat)
-    {
-        $this->etat = $etat;
     }
 
     

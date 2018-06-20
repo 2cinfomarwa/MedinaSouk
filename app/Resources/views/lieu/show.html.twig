@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <style>html, body {height: 100%;}#map {height: 100%;width:85%;}</style>
+{% extends 'layout_FrontEnd.html.twig' %}
 
-</head>
-<body>
-
-
-<div class="map" id="map"></div>
-
-
-
-
-
-
-
-
-
-<h1>Lieu</h1>
+{% block Content %}
+    <h1>Lieu</h1>
 
     <table>
         <tbody>
@@ -34,7 +18,6 @@
                 <td>{{ lieu.id }}</td>
             </tr>
         </tbody>
-
     </table>
 
     <ul>
@@ -50,75 +33,4 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
-
-
-<!-- Map -->
-<script>
-    var marker1;
-    var poly, geodesicPoly;
-
-    function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 7,
-            center: {lat: 35.2, lng: 10.0}
-        });
-
-        map.controls[google.maps.ControlPosition.TOP_CENTER].push(
-            document.getElementById('info'));
-
-        marker1 = new google.maps.Marker({
-            map: map,
-            draggable: true,
-            position: {lat: {{ lieu.lat }}, lng: {{ lieu.log }}}
-        });
-
-
-
-
-        google.maps.event.addListener(marker1, 'position_changed', update);
-
-
-        poly = new google.maps.Polyline({
-            strokeColor: '#FF0000',
-            strokeOpacity: 1.0,
-            strokeWeight: 3,
-            map: map,
-        });
-
-        geodesicPoly = new google.maps.Polyline({
-            strokeColor: '#CC0099',
-            strokeOpacity: 1.0,
-            strokeWeight: 3,
-            geodesic: true,
-            map: map
-        });
-
-        update();
-    }
-
-    function update() {
-        var path = marker1.getPosition();
-        poly.setPath(path);
-        geodesicPoly.setPath(path);
-
-
-        document.getElementById('origin').value = path.toString();
-
-    }
-
-</script>
-<script>
-    $(function() {
-        $( "#dat" ).datepicker();
-    });
-</script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpLuOqD-YeUvlY1wGgkGI1k8IX_18a1Y0&signed_in=true&language=ar&callback=initMap"></script>
-
-
-
-
-</body>
-
-<!-- Mirrored from mimity31.netlify.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 20 Mar 2018 07:02:57 GMT -->
-</html>
+{% endblock %}

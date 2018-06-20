@@ -33,7 +33,7 @@ class DetailsCommandeController extends Controller
      */
     public function newAction(Request $request)
     {
-        $detailsCommande = new DetailsCommande();
+        $detailsCommande = new Detailscommande();
         $form = $this->createForm('Souk\FrontEndBundle\Form\DetailsCommandeType', $detailsCommande);
         $form->handleRequest($request);
 

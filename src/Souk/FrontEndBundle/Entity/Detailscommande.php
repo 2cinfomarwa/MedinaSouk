@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="detailscommande", indexes={@ORM\Index(name="FK_details_cmd", columns={"idCommande"}), @ORM\Index(name="FK_details_produit", columns={"idProduit"})})
  * @ORM\Entity
  */
-class DetailsCommande
+class Detailscommande
 {
     /**
      * @var integer
@@ -158,8 +158,8 @@ class DetailsCommande
     {
         $this->idproduit = $idproduit;
     }
-
-
+    
+    
 
 
 }

@@ -13,10 +13,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Produit
 {
-    /**
-     * @var integer
+  /**
+     * @var \Souk\FrontEndBundle\Entity\Utilisateur
      *
-     * @ORM\Column(name="idUtilisateur", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Souk\FrontEndBundle\Entity\Utilisateur")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idUtilisateur", referencedColumnName="id")
+     * })
      */
     private $idutilisateur;
 

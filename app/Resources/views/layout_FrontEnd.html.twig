@@ -10,7 +10,7 @@
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <title>Home - Mimity</title>
+    <title>Souk elMadina</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('FrontEnd/bootstrap/css/bootstrap.min.css') }}">
@@ -20,290 +20,40 @@
     <link rel="stylesheet" href="{{ asset('FrontEnd/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('FrontEnd/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('FrontEnd/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('FrontEnd/css/map.css') }}">
 
     <!-- Mimity CSS -->
     <link rel="stylesheet" href="{{ asset('FrontEnd/css/style.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('FrontEnd/css/pagination.css') }}">
+    <style>html, body {height: 100%;}#map {height: 100%;width:85%;}</style>
+
+
 </head>
 <body>
 
-<!-- Offcanvas Menu -->
-<nav class="offcanvas">
-    <div class="offcanvas-content">
-        <div id="list-menu" class="list-menu list-group" data-children=".sub-menu1">
-            <a href="index-2.html"><i class="fa fa-fw fa-home"></i> Accueil</a>
-            <a href="products.html"><i class="fa fa-fw fa-tags"></i> Produits</a>
-            <a href="cart.html"><i class="fa fa-fw fa-shopping-cart"></i> Lieux<span class="badge badge-secondary badge-pill float-right mt-1">4</span></a>
-            <a href="checkout.html"><i class="fa fa-fw fa-check"></i> Evenements</a>
-            <a href="checkout.html"><i class="fa fa-fw fa-check"></i> Réclamation</a>
-            <!--    <div class="sub-menu1">
-                    <a data-toggle="collapse" href="#" data-target="#sub1" role="button" aria-expanded="false" aria-controls="sub1"><i class="fa fa-fw fa-file"></i> Pages</a>
-                    <div id="sub1" class="collapse" data-parent="#list-menu" role="tabpanel">
-                        <a href="about.html">About Us</a>
-                        <a href="blog.html">Blog</a>
-                        <a href="blog-detail.html">Blog Detail</a>
-                        <a href="compare.html">Compare</a>
-                        <a href="contact.html">Contact Us</a>
-                        <a href="cart-empty.html">Empty Shopping Cart</a>
-                        <a href="404.html">Error 404</a>
-                        <a href="faq.html">FAQ</a>
-                        <a href="login.html">Login</a>
-                        <a href="detail.html">Product Detail</a>
-                        <a href="register.html">Register</a>
-                        <div class="list-submenu" id="list-submenu" data-children=".sub-menu2">
-                            <div class="sub-menu2">
-                                <a data-toggle="collapse" href="#" data-target="#sub3" role="button" aria-expanded="false" aria-controls="sub3">Submenu</a>
-                                <div id="sub3" class="collapse" data-parent="#list-submenu" role="tabpanel">
-                                    <a href="#">Submenu 1</a>
-                                    <a href="#">Submenu 2</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
-            <div class="sub-menu1">
-                <a data-toggle="collapse" href="#" data-target="#sub2" role="button" aria-expanded="false" aria-controls="sub2"><i class="fa fa-fw fa-user"></i> Mon Compte</a>
-                <div id="sub2" class="collapse" data-parent="#list-menu" role="tabpanel">
-                    <a href="account-order.html">Commandes</a>
-                    <a href="account-profile.html">Profile</a>
-                    <!--<a href="account-address.html">Addresses</a>-->
-                    <a href="account-wishlist.html">Favoris</a>
-                    <a href="account-password.html">Changer mot passe</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
-
-<div class="content-overlay"></div>
 
 
 
-<!-- Middle Header -->
-<div class="middle-header">
-    <div class="container">
-        <div class="row py-2 py-lg-0">
-            <div class="col-2 col-sm-1 d-block d-lg-none">
-                <div class="d-flex align-items-center h-100 justify-content-center menu-btn-wrapper">
-                    <button class="btn btn-lg border-0 btn-link offcanvas-btn p-0" type="button">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="col-2 col-sm-1 col-lg-3 pr-0">
-                <div class="d-flex align-items-center h-100 logo-wrapper">
-                    <a href="index-2.html" class="d-lg-none"><img alt="Logo" src="" class="img-fluid"/></a>
-                    <a href="index-2.html" class="d-none d-lg-flex mb-2 mb-lg-0"><img alt="Logo" src="" class="img-fluid"/></a>
-                </div>
-            </div>
-            <div class="col-8 col-sm-6 col-md-7 col-lg-6">
-                <div class="d-flex align-items-center h-100">
-                    <div class="input-group input-group-search">
-                        <div class="input-group-prepend d-none d-md-flex">
+{% block middleHeader %}
 
-                            {% include '::modulesUsed/categories_produit.html.twig' %}
-
-                        </div>
-                        <input type="text" class="form-control" id="search-input" placeholder="Recherche..." aria-label="Recherche..." autocomplete="off">
-                        <span class="input-group-append">
-                  <button class="btn btn-theme btn-search" type="button"><i class="fa fa-search"></i></button>
-                </span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 col-sm-4 col-md-3 col-lg-3 d-none d-sm-block">
-                <div class="d-flex align-items-center h-100 float-right abg-secondary">
-                    <div class="btn-group btn-group-sm mr-3" role="group" aria-label="Login Sign Up">
-
-                        <!--  <button type="button" class="btn btn-outline-theme" data-toggle="modal" data-target="#LoginModal"><i class="fa fa-sign-in d-none d-lg-inline-block"></i> Login</button>-->
-                        <a  class="btn btn-outline-theme" href="{{ path('fos_user_security_login') }}" ><i class="fa fa-sign-in d-none d-lg-inline-block"></i> Login</a>
-
-                        <a class="btn btn-outline-theme" href="{{ path('fos_user_registration_register') }}" role="button"><i class="fa fa-user-plus d-none d-lg-inline-block"></i> Enregistrer</a>
-                    </div>
-                    <div class="navbar p-0 mr-3" hidden>
-                        <div class="dropdown">
-                            <button class="btn btn-light active btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Bienvenue , User
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right smooth" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="account-order.html"><i class="fa fa-fw fa-shopping-bag"></i> Commandes</a>
-                                <a class="dropdown-item" href="account-profile.html"><i class="fa fa-fw fa-user"></i> Profile</a>
-                                <a class="dropdown-item" href="account-wishlist.html"><i class="fa fa-fw fa-heart"></i> Favoris</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="fa fa-fw fa-sign-out"></i> Déconnexion</a>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="account-wishlist.html" class="d-none d-xl-block pos-r mr-3"><img src="{{ asset('FrontEnd/images/wishlist.png') }}" alt="" width="31"><span class="badge badge-counter badge-theme">3</span></a>
-                    <a href="cart.html" class="d-lg-none pos-r"><img src="images/cart.png" alt="" width="31"><span class="badge badge-counter badge-theme">4</span></a>
-                    <div class="navbar p-0 d-none d-lg-block"> <!-- Disable Popper.js for Dropdown in Navbar, this will make it easier to animate -->
-                        <div class="dropdown dropdown-cart">
-                            <a class="d-block pos-r" href="#" role="button" id="dropdown-cart" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="{{ asset('FrontEnd/images/cart.png') }}" alt="" width="31"><span class="badge badge-counter badge-theme">4</span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-cart smooth" aria-labelledby="dropdown-cart">
-                                <div class="media">
-                                    <a href="detail.html"><img class="img-thumbnail d-flex mr-2" src="images/product/prod.jpg" alt="product" width="50"></a>
-                                    <div class="media-body">
-                                        <div><a href="detail.html" class="mt-0 text-default">Produit1</a></div>
-                                        <small>x1</small> <span class="price font-weight-normal">$13.50</span> <a href="#" class="float-right" data-toggle="tooltip" title="Remove"><span class="badge badge-light"><i class="fa fa-remove"></i></span></a>
-                                    </div>
-                                </div>
-                                <div class="media">
-                                    <a href="detail.html"><img class="img-thumbnail d-flex mr-2" src="{{ asset('FrontEnd/images/product/polo2-small.jpg') }}" alt="product" width="50"></a>
-                                    <div class="media-body">
-                                        <div><a href="detail.html" class="mt-0 text-default">Produit1</a></div>
-                                        <small>x1</small> <span class="price font-weight-normal">$13.50</span> <a href="#" class="float-right" data-toggle="tooltip" title="Remove"><span class="badge badge-light"><i class="fa fa-remove"></i></span></a>
-                                    </div>
-                                </div>
-                                <div class="media">
-                                    <a href="detail.html"><img class="img-thumbnail d-flex mr-2" src="{{ asset('FrontEnd/images/product/prod.jpg') }}" alt="product" width="50"></a>
-                                    <div class="media-body">
-                                        <div><a href="detail.html" class="mt-0 text-default">Produit1</a></div>
-                                        <small>x1</small> <span class="price font-weight-normal">$13.50</span> <a href="#" class="float-right" data-toggle="tooltip" title="Remove"><span class="badge badge-light"><i class="fa fa-remove"></i></span></a>
-                                    </div>
-                                </div>
-                                <div class="media">
-                                    <a href="detail.html"><img class="img-thumbnail d-flex mr-2" src="{{ asset('FrontEnd/images/product/prod.jpg') }}" alt="product" width="50"></a>
-                                    <div class="media-body">
-                                        <div><a href="detail.html" class="mt-0 text-default">Produit1</a></div>
-                                        <small>x1</small> <span class="price font-weight-normal">$13.50</span> <a href="#" class="float-right" data-toggle="tooltip" title="Remove"><span class="badge badge-light"><i class="fa fa-remove"></i></span></a>
-                                    </div>
-                                </div>
-                                <div class="dropdown-divider"></div>
-                                Sous Total: <span class="price">$54.00</span>
-                                <div class="dropdown-divider"></div>
-                                <div class="text-center">
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="View Cart and Checkout Button">
-                                        <a href="#" role="button" class="btn btn-outline-theme"><i class="fa fa-shopping-cart"></i> View Cart</a>
-                                        <a href="#" role="button" class="btn btn-outline-theme"><i class="fa fa-check"></i> Checkout</a>
-                                    </div>
-                                </div>
-                                <div class="dropdown-divider"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+{% endblock %}
 
 <div id="container">
-
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-0 d-none d-lg-flex navbar-theme">
         <div class="container">
             <div class="pos-r d-flex w-100">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"><a class="nav-link" href="index.html">Accueil</a></li>
-                    <li class="nav-item dropdown mega-menu">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarMegaMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Liste de  Produits
-                        </a>
-                        <div class="dropdown-menu w-100 t-90 smooth" aria-labelledby="navbarMegaMenu">
-                            <div class="mega-menu-content">
-                                <div class="row">
-                                    <div class="col">
-                                        <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">Top Categories</h6>
-                                        <div class="list-group">
-                                            <a href="products.html" class="list-group-item list-group-item-action py-1 px-3 border-0">Polo T-Shirt</a>
-                                            <a href="products.html" class="list-group-item list-group-item-action py-1 px-3 border-0">Round Neck T-Shirt</a>
-                                            <a href="products.html" class="list-group-item list-group-item-action py-1 px-3 border-0">V Neck T-Shirt</a>
-                                            <a href="products.html" class="list-group-item list-group-item-action py-1 px-3 border-0">Hooded T-Shirt</a>
-                                            <a href="products.html" class="list-group-item list-group-item-action py-1 px-3 border-0">Polo T-Shirt</a>
-                                            <a href="products.html" class="list-group-item list-group-item-action py-1 px-3 border-0">Round Neck T-Shirt</a>
-                                            <a href="products.html" class="list-group-item list-group-item-action py-1 px-3 border-0">V Neck T-Shirt</a>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">Categories</h6>
-                                        <div class="list-group">
-                                            <a href="products.html" class="list-group-item list-group-item-action py-1 px-3 border-0">Dresses</a>
-                                            <a href="products.html" class="list-group-item list-group-item-action py-1 px-3 border-0">Tops</a>
-                                            <a href="products.html" class="list-group-item list-group-item-action py-1 px-3 border-0">Bottoms</a>
-                                            <a href="products.html" class="list-group-item list-group-item-action py-1 px-3 border-0">Jackets / Coats</a>
-                                            <a href="products.html" class="list-group-item list-group-item-action py-1 px-3 border-0">Sweaters</a>
-                                            <a href="products.html" class="list-group-item list-group-item-action py-1 px-3 border-0">Gym Wear</a>
-                                            <a href="products.html" class="list-group-item list-group-item-action py-1 px-3 border-0">Others</a>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="row">
-                                            <div class="col-12 mb-2">
-                                                <div class="card overlay-thumbnail">
-                                                    <img src="{{ asset('FrontEnd/images/product/type-polo.jpg') }}" alt="" class="card-img">
-                                                    <a href="products.html">
-                                                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                                                            <div class="card-text">
-                                                                <div>Polo T-Shirts <br/><small>40% OFF</small></div>
-                                                                <button class="btn btn-sm btn-info rounded"><small>SHOP NOW</small></button>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="card overlay-thumbnail">
-                                                    <img src="{{ asset('FrontEnd/images/product/type-hooded.jpg') }}" alt="" class="card-img">
-                                                    <a href="products.html">
-                                                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                                                            <div class="card-text">
-                                                                <div>New Collection</div>
-                                                                <button class="btn btn-sm btn-warning rounded"><small>SHOP NOW</small></button>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <a href="products.html"><img class="img-thumbnail" src="{{ asset('FrontEnd/images/product/mega-menu.jpg') }}" alt=""></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- <li class="nav-item"><a class="nav-link" href="products.html">Produits</a></li>-->
-                    <li class="nav-item"><a class="nav-link" href="cart.html">Lieux</a></li>
-                    <li class="nav-item"><a class="nav-link" href="checkout.html">Evenements</a></li>
-                    <li class="nav-item"><a class="nav-link" href="checkout.html">Réclamation</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="{{ path('souk_front_end_elmadina_accueil') }}">Accueil</a></li>
 
-                    <!-- <li class="nav-item dropdown">
-                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                             Pages
-                         </a>
-                         <div class="dropdown-menu t-90 smooth" aria-labelledby="navbarDropdownMenuLink">
-                             <a class="dropdown-item" href="about.html">About Us</a>
-                             <a class="dropdown-item" href="blog.html">Blog</a>
-                             <a class="dropdown-item" href="blog-detail.html">Blog Detail</a>
-                             <a class="dropdown-item" href="compare.html">Compare</a>
-                             <a class="dropdown-item" href="contact.html">Contact Us</a>
-                             <a class="dropdown-item" href="cart-empty.html">Empty Shopping Cart</a>
-                             <a class="dropdown-item" href="404.html">Error 404</a>
-                             <a class="dropdown-item" href="faq.html">FAQ</a>
-                             <a class="dropdown-item" href="login.html">Login</a>
-                             <a class="dropdown-item" href="detail.html">Product Detail</a>
-                             <a class="dropdown-item" href="register.html">Register</a>
-                             <div class="dropdown-submenu">
-                                 <a href="#" class="dropdown-item">My Account</a>
-                                 <ul class="dropdown-menu smooth">
-                                     <a href="account-order.html" class="dropdown-item">Orders</a>
-                                     <a href="account-profile.html" class="dropdown-item">Profile</a>
-                                     <a href="account-address.html" class="dropdown-item">Addresses</a>
-                                     <a href="account-wishlist.html" class="dropdown-item">Wishlist</a>
-                                     <a href="account-password.html" class="dropdown-item">Change Password</a>
-                                     <div class="dropdown-submenu">
-                                         <a href="#" class="dropdown-item">Submenu</a>
-                                         <ul class="dropdown-menu smooth">
-                                             <a href="#" class="dropdown-item">Submenu1</a>
-                                             <a href="#" class="dropdown-item">Submenu2</a>
-                                         </ul>
-                                     </div>
-                                 </ul>
-                             </div>
-                         </div>
-                     </li>-->
+                    <!-- <li class="nav-item"><a class="nav-link" href="products.html">Produits</a></li>-->
+                    <li class="nav-item"><a class="nav-link" href="{{ path('produit_index') }}">Nos Produits</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path('boutique_index') }}">Nos Boutiques</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path('lieu_index') }}">Lieux</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path('event_index') }}">Evenements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path('reclamation_new') }}">Réclamations</a></li>
+
+
 
                 </ul>
                 <span class="navbar-text">
@@ -314,8 +64,9 @@
             </div>
         </div>
     </nav>
-    {% block Content %}
 
+    {% block Content %}
+</div>
 
 
 
@@ -329,7 +80,9 @@
                     <div class="title-footer"><span>About Us</span></div>
                     <ul>
                         <li>
-                            Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et doloremmagna aliqua. Ut enim ad minim... <a href="about.html">Read More</a>
+                            My Souk votre nouvelle boutique en ligne, 100% Tunisienne: Bijoux, Maison, Beauté...
+                            Achetez vos articles en quelques #CLICS sur mysouk.tn
+                            Nouveau concept store en ligne</a>
                         </li>
                     </ul>
                 </div>
@@ -343,72 +96,30 @@
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <div class="title-footer"><span>Categories</span></div>
-                    <ul>
-                        <li><i class="fa fa-angle-double-right"></i> <a href="products.html">Cras justo odio</a></li>
-                        <li><i class="fa fa-angle-double-right"></i> <a href="products.html">Dapibus ac facilisis in</a></li>
-                        <li><i class="fa fa-angle-double-right"></i> <a href="products.html">Morbi leo risus</a></li>
-                        <li><i class="fa fa-angle-double-right"></i> <a href="products.html">Porta ac consectetur ac</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="title-footer"><span>Newsletter</span></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, soluta, tempora, ipsa voluptatibus porro vel laboriosam</p>
-                    <div class="input-group input-group-sm">
-                        <input class="form-control" type="text" placeholder="Email Address" aria-label="Email Address">
-                        <div class="input-group-append">
-                            <button class="btn btn-theme" type="button">Subscribe</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
                     <div class="title-footer"><span>Our Store</span></div>
                     <ul class="footer-icon">
-                        <li><span><i class="fa fa-map-marker"></i></span> 212 Lorem Ipsum. Dolor Sit</li>
-                        <li><span><i class="fa fa-phone"></i></span> +123-456-789</li>
-                        <li><span><i class="fa fa-envelope"></i></span> <a href="mailto:cs@domain.tld">cs@domain.tld</a></li>
+                        <li><span><i class="fa fa-map-marker"></i></span> Adresse: Agence Charguia2 Esprit CS </li>
+                        <li><span><i class="fa fa-phone"></i></span> +71526832</li>
+                        <li><span><i class="fa fa-envelope"></i></span> <a href="mailto:cs@domain.tld">mysouk@esprit.tn</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="title-footer"><span>Follow Us</span></div>
                     <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum</p>
                     <ul class="follow-us">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="title-footer"><span>Payment Method</span></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, soluta, tempora, ipsa voluptatibus porro vel laboriosam</p>
-                    <img src="{{ asset('FrontEnd/images/payment-1.png') }}" alt="Payment-1">
-                    <img src="{{ asset('FrontEnd/images/payment-2.png') }}" alt="Payment-2">
-                    <img src="{{ asset('FrontEnd/images/payment-3.png') }}" alt="Payment-3">
-                    <img src="{{ asset('FrontEnd/images/payment-4.png') }}" alt="Payment-4">
-                    <img src="{{ asset('FrontEnd/images/payment-5.png') }}" alt="Payment-5">
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="title-footer"><span>My Account</span></div>
-                    <ul>
-                        <li><i class="fa fa-angle-double-right"></i> <a href="account-order.html">Orders</a></li>
-                        <li><i class="fa fa-angle-double-right"></i> <a href="account-profile.html">Profile</a></li>
-                        <li><i class="fa fa-angle-double-right"></i> <a href="account-wishlist.html">Wishlist</a></li>
-                        <li><i class="fa fa-angle-double-right"></i> <a href="#">Logout</a></li>
+                        <li>{{ socialButtons()}}</li>
+
                     </ul>
                 </div>
             </div>
+
         </div>
         <div class="text-center copyright">
-            Copyright &copy; 2018 Mimity All right reserved
+            Copyright &copy; 2018 Machmoum
         </div>
     </div>
-
     <!-- Login Modal -->
-    <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel" aria-hidden="true">
+   <!-- <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -438,7 +149,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 
     <!-- Quick View Modal -->
 
@@ -455,6 +166,8 @@
 
 <!-- Mimity JS -->
 <script src="{{ asset('FrontEnd/js/mimity.min.js') }}"></script>
+{% block map %}
+{% endblock %}
 
 </body>
 

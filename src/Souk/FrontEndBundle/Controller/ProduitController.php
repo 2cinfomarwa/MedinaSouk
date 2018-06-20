@@ -21,9 +21,11 @@ class ProduitController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $produits = $em->getRepository('SoukFrontEndBundle:Produit')->findAll();
+        $categorieproduits = $em->getRepository('SoukFrontEndBundle:Categorieproduit')->findAll();
 
         return $this->render('produit/index.html.twig', array(
             'produits' => $produits,
+            'categorieproduits' => $categorieproduits,
         ));
     }
 

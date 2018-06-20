@@ -30,6 +30,16 @@ class CategorieproduitController extends Controller
         ));
     }
 
+    public function listeAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $produits = $em->getRepository('SoukFrontEndBundle:Categorieproduit')->findAll();
+
+        return $this->render('categorieproduit/liste.html.twig', array(
+            'categorieproduits' => $produits,
+        ));
+    }
     public function menuAction()
     {
         $em = $this->getDoctrine()->getManager();

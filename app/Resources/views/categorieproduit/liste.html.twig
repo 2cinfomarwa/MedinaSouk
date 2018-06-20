@@ -1,22 +1,22 @@
 
-{% for produit in produits %}
+{% for categorieproduit in categorieproduits %}
     <div class="product-slider-item">
     <div class="card card-product">
         <div class="img-wrapper">
-            <a href="detail.html"><img class="card-img-top" src="{{ asset('FrontEnd/images/product/' ~ produit.image) }}" alt="Card image cap"></a>
+
             <div class="tools tools-bottom" data-animate-in="fadeInDown" data-animate-out="flipOutX">
                 <div class="btn-group" role="group" aria-label="card-product-tools">
                     <button class="btn btn-link btn-sm d-none d-md-inline-block quick-view"><i class="fa fa-search-plus">loop</i></button>
-                    <a href="{{ path('ajouter_panier' , {'id':produit.id}) }}"><button class="btn btn-link btn-sm">Ajouter panier</button></a></div>
+                    <a href="{{ path('ajouter_panier' , {'id':categorieproduit.id}) }}"><button class="btn btn-link btn-sm">Ajouter panier</button></a></div>
                 <button class="btn btn-link btn-sm d-none d-md-inline-block"><i class="fa fa-heart"></i></button>
             </div>
         </div>
         <!-- <span class="badge badge-primary custom-badge arrowed-right label label-top-left">Extra Sale</span>-->
     </div>
     <div class="card-body">
-        <p class="card-text"><a href="detail.html">{{ produit.designation }}</a></p>
+        <p class="card-text"><a href="detail.html">{{ categorieproduit.libelle }}</a></p>
         <ul class="card-text list-inline">
-            <li class="list-inline-item"><span class="price">{{ produit.prixUnitaire }}</span></li>
+            <li class="list-inline-item"><span class="price">{{ categorieproduit.description }}</span></li>
             <!--<li class="list-inline-item"><del class="text-muted">$15.00</del></li>
             <li class="list-inline-item d-none d-sm-inline-block"><span class="badge badge-info custom-badge arrowed-left">-10%</span></li>-->
         </ul>

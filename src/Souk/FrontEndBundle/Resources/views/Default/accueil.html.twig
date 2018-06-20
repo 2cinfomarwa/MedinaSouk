@@ -1,4 +1,127 @@
 {% extends 'SoukFrontEndBundle::layout.html.twig' %}
+{% block middleHeader %}
+    <!-- Middle Header -->
+    <div class="middle-header">
+        <div class="container">
+            <div class="row py-2 py-lg-0">
+                <div class="col-2 col-sm-1 d-block d-lg-none">
+                    <div class="d-flex align-items-center h-100 justify-content-center menu-btn-wrapper">
+                        <button class="btn btn-lg border-0 btn-link offcanvas-btn p-0" type="button">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-2 col-sm-1 col-lg-3 pr-0">
+                    <div class="d-flex align-items-center h-100 logo-wrapper">
+                        <a href="index-2.html" class="d-lg-none"><img alt="Logo" src="{{ asset('FrontEnd/images/logo-teal.png') }}" class="img-fluid"/></a>
+                        <a href="index-2.html" class="d-none d-lg-flex mb-2 mb-lg-0"><img alt="Logo" src="{{ asset('FrontEnd/images/logo-teal.png') }}" class="img-fluid"/></a>
+
+                    </div>
+                </div>
+                <div class="col-8 col-sm-6 col-md-7 col-lg-6">
+                    <div class="d-flex align-items-center h-100">
+                        <div class="input-group input-group-search">
+                            <div class="input-group-prepend d-none d-md-flex">
+                                <select class="select-dropdown">
+                                    <option value="all">Categories</option>
+                                    {% for categorieproduit in categorieproduits %}
+                                        <option value="1">{{ categorieproduit.libelle }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <input type="text" class="form-control" id="search-input" placeholder="Recherche..." aria-label="Recherche..." autocomplete="off">
+                            <span class="input-group-append">
+                  <button class="btn btn-theme btn-search" type="button"><i class="fa fa-search"></i></button>
+                </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-4 col-md-3 col-lg-3 d-none d-sm-block">
+                    <div class="d-flex align-items-center h-100 float-right abg-secondary">
+                        <div class="btn-group btn-group-sm mr-3" role="group" aria-label="Login Sign Up">
+<!--#LoginModal-->
+    {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                            <button type="button" class="btn btn-outline-theme" data-toggle="modal" data-target=""><i class="fa fa-sign-in d-none d-lg-inline-block"></i><a href="{{ path('fos_user_security_logout') }}"> Logout</a></button>
+      {% else %}
+          <button type="button" class="btn btn-outline-theme" data-toggle="modal" data-target=""><i class="fa fa-sign-in d-none d-lg-inline-block"></i><a href="{{ path('fos_user_security_login') }}"> Login</a></button>
+     {% endif %}
+
+          <a class="btn btn-outline-theme" href="{{ path('fos_user_registration_register') }}" role="button"><i class="fa fa-user-plus d-none d-lg-inline-block"></i> Enregistrer</a>
+                    </div>
+                        <div class="navbar p-0 mr-3" hidden>
+                            <div class="dropdown">
+                                <button class="btn btn-light active btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Bienvenue , User
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right smooth" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#"><i class="fa fa-fw fa-shopping-bag"></i> Commandes</a>
+                                    <a class="dropdown-item" href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                                    <a class="dropdown-item" href="#"><i class="fa fa-fw fa-heart"></i> Favoris</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#"><i class="fa fa-fw fa-sign-out"></i> Déconnexion</a>
+                                </div>
+                            </div>
+                        </div>
+                       <!-- <a href="account-wishlist.html" class="d-none d-xl-block pos-r mr-3"><img src="{{ asset('FrontEnd/images/wishlist.png') }}" alt="" width="31"><span class="badge badge-counter badge-theme">3</span></a>-->
+                        <a href="{{ path('panier') }}" class="d-lg-none pos-r"><img src="images/cart.png" alt="" width="31"><span class="badge badge-counter badge-theme">4</span></a>
+                        <div class="navbar p-0 d-none d-lg-block"> <!-- Disable Popper.js for Dropdown in Navbar, this will make it easier to animate -->
+                            <div class="dropdown dropdown-cart">
+                                <a class="d-block pos-r" href="#" role="button" id="dropdown-cart" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="{{ asset('FrontEnd/images/cart.png') }}" alt="" width="31"><span class="badge badge-counter badge-theme">4</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-cart smooth" aria-labelledby="dropdown-cart">
+                                    <div class="media">
+                                        <a href="detail.html"><img class="img-thumbnail d-flex mr-2" src="images/product/prod.jpg" alt="product" width="50"></a>
+                                        <div class="media-body">
+                                            <div><a href="detail.html" class="mt-0 text-default">Produit1</a></div>
+                                            <small>x1</small> <span class="price font-weight-normal">$13.50</span> <a href="#" class="float-right" data-toggle="tooltip" title="Remove"><span class="badge badge-light"><i class="fa fa-remove"></i></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <a href="detail.html"><img class="img-thumbnail d-flex mr-2" src="{{ asset('FrontEnd/images/product/polo2-small.jpg') }}" alt="product" width="50"></a>
+                                        <div class="media-body">
+                                            <div><a href="detail.html" class="mt-0 text-default">Produit1</a></div>
+                                            <small>x1</small> <span class="price font-weight-normal">$13.50</span> <a href="#" class="float-right" data-toggle="tooltip" title="Remove"><span class="badge badge-light"><i class="fa fa-remove"></i></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <a href="detail.html"><img class="img-thumbnail d-flex mr-2" src="{{ asset('FrontEnd/images/product/prod.jpg') }}" alt="product" width="50"></a>
+                                        <div class="media-body">
+                                            <div><a href="detail.html" class="mt-0 text-default">Produit1</a></div>
+                                            <small>x1</small> <span class="price font-weight-normal">$13.50</span> <a href="#" class="float-right" data-toggle="tooltip" title="Remove"><span class="badge badge-light"><i class="fa fa-remove"></i></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <a href="detail.html"><img class="img-thumbnail d-flex mr-2" src="{{ asset('FrontEnd/images/product/prod.jpg') }}" alt="product" width="50"></a>
+                                        <div class="media-body">
+                                            <div><a href="detail.html" class="mt-0 text-default">Produit1</a></div>
+                                            <small>x1</small> <span class="price font-weight-normal">$13.50</span> <a href="#" class="float-right" data-toggle="tooltip" title="Remove"><span class="badge badge-light"><i class="fa fa-remove"></i></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    Sous Total: <span class="price">$54.00</span>
+                                    <div class="dropdown-divider"></div>
+                                    <div class="text-center">
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="View Cart and Checkout Button">
+                                            <a href="#" role="button" class="btn btn-outline-theme"><i class="fa fa-shopping-cart"></i> View Cart</a>
+                                            <a href="#" role="button" class="btn btn-outline-theme"><i class="fa fa-check"></i> Checkout</a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+
   {% block Content %}
 
       <div class="container-fluid mb-3">
@@ -9,12 +132,12 @@
                           <div class="row h-100 align-items-center">
                               <div class="col-8 col-lg-6 text-center">
                                   <div class="animated d-none d-sm-block" data-animate="slideInRight">
-                                      <h1 class="bg-theme text-white d-inline-block px-2">TOP BRANDS</h1>
+                                      <h1 class="bg-theme text-white d-inline-block px-2">My Souk</h1>
                                   </div>
                                   <div class="animated" data-animate="bounceInUp">
-                                      <h2 class="text-white font-weight-bold display-4 d-inline-block" remove-class-on-xs="display-4 font-weight-bold">MINIMUM<br/>30% - 70% OFF</h2>
+
                                   </div>
-                                  <a href="products.html" class="btn btn-theme animated delay-1" data-animate="fadeInDown" add-class-on-xs="btn-sm">Shop Now</a>
+                                  <a href="{{ path('panier') }}" class="btn btn-theme animated delay-1" data-animate="fadeInDown" add-class-on-xs="btn-sm">Shop Now</a>
                               </div>
                           </div>
                       </div>
@@ -24,15 +147,13 @@
                           <div class="row h-100 align-items-center justify-content-end">
                               <div class="col col-sm-6 text-center">
                                   <div class="animated" data-animate="lightSpeedIn">
-                                      <h1 class="bg-dark display-4 text-white d-inline-block px-2" remove-class-on-xs="display-4">T-LOVE</h1>
+
                                   </div>
                                   <div class="animated" data-animate="rotateIn">
                                       <h3 class="d-none d-sm-inline-block" add-class-on-xl="font-weight-bold">
-                                          A COMPLETE SHOPPING GUIDE ON WHAT AND HOW TO WEAR THE BEST T-SHIRTS
+                                         مرحبا بكم في سوق المدينة
                                       </h3>
-                                      <h5 class="d-inline-block d-sm-none" add-class-on-xs="text-white">
-                                          A COMPLETE SHOPPING GUIDE
-                                      </h5>
+
                                   </div>
                                   <a href="products.html" class="btn btn-theme animated delay-1" data-animate="fadeInUp" add-class-on-xs="btn-sm">Shop Now</a>
                               </div>
@@ -44,15 +165,15 @@
                           <div class="row h-100 align-items-center justify-content-center">
                               <div class="col text-center">
                                   <div class="animated d-none d-lg-block" data-animate="zoomIn">
-                                      <h1 class="bg-warning d-inline-block px-2">YOUR PRAYERS ANSWERED!</h1>
+
                                   </div>
                                   <div class="animated" data-animate="bounceInDown">
-                                      <h2 class="display-4 bg-light d-inline-block px-2" remove-class-on-xs="display-4">UPTO 70% OFF</h2>
+
                                   </div>
                                   <div class="animated d-none d-sm-block" data-animate="slideInLeft">
-                                      <h1 class="bg-dark text-white d-inline-block px-2">+ EXTRA 10% OFF</h1>
+
                                   </div>
-                                  <a href="products.html" class="btn btn-theme animated delay-1" data-animate="flipInX" add-class-on-xs="btn-sm">Shop Now</a>
+
                               </div>
                           </div>
                       </div>
@@ -65,10 +186,10 @@
                                       <i class="fa fa-truck fa-5x"></i>
                                   </div>
                                   <div class="animated delay-1" data-animate="bounceInUp">
-                                      <h3 class="d-none d-sm-inline-block bg-white p-2" add-class-on-xl="font-weight-bold">FREE SHIPPING</h3>
+
                                   </div>
                                   <div class="animated delay-2" data-animate="rotateInDownRight">
-                                      <h2 class="d-none d-sm-inline-block px-2 bg-dark text-white">ON ALL ORDERS !</h2>
+
                                   </div>
                               </div>
                               <div class="d-none d-sm-block col-sm-5 text-center">
@@ -84,10 +205,10 @@
                               </div>
                               <div class="col d-sm-none text-center">
                                   <div class="animated" data-animate="fadeInDown">
-                                      <h6 class="bg-white d-inline-block px-2">FREE SHIPPING</h6>
+                                      <h6 class="bg-white d-inline-block px-2">Livraison Gratuite</h6>
                                   </div>
                                   <div class="animated delay-1" data-animate="fadeInDown">
-                                      <h4 class="bg-dark text-white d-inline-block px-2">ON ALL ORDERS</h4>
+                                      <h4 class="bg-dark text-white d-inline-block px-2">et rapide 48h-72h</h4>
                                   </div>
                                   <a href="products.html" class="btn btn-theme animated delay-2" data-animate="fadeInUp" add-class-on-xs="btn-sm">Shop Now</a>
                               </div>
@@ -103,7 +224,7 @@
       <div class="container">
 
 
-          <!-- Popular Products -->
+                   <!-- Popular Products -->
           <div class="row">
               <div class="col-12"><div class="title"><span>Popular Products</span></div></div>
               <div class="col pl-sm-0 pr-sm-0">
@@ -113,8 +234,17 @@
 
                   </div>
               </div>
-          </div>
 
+
+              <div class="col-12"><div class="title"><span>Top categories</span></div></div>
+              <div class="col pl-sm-0 pr-sm-0">
+                  <div class="owl-carousel owl-theme product-slider">
+
+                      {% include '::modulesUsed/liste_cat_produit.html.twig' %}
+
+                  </div>
+              </div>
+          </div>
           <!-- Our Clients -->
           <div class="row">
               <div class="col-12"><div class="title text-center"><span>Our Clients</span></div></div>

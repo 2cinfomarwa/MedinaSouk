@@ -15,8 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\Validator\Constraints\Date;
-use Symfony\Component\Validator\Constraints\DateTime;
+
 
 
 class PanierController extends Controller
@@ -35,21 +34,21 @@ class PanierController extends Controller
     {
         $user = $this->getUser();
         $commande = new Commande();
-
+        $em = $this->getDoctrine()->getManager();
+        $commande->setIdutilisateur($user);
+        $em->persist($commande);
+        $em->flush();
         $session =  new Session();
         $panier = $session->get('panier');
         $totalHT = 0 ;
-        $em = $this->getDoctrine()->getManager();
         $produits = $em->getRepository('SoukFrontEndBundle:Produit')->findArray(array_keys($session->get('panier')));
         $cmd = $em->getRepository('SoukFrontEndBundle:Commande')->findCmd();
-       $totalTTC = 0;
+
         foreach($produits as $produit) {
             $qte = $panier[$produit->getId()];
             $prixUnitaire = $produit->getPrixunitaire();
             $prixHT = $qte *  $prixUnitaire ;
             $totalHT = $totalHT + $prixHT ;
-            $prixTTC = ( ($prixHT * $produit->getTauxtva())/100 ) + $prixHT ;
-            $totalTTC = $totalTTC + $prixTTC ;
             $detailsCmd = new Detailscommande();
             $detailsCmd->setIdproduit($produit);
             $detailsCmd->setQuantite($qte);
@@ -60,25 +59,13 @@ class PanierController extends Controller
             $em->persist($detailsCmd);
             $em->flush();
         }
-        $em = $this->getDoctrine()->getManager();
-        $commande->setIdutilisateur($user);
-        $commande->setMontantHT($totalHT);
-        $commande->setMontantTTC($totalTTC);
-       // $datecmd = new DateTime('now');
-        //$datecmd = strtoti
-       // die($datecmd);
-       // $commande->setDatecmd(new Date());
-        $em->persist($commande);
-        $em->flush();
 
         //Ici le mail de validation
 
         $message = (new \Swift_Message('Commande à Valider'))
             ->setFrom('hassenslimi12@gmail.com')
             ->setTo('hassen.slimi@esprit.tn')
-           ->setBody($this->renderView('panier/validationEmail.html.twig' ,  array('produits' => $produits,
-               'panier' => $panier,
-               'commande'=>$cmd)),'text/html');
+           ->setBody($this->renderView('panier/validationEmail.html.twig'),'text/html');
 
 
 
@@ -140,6 +127,31 @@ class PanierController extends Controller
         return $this->redirectToRoute('panier');
 
 
+        /*   if (array_key_exists($id, $panier)) {
+
+               if ($request->query->get('qte') != null) $panier[$id] = $this->getRequest()->query->get('qte');
+               $this->get('session')->getFlashBag()->add('success','Quantité modifié avec succès');
+           } else {
+               if ($this->getRequest()->query->get('qte') != null)
+                   $panier[$id] = $this->getRequest()->query->get('qte');
+               else
+                   $panier[$id] = 1;
+
+               $this->get('session')->getFlashBag()->add('success','Article ajouté avec succès');
+           }
+
+           $session->set('panier',$panier);
+
+
+           return $this->redirectToRoute('panier');*/
+
+
+        /*$session = new Session();
+        $session->set('name','hassen slimi');
+        $user = $session->get('name');
+
+
+       return $this->render('commande/ajouter_panier.html.twig',['user'=>$user]);*/
 
 
     }

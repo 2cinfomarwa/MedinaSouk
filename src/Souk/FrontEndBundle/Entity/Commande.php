@@ -55,8 +55,6 @@ class Commande
      */
     private $montantTTC;
 
-
-
     /**
      * @var integer
      *
@@ -64,6 +62,7 @@ class Commande
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
+
     private $id;
 
     /**
